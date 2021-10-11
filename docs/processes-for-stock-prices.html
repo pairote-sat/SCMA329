@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Processes for stock prices | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Chapter 3 Processes for stock prices | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Processes for stock prices | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Processes for stock prices | SCMA329 Practical Mathematical Financial Modeling" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2021-10-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bonds-and-inflation.html"/>
+<link rel="next" href="chapter-three.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329 Practical Mathematical Financial Modelling</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Cashflows, Interest and the Time Value of Money</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction-to-financial-modelling"><i class="fa fa-check"></i><b>1.1</b> Introduction to Financial Modelling</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#cashflows"><i class="fa fa-check"></i><b>1.2</b> Cashflows</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#interest-and-the-time-value-of-money"><i class="fa fa-check"></i><b>1.3</b> Interest and the Time Value of Money</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#simple-interest"><i class="fa fa-check"></i><b>1.3.1</b> Simple interest</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#effective-rate-of-interest"><i class="fa fa-check"></i><b>1.3.2</b> Effective rate of interest</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#compounding-over-any-number-of-time-units"><i class="fa fa-check"></i><b>1.3.3</b> Compounding over any number of time units</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#changing-the-time-period-of-the-effective-rates-of-interest"><i class="fa fa-check"></i><b>1.3.4</b> Changing the time period of the effective rates of interest</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#non-constant-interest-rates"><i class="fa fa-check"></i><b>1.3.5</b> Non-constant interest rates</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#accumulation-factors"><i class="fa fa-check"></i><b>1.3.6</b> Accumulation factors</a></li>
+<li class="chapter" data-level="1.3.7" data-path="index.html"><a href="index.html#present-values-and-discount-factors"><i class="fa fa-check"></i><b>1.3.7</b> Present values and discount factors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#cashflows-and-annuities"><i class="fa fa-check"></i><b>1.4</b> Cashflows and Annuities</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#level-annuities-certain"><i class="fa fa-check"></i><b>1.4.1</b> Level Annuities certain</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#level-annuities-due"><i class="fa fa-check"></i><b>1.4.2</b> Level Annuities Due</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#deferred-annuities"><i class="fa fa-check"></i><b>1.4.3</b> Deferred annuities</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#increasing-annuities"><i class="fa fa-check"></i><b>1.4.4</b> Increasing annuities</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#compound-increasing-annuities"><i class="fa fa-check"></i><b>1.4.5</b> Compound increasing annuities</a></li>
+<li class="chapter" data-level="1.4.6" data-path="index.html"><a href="index.html#annuities-payable-more-than-once-per-time-unit"><i class="fa fa-check"></i><b>1.4.6</b> Annuities payable more than once per time unit</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#nominal-rates-of-interest"><i class="fa fa-check"></i><b>1.5</b> Nominal Rates of Interest</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#nominal-rates-of-discount"><i class="fa fa-check"></i><b>1.5.1</b> Nominal Rates of Discount</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#principle-of-equivalence-yields-and-equation-of-value"><i class="fa fa-check"></i><b>1.6</b> Principle of Equivalence, Yields and Equation of Value</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#equation-of-value-and-yields"><i class="fa fa-check"></i><b>1.6.1</b> Equation of value and yields</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#the-method-to-estimate-the-yield"><i class="fa fa-check"></i><b>1.6.2</b> The method to estimate the yield</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#loan-schedules"><i class="fa fa-check"></i><b>1.7</b> Loan schedules</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-as-late-as-possible"><i class="fa fa-check"></i>Repay as late as possible:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-interest-only-during-the-term-and-repay-the-capital-at-the-end-of-the-term"><i class="fa fa-check"></i>Repay interest only during the term and repay the capital at the end of the term:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-loan-by-regular-instalments-of-interest-and-capital-throughout-term-of-loan"><i class="fa fa-check"></i>Repay loan by regular instalments of interest and capital throughout term of loan:</a></li>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#the-loan-schedule"><i class="fa fa-check"></i><b>1.7.1</b> The loan schedule</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#changing-the-term-of-a-loan"><i class="fa fa-check"></i><b>1.7.2</b> Changing the term of a loan</a></li>
+<li class="chapter" data-level="1.7.3" data-path="index.html"><a href="index.html#changing-the-interest-rate"><i class="fa fa-check"></i><b>1.7.3</b> Changing the interest rate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html"><i class="fa fa-check"></i><b>2</b> Bonds and Inflation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#bonds"><i class="fa fa-check"></i><b>2.1</b> Bonds</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#characteristics-of-bonds"><i class="fa fa-check"></i><b>2.1.1</b> Characteristics of Bonds</a></li>
+<li class="chapter" data-level="2.1.2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#bond-prices"><i class="fa fa-check"></i><b>2.1.2</b> Bond prices</a></li>
+<li class="chapter" data-level="2.1.3" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#no-tax"><i class="fa fa-check"></i><b>2.1.3</b> No tax</a></li>
+<li class="chapter" data-level="2.1.4" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#income-tax"><i class="fa fa-check"></i><b>2.1.4</b> Income tax</a></li>
+<li class="chapter" data-level="2.1.5" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#capital-gains-tax-cgt"><i class="fa fa-check"></i><b>2.1.5</b> Capital gains tax (CGT)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#inflation"><i class="fa fa-check"></i><b>2.2</b> Inflation</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#real-rates-of-interest"><i class="fa fa-check"></i><b>2.2.1</b> Real rates of interest</a></li>
+<li class="chapter" data-level="2.2.2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#real-yields"><i class="fa fa-check"></i><b>2.2.2</b> Real yields</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#calculating-real-yields-given-constant-inflation-assumptions"><i class="fa fa-check"></i><b>2.2.3</b> Calculating real yields given constant inflation assumptions</a></li>
+<li class="chapter" data-level="2.2.4" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#index-linked-securities"><i class="fa fa-check"></i><b>2.2.4</b> Index-linked securities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html"><i class="fa fa-check"></i><b>3</b> Processes for stock prices</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#force-of-interest"><i class="fa fa-check"></i><b>3.1</b> Force of interest</a></li>
+<li class="chapter" data-level="3.2" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#stochastic-processes"><i class="fa fa-check"></i><b>3.2</b> Stochastic processes</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#a-simple-random-walk"><i class="fa fa-check"></i><b>3.2.1</b> A simple random walk</a></li>
+<li class="chapter" data-level="3.2.2" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#sample-paths"><i class="fa fa-check"></i><b>3.2.2</b> Sample paths</a></li>
+<li class="chapter" data-level="3.2.3" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#simulating-a-simple-random-walk"><i class="fa fa-check"></i><b>3.2.3</b> Simulating a simple random walk</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#monte-carlo-methods"><i class="fa fa-check"></i><b>3.3</b> Monte Carlo Methods</a></li>
+<li class="chapter" data-level="3.4" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#the-markov-property"><i class="fa fa-check"></i><b>3.4</b> The Markov Property</a></li>
+<li class="chapter" data-level="3.5" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#wiener-processes"><i class="fa fa-check"></i><b>3.5</b> Wiener processes</a></li>
+<li class="chapter" data-level="3.6" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#generalised-wiener-process-brownian-motion-with-drift"><i class="fa fa-check"></i><b>3.6</b> Generalised Wiener process (Brownian Motion with Drift)</a></li>
+<li class="chapter" data-level="3.7" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#the-process-for-a-stock-price"><i class="fa fa-check"></i><b>3.7</b> The process for a stock price</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#model-assumptions-of-the-geometric-brownian-motion"><i class="fa fa-check"></i><b>3.7.1</b> Model Assumptions of the Geometric Brownian Motion</a></li>
+<li class="chapter" data-level="" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#stock-prices-are-lognormally-distributed"><i class="fa fa-check"></i>Stock prices are lognormally distributed</a></li>
+<li class="chapter" data-level="3.7.2" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#more-accurate-simulation-the-lognormal-model"><i class="fa fa-check"></i><b>3.7.2</b> More accurate simulation : the lognormal model</a></li>
+<li class="chapter" data-level="3.7.3" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#the-distribution-of-the-rate-of-return"><i class="fa fa-check"></i><b>3.7.3</b> The distribution of the rate of return</a></li>
+<li class="chapter" data-level="3.7.4" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#the-two-expected-returns-this-section-may-be-skipped"><i class="fa fa-check"></i><b>3.7.4</b> The two expected returns (this section may be skipped)</a></li>
+<li class="chapter" data-level="3.7.5" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#estimating-volatility"><i class="fa fa-check"></i><b>3.7.5</b> Estimating volatility</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#chapter-two"><i class="fa fa-check"></i><b>3.8</b> Chapter TWO</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chapter-three.html"><a href="chapter-three.html"><i class="fa fa-check"></i><b>4</b> Chapter THREE</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#datacamp-light"><i class="fa fa-check"></i><b>5.1</b> DataCamp Light</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SCMA329 Practical Mathematical Financial Modeling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="processes-for-stock-prices" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Processes for stock prices</h1>
+<p>In this chapter, we will consider some models (or processes) that are
+used to model stock price. The prices of stocks are continuous in time
+and value, which are unpredictable. However, we assume that stock prices
+follow a type of models (which are stochastic processes) known as
+<strong>geometric Brownian motion</strong>. This is one of the main tools in
+mathematical financial used in an analysis of derivatives. You will
+study in more details in the course “SCMA 459 Investment Science II”.</p>
+<p>We will first begin with the brief introduction of the <strong>force of
+interest</strong> (or <strong>continuous compounding</strong>). The process for a stock
+price and an algorithm to simulate stock prices will be presented after
+main concepts of random walks and Brownian motion are given.</p>
+<div id="force-of-interest" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Force of interest</h2>
+<p>Given an annual effective rate <span class="math inline">\(i\)</span>, a principal of 1 accumulates to
+<span class="math inline">\((1 + i)\)</span> at the end of the first year. The following formula provides
+the <strong>equivalent nominal rates</strong>, <span class="math inline">\(i^{(n)}\)</span>, of interest convertible <span class="math inline">\(n\)</span>
+times per year, <span class="math display">\[\left(1 + \frac{i^{(n)}}{n} \right)^n  = (1 + i),\]</span>
+which gives <span class="math display">\[i^{(n)} = n\left( (1+ i)^{1/n} - 1  \right).\]</span> Note that
+<span class="math inline">\(\displaystyle{\frac{i^{(n)}}{n}}\)</span> is the effect interest rate applied
+for each <span class="math inline">\(n\)</span>-th of a year. For e.g. if <span class="math inline">\(n =2\)</span>, then
+<span class="math inline">\(\displaystyle{\frac{i^{(2)}}{2}}\)</span> is the half-yearly effect interest
+rate equivalent to <span class="math inline">\(i\)</span>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-58" class="example"><strong>Example 3.1  </strong></span><em>Given the annual effective rate <span class="math inline">\(i = 4\%\)</span>,</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>calculate the equivalent nominal rates of interest convertible <span class="math inline">\(n\)</span>
+times a year for <span class="math inline">\(n = 2,4,12, 52,\)</span> and 365,</em></p></li>
+<li><p><em>find the limit of <span class="math inline">\(i^{(n)}\)</span> as <span class="math inline">\(n\)</span> tends to infinity, and</em></p></li>
+<li><p><em>plot the graph of <span class="math inline">\(i^{(n)}\)</span> as a function of <span class="math inline">\(n\)</span>.</em></p></li>
+</ol>
+</div>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Using the result from calculus, we can show that
+<span class="math display">\[\lim_{n \rightarrow \infty} \left(1 + \frac{x}{n} \right)^n = \exp(x).\]</span></p></li>
+<li><p>As <span class="math inline">\(n\)</span> tends to infinity, a rate of <span class="math inline">\(i^{(n)}\)</span> compounding <span class="math inline">\(n\)</span> times
+a year converges to a constant, which will be denoted by <span class="math inline">\(\delta\)</span>,
+i.e. <span class="math inline">\(i^{(n)} \rightarrow \delta\)</span> as <span class="math inline">\(n \rightarrow \infty\)</span>.</p></li>
+<li><p>The above observations imply following relation:
+<span class="math display">\[\lim_{n \rightarrow \infty} \left(1 + \frac{i^{(n)}}{n} \right)^n  = \exp(i^{(\infty)}) = \exp(\delta),\]</span>
+where we write <span class="math inline">\(i^{(\infty)} = \delta\)</span>.</p></li>
+<li><p>The constant <span class="math inline">\(\delta\)</span> is known as the <strong>force of interest</strong> or also
+known as a <strong>continuous compounded rate</strong>. It is the interest rate
+paid continuously throughout the period. It is a constant <strong>force</strong>
+that causes the initial investment to grow.</p></li>
+<li><p>The following relationship between the force of interest and the
+annual effective rate of interest holds:
+<span class="math display">\[1 + i = \exp(\delta) \quad \text { or } \delta = \ln(1+i).\]</span></p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-59" class="example"><strong>Example 3.2  </strong></span><em>฿200 is invested in an account which pays a force of
+interest of 4% pa. Calculate the amount in the account after 3 years.</em></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-60" class="example"><strong>Example 3.3  </strong></span><em>A payment of ฿500 is due in 5 years’ time. Calculate
+the present value of this payment at a force of interest of 4% pa.</em></p>
+</div>
+<p>For a force of interest <span class="math inline">\(\delta\)</span>, the accumulation at time <span class="math inline">\(t\)</span> of 1 unit
+paid at time <span class="math inline">\(s\)</span> is <span class="math display">\[A(s,t) = \exp( \delta (t-s)).\]</span> The present value
+at time <span class="math inline">\(s\)</span> of 1 unit paid at time <span class="math inline">\(t\)</span> is
+<span class="math display">\[V(s,t) = \exp( -\delta (t-s)).\]</span> <strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>In general, the force of interest <span class="math inline">\(\delta(t)\)</span> per annum at time <span class="math inline">\(t\)</span>
+is a function of <span class="math inline">\(t\)</span>.</p></li>
+<li><p>Given the force of interest per annum <span class="math inline">\(\delta(t)\)</span>, the accumulation
+at time <span class="math inline">\(t\)</span> of 1 unit paid at time <span class="math inline">\(s\)</span> is
+<span class="math display">\[A(s,t) = \exp\left( \int_{s}^t \delta(s) \, ds  \right).\]</span></p>
+<p>Also, the present value at time <span class="math inline">\(s\)</span> of 1 unit paid at time <span class="math inline">\(t\)</span> is
+<span class="math display">\[V(s,t) = \exp\left(- \int_{s}^t \delta(s) \, ds  \right).\]</span></p></li>
+<li><p>The more detailed discussion regarding the force of interest and
+continuous cashflows will be given in the course SCMA 361 Theory of
+Interest.</p></li>
+</ol>
+<p>The diagram below shows the accumulation at time <span class="math inline">\(t\)</span> of 1 unit paid at
+time <span class="math inline">\(s\)</span> at the annual effective rate <span class="math inline">\(i\)</span> and the force of interest
+<span class="math inline">\(\delta(t)\)</span>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-61" class="example"><strong>Example 3.4  </strong></span><em>A payment of ฿1000 is due in 1 years’ time. Calculate
+the accumulated amount at time 1 of this payment at a force of interest
+of <span class="math inline">\(\delta(t)\)</span> pa, where <span class="math display">\[\delta(t) = a + b t + c t^2,\]</span> <span class="math inline">\(a,b\)</span> and <span class="math inline">\(c\)</span>
+are given constants.</em></p>
+</div>
+</div>
+<div id="stochastic-processes" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Stochastic processes</h2>
+<p>It is of great interest to model the behaviour of a system by describing
+how different states, describe by random variables <span class="math inline">\(X\)</span>’s, in the system
+evolve with time.</p>
+<p>Stochastic processes can be used to represent many different phenomena
+from various areas including science, engineering, finance, and
+economics. As opposed to a deterministic model whose outcome is fixed,
+the outcome of a stochastic process is not certain, the stochastic
+process is simply a collection of random variables defined as follows:</p>
+<p>A <strong>stochastic process</strong> is a collection of random variables
+<span class="math inline">\(\{ X_t : t \in T\}\)</span>, where</p>
+<ul>
+<li><p><span class="math inline">\(t\)</span> is a parameter running over some index set <span class="math inline">\(T\)</span>, called the
+<strong>time domain</strong>.</p></li>
+<li><p>The common sample space of the random variables (the range of
+possible values for <span class="math inline">\(X_t\)</span>) denoted by <span class="math inline">\(S\)</span> is called the <strong>state
+space</strong> of the process.</p></li>
+</ul>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The set of random variables may be dependent or need not be
+identically distributed.</p></li>
+<li><p>Techniques used to study stochastic processes depend on whether the
+state space or the index set (the time domain) are discrete or
+continuous.</p></li>
+<li><p>Topics on stochastic processes will be discussed in the course “SCMA
+469 Actuarial Statistics”.</p></li>
+</ol>
+<div id="a-simple-random-walk" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> A simple random walk</h3>
+<p>Consider a simple model of the price of a stock measured in units of
+Thai baht. For each trading day <span class="math inline">\(n = 0,1,2, \ldots\)</span>, the stock price
+increases by 1 baht with probability <span class="math inline">\(p\)</span> or decreases by 1 baht with
+probability <span class="math inline">\(q = 1-p\)</span>.</p>
+<p>Let <span class="math inline">\(X_n\)</span> denote the stock price at day <span class="math inline">\(n\)</span> and <span class="math inline">\(X_0 =\)</span> ฿100. This
+simple model is called a <strong>simple random walk</strong>.</p>
+<p>In general, a simple random walk <span class="math inline">\(X_n\)</span> is a discrete-time stochastic
+process defined by</p>
+<ul>
+<li><p><span class="math inline">\(X_0 = a\)</span> and</p></li>
+<li><p>for <span class="math inline">\(n \ge1\)</span>,
+<span class="math display">\[X_n = a + \sum_{i=1}^n  Z_i, \text{ where } Z_i = \begin{cases}
+    1, &amp; \text{ with probability } p  \\
+    -1, &amp; \text{ with probability } q =  1- p.
+ \end{cases}\]</span></p></li>
+</ul>
+<p><strong>Note</strong> When <span class="math inline">\(p = 1/2\)</span>, the value of the process increases or decreases
+randomly by 1 unit with equal probability. In this case, the process is
+known as a <strong>symmetric</strong> random walk.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-62" class="example"><strong>Example 3.5  </strong></span><em>Calculate the expectation and variance of the random
+variable <span class="math inline">\(Z_i\)</span>.</em></p>
+</div>
+<p><strong>Solution:</strong> <span class="math display">\[\begin{aligned}
+    \mu &amp;= \mathrm{E}[Z_i] = 1\cdot p + (-1) \cdot q = p - q.\\\end{aligned}\]</span>
+<span class="math display">\[\begin{aligned}
+    \sigma^2 &amp;= \mathrm{Var}[Z_i] \\
+            &amp;=\mathrm{E}[Z_i^2] - (\mathrm{E}[Z_i] )^2 \\
+            &amp;= 1 - (p-q)^2  = (p+q)^2 - (p-q)^2\\
+            &amp;= 4pq.\end{aligned}\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-63" class="example"><strong>Example 3.6  </strong></span><em>Calculate the expectation and variance of the process
+<span class="math inline">\(X_n\)</span> at time <span class="math inline">\(n\)</span>.</em></p>
+</div>
+<p><strong>Solution:</strong> <span class="math display">\[\begin{aligned}
+     \mathrm{E}[X_n] &amp;=  \mathrm{E}[a + \sum_{i=1}^n Z_i] = a + n\mu.\end{aligned}\]</span>
+<span class="math display">\[\begin{aligned}
+    \mathrm{Var}[X_n]&amp;= \mathrm{Var}[a + \sum_{i=1}^n Z_i]  = n \sigma^2.\end{aligned}\]</span>
+It should be noted that the variance of <span class="math inline">\(X_n\)</span> increases with time.</p>
+<p>The next example shows how to use a coin to simulate price paths of a
+stock.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-64" class="example"><strong>Example 3.7  </strong></span><em>We flip the coin once to represent each trading day.
+If the coin comes up head then the stock price goes up by 1 baht; if it
+comes up tail then the stock price goes down by 1 baht. Assume that the
+initial stock price is <span class="math inline">\(X_0 = 100\)</span>. Let us flip the coin 20 times and
+then draw the graph of the stock price against time (in day). Repeat
+this process 4 more times.</em></p>
+</div>
+<p><strong>Solution:</strong> See the Excel worksheet.</p>
+</div>
+<div id="sample-paths" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Sample paths</h3>
+<p>In the simple random walk process, time is discrete (as observed at the
+end of each day) and the state space is discrete. The stochastic model
+has an infinite number of <strong>stochastic realisations</strong>. A <strong>sample path</strong>
+is then just the sequence of a particular set of experiments. Graphs of
+some stochastic realisations of the simple random walk with <span class="math inline">\(p = 0.5\)</span>
+and <span class="math inline">\(a = 100\)</span> are shown in Figure are shown in Figure <a href="processes-for-stock-prices.html#fig:FigRW">3.1</a>.</p>
+<div class="figure"><span id="fig:FigRW"></span>
+<img src="SCMA329Bookdownproj_files/figure-html/FigRW-1.png" alt="Some stochastic realisations of the simple random walk" width="672" />
+<p class="caption">
+Figure 3.1: Some stochastic realisations of the simple random walk
+</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-65" class="example"><strong>Example 3.8  </strong></span><em>For the random process, calculate
+<span class="math display">\[\Pr(X_2 = 98, X_5 = 99 | X_0 = 100).\]</span></em></p>
+</div>
+<p><strong>Solution:</strong> The process <span class="math inline">\(X_n\)</span> must decrease on the first two days,
+which happens with probability <span class="math inline">\((1-p)^2\)</span>. Independently, it must then
+increases on another two days and decrease on one day (not necessarily
+in that order), giving three different possibilities. Each of these has
+probability <span class="math inline">\(p^2(1-p)\)</span>. So
+<span class="math display">\[\Pr(X_2 = 98, X_5 = 99 | X_0 = 100) = (1-p)^2 \cdot 3 p^2(1-p) = 3p^2(1-p)^3.\]</span></p>
+<div class="figure">
+<embed src="RWThreePaths.pdf" id="fig:SamplePaths" style="width:3in" />
+<p class="caption">Three possible sample paths</p>
+</div>
+</div>
+<div id="simulating-a-simple-random-walk" class="section level3" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Simulating a simple random walk</h3>
+<p>To simulate a sample path of the simple random walk process <span class="math inline">\(X_n\)</span> for
+<span class="math inline">\(n = 0,1, \ldots, N\)</span>, we proceed as follows:</p>
+<ol style="list-style-type: decimal">
+<li><p>Generate <span class="math inline">\(N\)</span> random samples from the discrete distribution of the
+random variable <span class="math inline">\(Z_i\)</span>, <span class="math inline">\(i = 1,\ldots, N\)</span>, as follows:</p>
+<ol style="list-style-type: decimal">
+<li><p>We first generate random numbers from the uniform distribution
+<span class="math inline">\(U(0,1)\)</span>. Denote these numbers by <span class="math inline">\(U_i\)</span>.</p></li>
+<li><p>If <span class="math inline">\(U_i \le p\)</span>, then set <span class="math inline">\(Z_i = 1\)</span>. Otherwise, <span class="math inline">\(Z_i = -1\)</span></p></li>
+</ol></li>
+<li><p>The value <span class="math inline">\(X_n\)</span> of the random walk process at time <span class="math inline">\(n\)</span>,
+<span class="math inline">\(1 \le n \le N\)</span>, can then be calculated from
+<span class="math display">\[X_n = a + \sum_{i=1}^n  Z_i.\]</span></p></li>
+</ol>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Excel provides two function <strong>RAND()</strong> and <strong>RANDBETWEEN(a,b)</strong> to
+generate a random number between 0 and 1 and a random integer
+between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p></li>
+<li><p>Excel also provides Random Number Generation to draw sample numbers
+from some specified distributions (to be discussed in Excel Lab).</p></li>
+</ol>
+<div class="figure">
+<embed src="RW.pdf" id="fig:RW" style="width:8in" />
+<p class="caption">Simulating a sample path of a simple random walk</p>
+</div>
+</div>
+</div>
+<div id="monte-carlo-methods" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Monte Carlo Methods</h2>
+<p>Monte Carlo methods are simulation-based algorithms that rely on
+generating a large set of samples from a statistical model to obtain the
+behaviour of the model and estimate the quantities of interest. For a
+large sample set of a random variable representing a quantity of
+interest, the law of large numbers allows to approximate the expectation
+by the average value from the samples.</p>
+<p>Consider repeated independent trials of a random experiment. We will
+need to generate a large number of samples <span class="math inline">\(X_1, X_2, \ldots\)</span> from the
+model. A Monte Carlo method for estimating the expectation
+<span class="math inline">\(\mathrm{E}[ X ]\)</span> is a numerical method based on the approximation
+<span class="math display">\[\mathrm{E}[ X] \approx \frac{1}{N}\sum_{i=1}^N X_i,\]</span> where
+<span class="math inline">\(X_1, X_2, \ldots\)</span> are i.i.d. with the same distribution as <span class="math inline">\(X\)</span>.</p>
+<p>While computing expectations and computing probabilities at first look
+like different problems, the latter can be reduced to the former: if <span class="math inline">\(X\)</span>
+is a random variable, we have
+<span class="math display">\[\Pr(X \in A) = \mathrm{E}[\mathbbm{1}_A(X)].\]</span></p>
+<p>Using this equality, we can estimate <span class="math inline">\(\Pr(X \in A)\)</span> by
+<span class="math display">\[\Pr(X \in A) = \mathrm{E}[\mathbbm{1}_A(X)] = \frac{1}{N}\sum_{i=1}^N \mathbbm{1}_A(X_i).\]</span></p>
+<p>Recall that the indicator function of the set <span class="math inline">\(A\)</span> is the defined as
+<span class="math display">\[\mathbbm{1}_A(x) =
+\begin{cases*}
+     1          &amp; if $x \in A $ \\
+      0        &amp; otherwise.
+\end{cases*}\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-66" class="example"><strong>Example 3.9  </strong></span><em>Using Monte Carlo estimation, approximate the
+expectation <span class="math inline">\(\mathrm{E}[X]\)</span> where <span class="math inline">\(X \sim \mathcal{N}(0,1)\)</span>, and
+estimate the percent of values lie within two standard deviation of the
+mean of <span class="math inline">\(X\)</span></em></p>
+</div>
+<p><strong>Solution:</strong> We generate samples <span class="math inline">\(X_1,X_2,...,X_N\)</span> from the model <span class="math inline">\(X\)</span>
+for large <span class="math inline">\(N\)</span>, for example for <span class="math inline">\(N = 10000\)</span>, we can use estimates such as
+<span class="math display">\[\mathrm{E}[X] \approx \frac{1}{N}\sum_{i=1}^N X_i,\]</span> and
+<span class="math display">\[\mathrm{Var}[X] \approx \frac{1}{N-1}\sum_{i=1}^N (X_i - \bar{X})^2.\]</span></p>
+</div>
+<div id="the-markov-property" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> The Markov Property</h2>
+<p>A Markov process is a special type of stochastic processes with the
+property that the future evolution of the process depends only on its
+current state and not on its past history.</p>
+<p>That is given the value of <span class="math inline">\(X_t\)</span>, the values of <span class="math inline">\(X_s\)</span> for <span class="math inline">\(s &gt; t\)</span> do not
+depend on the values of <span class="math inline">\(X_u\)</span> for <span class="math inline">\(u &lt; t\)</span>. This property is called the
+<strong>Markov property</strong>.</p>
+<p>A <strong>Markov process</strong> is any stochastic process that satisfies the Markov
+property</p>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Stock prices are usually assumed to follow a Markov process where
+only the current stock price is relevant for predicting future
+prices, and thus the past values are irrelevant</p></li>
+<li><p>Predictions in the future is uncertain, and must be expressed in
+terms of probability distributions. Hence, the probability
+distribution of the future stock price is independent of the
+particular price path in the past.</p></li>
+<li><p><strong>Time series models</strong> are widely used in economics, business and
+engineering to predict the variability of a variable over time,
+where past values are used as the input variables for the model.</p></li>
+</ol>
+</div>
+<div id="wiener-processes" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Wiener processes</h2>
+<p>We start with the Markov process that is a building block for the
+geometric Brownian motion. Analogously to the random walk process, it is
+defined in terms of some simple intermediary processes, that is the
+increment process <span class="math inline">\(Z_i\)</span>. The <strong>Wiener process</strong> is a Markov process
+which will be used to <strong>model the change in the stock prices</strong>.</p>
+<p>The Wiener process is a (<strong>continuous-time stochastic</strong>) process which
+can be described by a variable <span class="math inline">\(W\)</span> having the following properties:</p>
+<ul>
+<li><p>We assume that the current value is 0 (i.e. <span class="math inline">\(W(0) = 0\)</span>) and <strong>the
+change in its value during a year</strong> (i.e. <span class="math inline">\(W(1) - W(0)\)</span>) is <span class="math inline">\(N(0,1)\)</span>
+where <span class="math inline">\(N(m,v)\)</span> is a probability distribution normally distributed
+with mean <span class="math inline">\(m\)</span> and variance <span class="math inline">\(v\)</span>.</p>
+<p><strong>Notes</strong> The following properties of the normal distributions are
+useful.</p>
+<ol style="list-style-type: decimal">
+<li><p>Given <span class="math inline">\(X \sim N(\mu, \sigma^2), Y = a + bX\)</span>, it follows that
+<span class="math display">\[Y \sim N(a + b\cdot \mu, b^2 \sigma^2).\]</span></p></li>
+<li><p>Given <span class="math inline">\(X \sim N(\mu_X, \sigma_X^2), Y \sim N(\mu_Y, \sigma_Y^2)\)</span>
+with <span class="math inline">\(X, Y\)</span> independent, it follows that
+<span class="math display">\[X + Y  \sim N(\mu_X + \mu_Y, \sigma_X^2 + \sigma_Y^2).\]</span></p></li>
+<li><p>It is well known that if two i.i.d. random variables are
+normally distributed, their sum is also normally distributed.</p>
+<p>The converse is also true.</p>
+<p>That is, suppose <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are two i.i.d. random variables
+such that <span class="math inline">\(X + Y\)</span> is normal. It necessarily the case that <span class="math inline">\(X\)</span>
+and <span class="math inline">\(Y\)</span> are also normal.</p></li>
+</ol></li>
+<li><p>The probability distribution of the change in the value of the
+variable during any time period of length <span class="math inline">\(T\)</span> is <span class="math inline">\(N(0,T)\)</span>. For
+example,</p>
+<ul>
+<li><p>The change in 2 years is the sum of two normal distributions,
+each of which has mean of 0 and variance of 1. <strong>Solution:</strong>
+<span class="math display">\[\begin{aligned}
+    W(2) - W(0) &amp;= (W(2) - W(1)) +  (W(1) - W(0)) \\
+              &amp;\sim X + Y \text{ where } X, Y \text{ are independent } N(0,1)                   \text{ distributions.}  \\
+              &amp;\sim N(0,2).\end{aligned}\]</span></p>
+<p>The Markov property implies that the two distributions are
+<strong>independent</strong>. Hence the sum of two independent normal
+distributions is a normal distribution where the mean is the sum
+of the means and the variance is the sum of the variances.</p>
+<p>The the probability distribution of the change in the value of
+the variable in 2 years is <span class="math inline">\(N(0,2)\)</span>.</p></li>
+<li><p>For the change in 6 months, the variance of the change in the
+value of the variable during 1 year (which is 1) equals to the
+sum of the variance of the change in the first 6 months and the
+second 6 months. We also assume that the two distributions of
+the six-months period are the same (or <strong>identical</strong>). As a
+result, the the probability distribution of the change in the
+value of the variable during 6 months is <span class="math inline">\(N(0,0.5)\)</span>.</p>
+<p><strong>Solution:</strong> <span class="math display">\[\begin{aligned}
+    W(1) - W(0) &amp;= (W(1) - W(0.5)) +  (W(0.5) - W(0)) \\
+              &amp;\sim U + V \text{ where } U, V \text{ are identical and independent}\end{aligned}\]</span>
+Since <span class="math inline">\(W(1) - W(0) \sim N(0,1)\)</span>, it follows that <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> are
+both normally distributed <span class="math inline">\(N(0,0.5)\)</span>.</p></li>
+</ul></li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-67" class="example"><strong>Example 3.10  </strong></span><em>Given that <span class="math inline">\(W(0) = a\)</span>, what is the probability
+distribution of the value of W at 3 months, i.e. <span class="math inline">\(W(0.25)\)</span>?</em></p>
+</div>
+<p><strong>Solution:</strong> <span class="math display">\[\begin{aligned}
+    W(0.25) &amp;= W(0) + (W(0.25) - W(0)) \\
+            &amp; \sim a + N(0,0.25)  \\
+            &amp; \sim N(a, 0.25).\end{aligned}\]</span> The mean and the variance
+of <span class="math inline">\(W(0.25)\)</span> is <span class="math inline">\(a\)</span> and 0.25, respectively.</p>
+<p>More precisely, a <strong>standard Brownian motion</strong> or <strong>standard Wiener
+process</strong> over <span class="math inline">\([0,T]\)</span> is a random variable <span class="math inline">\(W(t)\)</span> that depends
+continuously on <span class="math inline">\(t \in [0,T]\)</span> and satisfies the following conditions:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(W(0) = 0\)</span> (with probability 1).</p></li>
+<li><p>For <span class="math inline">\(0 \le s &lt; t \le T\)</span>, the <strong>change (or increment)</strong> <span class="math inline">\(W(t) - W(s)\)</span>
+is normally distributed with mean zero and variance <span class="math inline">\(t -s\)</span>.</p></li>
+<li><p>For <span class="math inline">\(0 \le s &lt; t &lt; u &lt; v \le T\)</span>, the change (or increment)
+<span class="math inline">\(W(t) - W(s)\)</span> and <span class="math inline">\(W(v) - W(u)\)</span> are independent.</p></li>
+</ol>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The second condition above implies that the change
+<span class="math inline">\(W(t) - W(s) \sim \sqrt{t-s} N(0,1)\)</span>, where <span class="math inline">\(N(0,1)\)</span> denotes a
+normally distributed random variable with mean zero and unit
+variance.</p></li>
+<li><p>The uncertainty about the value of the standard Brownian motion
+measured in terms of its standard deviation increases as the square
+root of how far we are looking ahead, i.e. the square root of the
+length of the period considered.</p></li>
+</ol>
+<div id="simulating-a-standard-brownian-motion" class="section level4" number="3.5.0.1">
+<h4><span class="header-section-number">3.5.0.1</span> Simulating a standard Brownian motion</h4>
+<p>Recall that the standard Brownian motion is a continuous process. We can
+simulate it by discretising the time domain (the interval <span class="math inline">\([0,T]\)</span>) . The
+algorithm can be summarised as follows:</p>
+<ol style="list-style-type: decimal">
+<li><p>We set <span class="math inline">\(\Delta t = T/N\)</span> for some positive inter <span class="math inline">\(N\)</span> and let <span class="math inline">\(W_j\)</span>
+denote <span class="math inline">\(W(t_j)\)</span> with <span class="math inline">\(t_j = j \cdot \Delta t\)</span></p></li>
+<li><p>Condition 1 implies that <span class="math inline">\(W_0 = 0\)</span> with probability 1, and
+conditions 2 and 3 tells us that
+<span class="math display">\[W_j = W_{j-1} + \Delta W_j, \, j = 1,2, \ldots, N,\]</span> where each
+<span class="math inline">\(\Delta W_j\)</span> is an independent random variable of the form
+<span class="math inline">\(\sqrt{\Delta t} N(0,1)\)</span>.</p></li>
+</ol>
+<p><strong>Note</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>How can I simulate values of a normal random variable?</p>
+<p>(Excel) If you type in any cell the formula
+=NORM.INV(rand(),mu,sigma), you will generate a simulated value of a
+normal random variable having a mean mu and a standard deviation
+sigma (why?).</p></li>
+<li><p>In ordinary calculus, the notation <span class="math display">\[dx = a dt\]</span> indicates that
+<span class="math inline">\(\Delta x = a \Delta t\)</span> in the limit as <span class="math inline">\(\Delta t \rightarrow 0\)</span>.
+This means that the change in <span class="math inline">\(x\)</span> per unit of time is constant, i.e.
+equal to <span class="math inline">\(a\)</span>.</p></li>
+<li><p>In stochastic calculus, we use <span class="math inline">\(dW\)</span> as a Wiener increment which is
+the limit of <span class="math inline">\(\Delta W_j\)</span> as <span class="math inline">\(\Delta t \rightarrow 0\)</span>.</p></li>
+<li><p>We see that the Wiener process has very jagged (irregular) sample
+paths.</p></li>
+</ol>
+<div class="figure">
+<embed src="BM.pdf" id="fig:BM" style="width:8in" />
+<p class="caption">Simulating a sample path of the standard Brownian
+motion</p>
+</div>
+<p>In the following example, we do not assume that <span class="math inline">\(W_0 = 0\)</span> with
+probability 1.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-68" class="example"><strong>Example 3.11  </strong></span><em>Consider a Wiener process denoted by <span class="math inline">\(W(t)\)</span> with
+<span class="math inline">\(W(0) = a\)</span> with probability 1. The time is measured in years.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>What is the probability distribution of the value of the variable
+at the end of one year, i.e. <span class="math inline">\(W(1)\)</span>?</em></p></li>
+<li><p><em>What is the probability distribution of the value of the variable,
+i.e. <span class="math inline">\(W(4)\)</span>? and what is the mean and the standard deviation of
+<span class="math inline">\(W(4)\)</span>.</em></p></li>
+</ol>
+<p><em>What is the probability distribution of the change in the value of W
+during 3 months, i.e. <span class="math inline">\(W(0.25) - W(0) = W(0.25)\)</span>?</em></p>
+</div>
+</div>
+</div>
+<div id="generalised-wiener-process-brownian-motion-with-drift" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Generalised Wiener process (Brownian Motion with Drift)</h2>
+<p>In this section, we will consider a variant of the standard Wiener
+process, which is modified by introducing the drift and variance
+parameters. This new process is known as a <strong>generalised Wiener
+process</strong> or <strong>Brownian motion with drift</strong>.</p>
+<p>More precisely, a generalised Wiener process for a variable <span class="math inline">\(X\)</span> is
+defined in terms of <span class="math inline">\(dW\)</span> as <span class="math display">\[dX = a dt + b dW,\]</span> where <span class="math inline">\(a\)</span> is a drift
+parameter and <span class="math inline">\(b^2\)</span> is a variance parameter.</p>
+<p><strong>Note</strong> The process defined above is also known as a <strong>linear
+stochastic differential equation</strong>.</p>
+<ul>
+<li><p>The term <span class="math inline">\(a dt\)</span> (deterministic term) implies that <span class="math inline">\(X\)</span> has an
+<strong>expected drift rate</strong> of <span class="math inline">\(a\)</span> per unit of time (or the mean change
+per unit time). To see this, without the stochastic or random
+component <span class="math inline">\(b dW\)</span>, the equation is simply an ordinary differential
+equation <span class="math display">\[dX = a dt \quad \text{ or } \quad \frac{dX}{dt} = a.\]</span>
+The solution to this equation with an initial condition <span class="math inline">\(X(0) = X_0\)</span>
+is <span class="math display">\[X = X_0 + a t.\]</span> Clearly, for each time unit the variable <span class="math inline">\(X\)</span>
+increases by an amount <span class="math inline">\(a\)</span>.</p></li>
+<li><p>The stochastic or random component <span class="math inline">\(b dW\)</span>, measured in terms of the
+variance of the change in <span class="math inline">\(X\)</span>, adds <strong>uncertainty</strong>, <strong>noise</strong> or
+<strong>variability</strong> to the path followed by <span class="math inline">\(X\)</span>. The term <span class="math inline">\(b^2\)</span> is
+referred to as the <strong>variance rate</strong>.</p></li>
+</ul>
+<p>The following example shows that properties of the generalised Wiener
+processcan be obtained from the properties of the standard Wiener
+process.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-69" class="example"><strong>Example 3.12  </strong></span><em>Calculate the probability that the generalised Wiener
+process <span class="math inline">\(X(t)\)</span> with the drift parameter <span class="math inline">\(a = 0.5\)</span> and the variance
+<span class="math inline">\(b^2 = 0.16\)</span> takes the values between 3 and 4 at time <span class="math inline">\(t = 4\)</span>. Assume
+that its initial value <span class="math inline">\(X(0) = 1\)</span>.</em></p>
+</div>
+<p><strong>Solution:</strong> The change of process over 4 units of time is given by
+<span class="math display">\[X(t) - X(0) = 0.5 \cdot t + 0.4 \cdot (W(t) - W(0)) = 0.5 \cdot t + 0.4 \cdot W(t) .\]</span>
+The required probability is <span class="math display">\[\begin{aligned}
+        \Pr(3 \le X(4) \le 4) &amp;= \Pr( 3 \le  X(0) + 0.5 \cdot 4 + 0.4 \cdot W(4)   \le 4  )\\
+            &amp;= \Pr(0 \le W(4) \le 2.5) \\
+            &amp;= \Pr(0 \le 2 Z \le 2.5), \text{ where }  Z \sim N(0,1) \\
+            &amp;= \Pr(0 \le Z \le 1.25) = 0.3944
+    \end{aligned}\]</span> Here we can use the standard normal distribution
+table to obtain the probability, or use the Excel function
+NORM.S.DIST(z, TRUE), which returns the cumulative distribution of the
+standard normal distribution.</p>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The standard Wiener process has the expected drift rate of zero,
+<span class="math inline">\(a = 0\)</span> and unit variance rate (noise or variability) <span class="math inline">\(b^2 = 1\)</span>. For
+the generalised Wiener process, the amount of this noise or
+variability is <span class="math inline">\(b\)</span> times a Wiener process. For <strong>each time unit</strong>,
+the Wiener increment <span class="math inline">\(dW\)</span> follows the standard normal distribution
+<span class="math inline">\(N(0,1)\)</span>. Therefore, the variance per time unit time of the process
+<span class="math inline">\(X\)</span> is equal to <span class="math inline">\(b^2\)</span>.</p></li>
+<li><p>The change in the value of the process <span class="math inline">\(X\)</span> in any time interval <span class="math inline">\(t\)</span>
+is normal distributed with mean of <span class="math inline">\(at\)</span> and variance of <span class="math inline">\(b^2 t\)</span>,
+i.e. for <span class="math inline">\(s, t &gt; 0\)</span>, <span class="math display">\[X(s + t) - X(s) \sim N(at , b^2 t).\]</span> This
+follows from the definition of the process: <span class="math display">\[\begin{aligned}
+  X(s + t) - X(s)   &amp;= \Delta X  = a \Delta t + b \Delta W\\
+                        &amp;= a (s + t  - s) + b  \Delta W = a t + b (W(s + t) - w(s)) \\
+                    &amp;\sim at + b \cdot N(0, t) = N(at, b^2 t),\end{aligned}\]</span>
+since <span class="math inline">\(W(s + t) - w(s) \sim N(0,t)\)</span>.</p></li>
+<li><p>In general, the drift and variance rates of a stochastic process may
+depend on both <span class="math inline">\(X\)</span> and <span class="math inline">\(t\)</span>. The process is called an Itô process and
+can be written as <span class="math display">\[dX = a(X,t) dt + b(X,t) dW,\]</span> where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>
+are functions of <span class="math inline">\(X\)</span> and <span class="math inline">\(t\)</span>.</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-70" class="example"><strong>Example 3.13  </strong></span><em>Consider the cash position of a company measured in
+millions of Thai baht. Assume that it follows a generalised Wiener
+process with a drift of 10 per year and a variance rate of 400 per year.
+Let <span class="math inline">\(X(0) = 50\)</span>.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>What is the distribution of the process at the end of the first
+year, <span class="math inline">\(X(1)\)</span>?</em></p></li>
+<li><p><em>What is the distribution of the process at the end of 6 months,
+<span class="math inline">\(X(1/2)\)</span>?</em></p></li>
+<li><p><em>What is the probability that the cash position will be at least 60
+million baht at the end of 6 months?</em></p></li>
+</ol>
+</div>
+<p><strong>Solution:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>At the end of the first year, we know that
+<span class="math display">\[X(1) - X(0) \sim N(a \cdot 1, b^2 \cdot 1),\]</span> where <span class="math inline">\(a = 10\)</span> and
+<span class="math inline">\(b^2 = 400\)</span>. It follows that
+<span class="math display">\[X(1) \sim N(X(0) + a , b^2 ) = N(60, 400).\]</span></p></li>
+<li><p>Similarly, at the end of 6 months,
+<span class="math display">\[X(1/2) - X(0) \sim N(a \cdot \frac{1}{2}, b^2 \cdot \frac{1}{2}),\]</span>
+or <span class="math display">\[X(1/2) \sim N(55,200).\]</span></p></li>
+<li><p>The required probability is <span class="math display">\[\begin{aligned}
+        \Pr( X(1/2) \ge 60) &amp;= \Pr( Z \ge \frac{60 - 55}{\sqrt{200}}  )\\
+        &amp;= \Pr(Z \ge 0.35) \\
+        &amp;= 1 - \text{NORM.S.DIST(0.35, TRUE)} \\
+        &amp;= 1 - 0.638 = 0.362.
+    \end{aligned}\]</span></p></li>
+</ol>
+<div id="simulating-a-generalised-wiener-process" class="section level4" number="3.6.0.1">
+<h4><span class="header-section-number">3.6.0.1</span> Simulating a generalised Wiener process</h4>
+<p>Simulating a generalised Wiener process over <span class="math inline">\([0,T]\)</span> is similar to a
+standard Wiener process.</p>
+<ol style="list-style-type: decimal">
+<li><p>We first discretise the interval by let <span class="math inline">\(\Delta t = T/N\)</span> for some
+positive integer <span class="math inline">\(N\)</span> and <span class="math inline">\(t_j = j \cdot \Delta t\)</span>.</p></li>
+<li><p>Denote <span class="math inline">\(X(t_j)\)</span> by <span class="math inline">\(X_j\)</span>. The value <span class="math inline">\(X_j\)</span> can be approximated by
+<span class="math display">\[X_j = X_{j-1} + a \Delta t + b \Delta W_j,\]</span> where each
+<span class="math inline">\(\Delta W_j = W(t_j) - W(t_{j-1})\)</span> is an independent random
+variable of the form <span class="math inline">\(\sqrt{\Delta t} N(0,1)\)</span>.</p></li>
+</ol>
+<div class="figure">
+<embed src="GW2.pdf" id="fig:GW" style="width:8in" />
+<p class="caption">Simulating a sample path of the generalised Wiener process with
+<span class="math inline">\(a =0.5\)</span> and <span class="math inline">\(b = 2\)</span>.</p>
+</div>
+<p><strong>One-Period Simple Return</strong></p>
+<p>Let <span class="math inline">\(P_t\)</span> be the price of an asset at time index <span class="math inline">\(t\)</span>. Holding the asset
+for one period from date t-1 to date t would result in a simple gross
+return
+<span class="math display">\[1 + R_t =  \frac{P_t}{P_{t-1}}   \text{    or     }    P_t = P_{t-1} (1 + R_t).\]</span></p>
+<p><strong>Continuously Compounded Return</strong> The natural logarithm of the simple
+gross return of an asset is called the continuously compounded return or
+log return <span class="math display">\[r_t = \ln(1 + R_t) = \ln\frac{P_t}{P_{t-1}}.\]</span></p>
+</div>
+</div>
+<div id="the-process-for-a-stock-price" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> The process for a stock price</h2>
+<p>We will discuss a simple model (or a stochastic process) for the price
+of a non-dividend-paying stock. The model is known as <strong>geometric
+Brownian motion</strong>. We will show that this stochastic model assumes or
+implies the following properties for stock prices.</p>
+<ol style="list-style-type: decimal">
+<li><p>The process is <strong>continuous in time and value</strong>.</p></li>
+<li><p>It possesses the <strong>Markov property</strong>, i.e. future prices depend only
+on its the current stock price and not on its the past historical
+values.</p></li>
+<li><p>The <strong>proportional return on a stock</strong> over a short time interval is
+normally distributed.</p></li>
+<li><p>The <strong>price of a stock</strong> is lognormally distributed.</p></li>
+<li><p>The <strong>continuously compounded rate of return per year</strong> for a stock
+is normally distributed.</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 3.14  </strong></span><em>Explain why a generalised Wiener (GW) process is
+inappropriate to model a stock price.</em></p>
+</div>
+<p><strong>Solution:</strong> The GW model assumes that the expected change (not the
+return) is independent of the stock price, which does not explain a key
+aspect of stock prices. The expected percentage return (not the change
+in stock price) required by an investor in a short period of time,
+<span class="math inline">\(\Delta t\)</span>, should be the same regardless of the stock price.</p>
+<p>In particular, when either the stock price is ฿100 or ฿1000, the
+investor would require the same expected return.</p>
+<div id="model-assumptions-of-the-geometric-brownian-motion" class="section level3" number="3.7.1">
+<h3><span class="header-section-number">3.7.1</span> Model Assumptions of the Geometric Brownian Motion</h3>
+<p>The geometric Brownian motion also consists of two components:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>The deterministic component:</strong> The model assumes that the expected
+drift rate in <span class="math inline">\(S\)</span> (the mean change in <span class="math inline">\(S\)</span> per unit of time) is
+proportion to the price <span class="math inline">\(S\)</span>, i.e. equal to <span class="math inline">\(\mu S\)</span>, for some
+constant parameter <span class="math inline">\(\mu\)</span>. As a result, the expected increase in <span class="math inline">\(S\)</span>
+in a short time interval <span class="math inline">\(\Delta t\)</span> is <span class="math inline">\(\mu S \Delta t\)</span>. Therefore,
+without uncertainty, the model can be expressed as
+<span class="math display">\[\Delta S = \mu S \Delta t\]</span> As <span class="math inline">\(\Delta t \rightarrow 0,\)</span> the model
+can be described by an ordinary differential equation
+<span class="math display">\[\frac{dS}{dt} = \mu S,\]</span> and the solution to this differential
+equation is <span class="math display">\[S_{T} = S_0 \exp(\mu T),\]</span> where <span class="math inline">\(S_0\)</span> and <span class="math inline">\(S_T\)</span> are
+the stock prices at time 0 and time <span class="math inline">\(T\)</span>.</p>
+<p><strong>Note</strong> When there is no uncertainty, the stock price grows at a
+continuously compounded rate of <span class="math inline">\(\mu\)</span> per unit of time (generally
+per year). If the price of the stock today is <span class="math inline">\(S_0\)</span>, then its price
+<span class="math inline">\(S_T\)</span> at time <span class="math inline">\(T\)</span> is <span class="math inline">\(S_{T} = S_0 \exp(\mu T)\)</span>.</p></li>
+<li><p><strong>The stochastic component:</strong></p>
+<p>An additional assumption of the model is that the variability of the
+percentage return (<span class="math inline">\(\Delta S/S\)</span>) in a short time period <span class="math inline">\(\Delta t\)</span>
+is the same regardless of the stock price. This means that the
+uncertainty of the percentage return when the stock price is ฿100 is
+the same as that when the stock price is ฿250.</p>
+<p>This assumption adds stochastic or random component into the model.</p>
+<p>As a result, by adding the stochastic or random component to the
+deterministic component, the <strong>geometric Brownian motion</strong> can be
+expressed as <span class="math display">\[dS = \mu S dt + \sigma S dW\]</span> where <span class="math inline">\(W\)</span> is a standard
+Brownian motion (or a Weiner process).</p></li>
+</ol>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The geometric Brownian motion is the continuous-time version of a
+random walk.</p></li>
+<li><p>The discrete-time version of the geometric Brownian motion is
+<span class="math display">\[\frac{\Delta S}{S} = \mu \Delta t + \sigma \sqrt{\Delta t} \epsilon,\]</span>
+where <span class="math inline">\(\epsilon\)</span> has a standard normal distribution (with zero mean
+and unit variance ) The parameter <span class="math inline">\(\mu\)</span> is the <strong>expected rate of
+return per unit of time</strong> from the stock, and <span class="math inline">\(\sigma\)</span> is the
+<strong>volatility</strong> of the stock price.</p></li>
+</ol>
+<div id="proportional-return-on-stocks-are-normally-distributed" class="section level4" number="3.7.1.1">
+<h4><span class="header-section-number">3.7.1.1</span> Proportional return on stocks are normally distributed</h4>
+<p>It follows from the definition of the the geometric Brownian motion that
+the proportional return on the stock over a short time interval is
+normally distributed with a mean <span class="math inline">\(\mu \Delta t\)</span> and variance of
+<span class="math inline">\(\sigma^2 \Delta t\)</span>. In particular, <span class="math display">\[\begin{aligned}
+\label{propReturn}
+\frac{\Delta S}{S} = N( \mu \Delta t , \sigma^2  \Delta t).\end{aligned}\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-72" class="example"><strong>Example 3.15  </strong></span><em>Consider a stock that pays no dividends, provide an
+expected return of 20% per annum with continuous compounding and has a
+volatility of 40% per annum. Assume that the current stock price is ฿20
+and <span class="math inline">\(\epsilon\)</span> sampled from the standard normal distribution is 0.6.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Calculate the change of the stock price over 1 day, assuming that
+there are 250 trading days per year.</em></p></li>
+<li><p><em>Calculate the stock price over 10 days if the random samples for
+<span class="math inline">\(\epsilon\)</span> are given in Figure <a href="processes-for-stock-prices.html#fig:GBM" reference-type="ref" reference="fig:GBM">3.6</a>.</em></p></li>
+</ol>
+</div>
+<p><strong>Solution:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Given that <span class="math inline">\(\mu = 0.2\)</span> and <span class="math inline">\(\sigma = 0.4\)</span> per annum, the process of
+the stock price is <span class="math display">\[\frac{dS}{S} = \mu dt + \sigma dW.\]</span> Here <span class="math inline">\(S\)</span>
+is the stock price at a particular time. If <span class="math inline">\(\Delta S\)</span> is the change
+in the stock price in the next small interval <span class="math inline">\(\Delta\)</span>t of time,
+then the discrete-time version of the model is <span class="math display">\[\begin{aligned}
+    \frac{\Delta S}{S} &amp;= \mu \Delta t + \sigma \sqrt{\Delta t} \epsilon \\
+                   &amp;= 0.2 \Delta t + 0.4 \sqrt{\Delta t} \epsilon,
+    \end{aligned}\]</span> where <span class="math inline">\(\epsilon\)</span> has a standard normal
+distribution.</p>
+<p>For a time interval of 1 day or 0.004 years,
+<span class="math display">\[\frac{\Delta S}{S} = 0.2 \cdot 0.004 + 0.4 \sqrt{0.004} \epsilon.\]</span>
+If the current stock price is 20 and <span class="math inline">\(\epsilon = 0.6\)</span>, then
+<span class="math display">\[\Delta S = 20(0.2 \cdot 0.004 + 0.4 \sqrt{0.004} 0.6) = 0.3196,\]</span>
+and <span class="math inline">\(S(0.004) = S(0) + \Delta S = 20.3196.\)</span></p></li>
+<li><p>Leave as an exercise.</p></li>
+</ol>
+<div class="figure">
+<embed src="GBM.pdf" id="fig:GBM" style="width:8in" />
+<p class="caption">Simulating a sample path of a geometric Brownian motion with
+<span class="math inline">\(\mu =0.2\)</span> and <span class="math inline">\(\sigma = 0.4\)</span>.</p>
+</div>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The parameter <span class="math inline">\(\mu\)</span> is the annualised expected return in a short
+period of time. It should depend on the risk of the return from the
+stock, and should also depend on the level of interest rates in the
+market. The higher the interest rates, the higher the expected
+return.</p></li>
+<li><p>The value of a (financial) derivative, for example options, is
+independent of <span class="math inline">\(\mu\)</span>. So we do not need to concern with the
+estimation of <span class="math inline">\(\mu\)</span>.</p></li>
+<li><p>The parameter <span class="math inline">\(\sigma\)</span>, the stock price volatility, is important to
+determine the value of (financial) derivatives. We will discuss how
+to estimate <span class="math inline">\(\sigma\)</span>.</p></li>
+<li><p>The standard deviation of the proportional change in the stock price
+in a <strong>small interval</strong> <span class="math inline">\(\Delta t\)</span> is <span class="math inline">\(\sigma \sqrt{\Delta t}\)</span>. For
+a <strong>relatively long period</strong> of time <span class="math inline">\(T\)</span>, it is approximately equal
+to <span class="math inline">\(\sigma \sqrt{T}\)</span>.</p>
+<p>As a result, <strong>the volatility <span class="math inline">\(\sigma\)</span> can be interpreted as the
+standard deviation of the change in the stock price in 1 year</strong>.</p></li>
+</ol>
+</div>
+</div>
+<div id="stock-prices-are-lognormally-distributed" class="section level3 unnumbered">
+<h3>Stock prices are lognormally distributed</h3>
+<p>Using Itô lemma (from stochastic calculus), it follows that stock prices
+are lognormally distributed: <span class="math display">\[\begin{aligned}
+ \label{lognormal}
+ \ln \frac{S_T}{S_0} \sim N\left((\mu - \frac{\sigma^2}{2})T,\sigma^2 T\right)
+ \end{aligned}\]</span> and
+<span class="math display">\[\ln S_T \sim N\left(\ln S_0 +  (\mu - \frac{\sigma^2}{2})T,\sigma^2 T\right)\]</span>
+where <span class="math inline">\(S_T\)</span> is the stock price at time <span class="math inline">\(T\)</span> and <span class="math inline">\(S_0\)</span> is the stock price
+at time 0. Here <span class="math inline">\(\ln S_T\)</span> is normally distributed and hence <span class="math inline">\(S_T\)</span> has a
+lognormal distribution.</p>
+<p><strong>Note</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The logarithm of a price follows a generalised Wiener process with
+drift rate <span class="math inline">\(\mu - \sigma^2/2\)</span> and variance rate <span class="math inline">\(\sigma^2\)</span>.</p></li>
+<li><p>The mean of the distribution for the change in logarithm of price
+over each time unit (i.e. log return) is not <span class="math inline">\(\mu\)</span> but
+<span class="math inline">\(\mu - \sigma^2/2\)</span>.</p></li>
+<li><p>Why do stock prices follow a lognormal random variable? Let <span class="math inline">\(X_i\)</span>
+denotes the percentage change in the stock price during day <span class="math inline">\(i\)</span>.
+Then the stock price at day <span class="math inline">\(n\)</span> satisfies
+<span class="math display">\[S_n = S_0 \cdot X_1 \cdots X_n\]</span> or
+<span class="math display">\[\ln(S_n) = \ln(S_0) + \ln(X_1) + \cdots + \ln(X_n).\]</span> Suppose that
+the changes in prices on different days are (identical) independent
+random variables. Then the central limit theorem implies that the
+sum of those independent random variables will be a normal random
+variable. Hence, the stock prices are lognormally distributed.</p></li>
+<li><p>Recall that if the random variable <span class="math inline">\(X\)</span> is lognormally distributed,
+then <span class="math inline">\(Y = \ln(X)\)</span> has a normal distribution:
+<span class="math display">\[X \sim \text{Lognormal}(\mu,\sigma^2)  \Longleftrightarrow \ln(X) \sim N(\mu,\sigma^2).\]</span></p>
+<p><span class="math inline">\(\mathrm{E}[X] = e^{\mu + \frac{1}{2}\sigma^2}, \, \mathrm{Var}[X] = e^{2\mu + \sigma^2}\left( e^{\sigma^2 - 1} \right).\)</span></p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-73" class="example"><strong>Example 3.16  </strong></span><em>Consider a stock that pays no dividends, provide an
+expected return of 20% per annum with continuous compounding and has a
+volatility of 40% per annum. Assume that the current stock price is
+฿20.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Find the probability distribution of the logarithm of the stock
+price <span class="math inline">\(S_T\)</span> in 3 months’ time.</em></p></li>
+<li><p><em>Calculate the mean and the standard deviation of <span class="math inline">\(\ln S_T\)</span> in 3
+months’ time.</em></p></li>
+<li><p><em>Find the 95% confidence interval of <span class="math inline">\(S_T\)</span> in 3 months’ time.</em></p></li>
+</ol>
+</div>
+<p><strong>Solution:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Given that <span class="math inline">\(\mu = 0.2\)</span>, <span class="math inline">\(\sigma = 0.4\)</span> per annum and <span class="math inline">\(S_0 = 20\)</span>, the
+probability distribution of <span class="math inline">\(\ln S_T\)</span> in 3 months’ time (<span class="math inline">\(T\)</span> = 0.25
+years) is <span class="math display">\[\begin{aligned}
+    \ln S_T &amp;\sim  N\left(\ln S_0 +  (\mu - \frac{\sigma^2}{2})T,\sigma^2 T\right) \\
+        &amp;= N\left(\ln 20 +  (0.2 - \frac{0.4^2}{2}) 0.25,0.4^2 \cdot 0.25\right) = N(3.026,0.04).\end{aligned}\]</span></p></li>
+<li><p>It follows that for <span class="math inline">\(T\)</span> = 0.25 years,
+<span class="math display">\[\mathrm{E}[\ln S_T] = 3.026,   \text{ and    } \text{SD}(\ln S_T) = \sqrt{0.04} = 0.2.\]</span></p></li>
+<li><p>The 95% CI of <span class="math inline">\(\ln S_T\)</span> for <span class="math inline">\(T\)</span> = 0.25 years, is <span class="math display">\[\begin{aligned}
+    3.026 - 1.96 \cdot 0.2 &amp;&lt; \ln S_T &lt; 3.026 + 1.96 \cdot 0.2 \\
+    2.634 &amp;&lt; \ln S_T &lt; 3.418.\end{aligned}\]</span> Hence,
+<span class="math display">\[\begin{aligned}
+    e^{2.634} &amp;&lt;  S_T &lt; e^{3.418}\\
+        13.93 &amp;&lt;  S_T &lt; 30.51.
+    \end{aligned}\]</span> There is a 95% probability that the stock price
+in in 3 months’ time will lie between 13.93 and 30.51.</p></li>
+</ol>
+<p><strong>Note</strong> It should be noted that <span class="math display">\[\begin{aligned}
+    \mathrm{E}[S_T] &amp;= S_0 e^{\mu T} = 20 e^{0.2 \cdot 0.25} = 21.025  \\
+     &amp;\neq e^{\mathrm{E}[\ln S_T]}  =  20.615.
+    \end{aligned}\]</span> In particular,
+<span class="math inline">\(\ln \mathrm{E}[S_T] \neq \mathrm{E}[\ln S_T]\)</span>.</p>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>A variable that has a lognormal distribution can take any value
+between zero and infinity. It is not symmetrical unlike the normal
+distribution.</p></li>
+<li><p>From the properties of the lognormal distribution, the expected
+value of the stock price is given by (exercises)
+<span class="math display">\[\mathrm{E}[S_T] = S_0 \exp (\mu T)\]</span> and the variance of <span class="math inline">\(S_T\)</span> is
+<span class="math display">\[\mathrm{Var}[S_T] = S_0^2 \exp(2 \mu T) (\exp(\sigma^2 T) - 1).\]</span></p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-74" class="example"><strong>Example 3.17  </strong></span><em>Consider a stock that pays no dividends, provide an
+expected return of 20% per annum with continuous compounding and has a
+volatility of 40% per annum. Assume that the current stock price is ฿20.
+Calculate the mean and the standard deviation of the stock price <span class="math inline">\(S_T\)</span>
+in 1 year.</em></p>
+</div>
+<p><strong>Solution:</strong> The mean of <span class="math inline">\(S_1\)</span> is
+<span class="math display">\[\mathrm{E}[S_1] =  20 \exp (0.2 \cdot 1)  = 24.428.\]</span> and the variance
+of <span class="math inline">\(S_T\)</span> is
+<span class="math display">\[\mathrm{Var}[S_1] = 20^2 \exp(2 \cdot 0.2 \cdot 1) (\exp(0.4^2 \cdot 1) - 1) = 103.539.\]</span>
+and <span class="math display">\[\text{SD}(S_1) = \sqrt{ 103.539} = 10.175.\]</span></p>
+</div>
+<div id="more-accurate-simulation-the-lognormal-model" class="section level3" number="3.7.2">
+<h3><span class="header-section-number">3.7.2</span> More accurate simulation : the lognormal model</h3>
+<p>Because <span class="math inline">\(T\)</span> can be any time interval, we can use the lognormal
+distribution of stock prices to simulate the price of a stock at time
+<span class="math inline">\(t + \Delta t\)</span> given its price at time <span class="math inline">\(t\)</span>. This provides accurately
+simulated points along a typical path, regardless of the size of
+<span class="math inline">\(\Delta t\)</span>.</p>
+<p>The following equations can be use to simulate stock price and estimate
+volatility: <span class="math display">\[\begin{aligned}
+ \label{lognormalModel}
+\ln\left(  \frac{S_{t+\Delta t}}{S_t} \right) = (\mu - \frac{1}{2}\sigma^2 )\Delta t + \sigma \epsilon \sqrt{\Delta t}\end{aligned}\]</span>
+and
+<span class="math display">\[S_{t+ \Delta t}  = S_t \exp(   (\mu - \frac{1}{2}\sigma^2 )\Delta t + \sigma \epsilon \sqrt{\Delta t}  )\]</span></p>
+<p><strong>Note</strong> The above equations follows from the fact that the process
+<span class="math inline">\(\ln S\)</span> satisfies the following stochastic differential equation
+<span class="math display">\[d \ln S =  (\mu - \frac{1}{2}\sigma^2 ) \, dt + \sigma \, d W.\]</span></p>
+</div>
+<div id="the-distribution-of-the-rate-of-return" class="section level3" number="3.7.3">
+<h3><span class="header-section-number">3.7.3</span> The distribution of the rate of return</h3>
+<p>The lognormal property of stock prices can be used to show that the
+probability distribution of the <strong>continuously compounded rate of return
+per year</strong> for a stock is <strong>normally distributed</strong>.</p>
+<p>Recall that with the continuously compounded rate <span class="math inline">\(\delta\)</span> of return per
+year, the accumulated value at time <span class="math inline">\(T\)</span> of the stock <span class="math inline">\(S_0\)</span> at time 0 is
+<span class="math display">\[S_T = S_0 \exp(\delta T),\]</span> or
+<span class="math display">\[\delta = \frac{1}{T} \ln \frac{S_T}{S_0}.\]</span> Hence, it follows that
+<span class="math display">\[\begin{aligned}
+\label{returnRate}
+     \delta \sim N\left( \mu - \frac{1}{2}\sigma^2 , \frac{\sigma^2}{T} \right).\end{aligned}\]</span></p>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The standard deviation of <span class="math inline">\(\delta\)</span> declines as we consider longer
+time intervals. This means that</p>
+<ul>
+<li><p>if we hold a stock for a short time, our actual return may vary
+significantly from the expected return,</p></li>
+<li><p>but the longer we holder a stock, the more likely we are to earn
+a return close to the expect return.</p></li>
+</ul></li>
+<li><p>When <span class="math inline">\(T = 1\)</span>, the standard deviation of the stock return equal
+<span class="math inline">\(\sigma\)</span>. As been seen earlier, the <strong>volatility of a stock is the
+standard deviation of the distribution of its continuously
+compounded return per year</strong>.</p></li>
+</ol>
+</div>
+<div id="the-two-expected-returns-this-section-may-be-skipped" class="section level3" number="3.7.4">
+<h3><span class="header-section-number">3.7.4</span> The two expected returns (this section may be skipped)</h3>
+<p>As we have seen, there are two different expected returns of stocks,
+<span class="math inline">\(\mu\)</span> and <span class="math inline">\(\mu - \sigma^2/2\)</span>.</p>
+<ul>
+<li><p>Equation <a href="#propReturn" reference-type="eqref" reference="propReturn"><span class="math display">\[propReturn\]</span></a> shows that the expected percentage change
+(or proportional change) in the stock price in a very short period
+of time, <span class="math inline">\(\Delta t\)</span> is <span class="math inline">\(\mu \Delta t\)</span>.</p>
+<p>Hence, <span class="math inline">\(\mu\)</span> is the <strong>expected rate of return per year for the stock
+for infinitesimal interval of time</strong>.</p></li>
+<li><p>Whereas, <span class="math inline">\(\mu - \sigma^2/2\)</span> is the <strong>expected continuously
+compounded rate of return per year for finite intervals of time</strong>
+(like days or years), i.e. realised over a period of time of length
+<span class="math inline">\(T\)</span> (as shown in Equation
+<a href="#returnRate" reference-type="eqref" reference="returnRate"><span class="math display">\[returnRate\]</span></a>).</p></li>
+</ul>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Recall that the expected price of a stock grows at the continuously
+compounded rate of <span class="math inline">\(\mu\)</span> and we can write
+<span class="math display">\[\mathrm{E}[S_T] = S_0 \exp(\mu T).\]</span></p></li>
+<li><p>However, the expected continuously compounded rate of return per
+year for a stock is <span class="math inline">\(\mu - \sigma^2/2\)</span>. This is not the same as the
+rate of return we would calculate from the expected future price of
+stock return. <span class="math inline">\(\mu\)</span> is not the expected continuously compounded
+return on the stock.</p></li>
+<li><p>As a result, we cannot get the expected future price of the stock by
+growing its current price at the expected continuously compounded
+rate of return per year.</p></li>
+<li><p>If two stocks have the same price today and the same <span class="math inline">\(\mu\)</span>, then
+their expected prices at any time in the future will be the same.
+The stock with the higher volatility will have a lower continuously
+compounded expected rate of return.</p></li>
+</ol>
+</div>
+<div id="estimating-volatility" class="section level3" number="3.7.5">
+<h3><span class="header-section-number">3.7.5</span> Estimating volatility</h3>
+<p>There are many different methods to estimate the volatility of a stock.
+Here the method is based on a stock’s historical volatility calculated
+from its daily prices for a certain number of days. As we have seen, the
+simulations of a stock price can be simulated by using the following
+equation
+<span class="math display">\[\ln\left(  \frac{S_{t+\Delta t}}{S_t} \right) = (\mu - \frac{1}{2}\sigma^2 )\Delta t + \sigma \epsilon \sqrt{\Delta t}.\]</span>
+The estimation of the volatility of the stock price can be done as
+follows: Let <span class="math inline">\(n+1\)</span> denote the number of observations and <span class="math inline">\(\tau\)</span> to be
+the length of observation time interval in years.</p>
+<ol style="list-style-type: decimal">
+<li><p>Given the stock price <span class="math inline">\(S_i\)</span> at end of the <span class="math inline">\(i\)</span>th interval for
+<span class="math inline">\(i = 0,1, \ldots, n\)</span>, we define
+<span class="math display">\[u_i = \ln \left(\frac{S_i}{S_{i-1}} \right), \quad \text{ for } i = 0,1, \ldots, n\]</span></p></li>
+<li><p>The estimates of the mean and standard deviation of the <strong>daily
+returns</strong> are given by <span class="math display">\[\begin{aligned}
+    \bar{u} &amp;= \frac{1}{n} \sum_{i=1}^n u_i \\
+    s &amp;= \sqrt{\frac{1}{n-1} \sum_{i=1}^n (u_i - \bar{u})^2 } \\
+        &amp;= \sqrt{\frac{1}{n-1} \sum_{i=1}^n    u_i^2 - \frac{1}{n(n-1)}  \left(\sum_{i=1}^n u_i  \right)^2 }\end{aligned}\]</span></p></li>
+<li><p>Because we are using observations at intervals of <span class="math inline">\(\tau\)</span> measured in
+years, the estimate of the <strong>annualised volatility</strong> is given by
+<span class="math display">\[\hat{\sigma} = \frac{s}{\sqrt{\tau}}.\]</span> The <strong>standard error of
+this estimate</strong> is approximately <span class="math inline">\(\hat{\sigma}/\sqrt{2n}\)</span>.</p>
+<p>For example, if we use daily prices and assume that there are 250
+trading days in a year, then the time interval is 1/250 years. To
+annualise the daily volatility, we have to multiply <span class="math inline">\(s\)</span> by
+<span class="math inline">\(\sqrt{250}\)</span>.</p></li>
+</ol>
+<p><strong>Note</strong> It follows from
+<a href="#returnRate" reference-type="eqref" reference="returnRate"><span class="math display">\[returnRate\]</span></a> that the estimated expected return <span class="math inline">\(\hat{\mu}\)</span>
+is given by
+<span class="math display">\[\hat{\mu}  =  \frac{\bar{u}}{\tau}  + \frac{\hat{\sigma}^2}{2} = \frac{\bar{u}}{\tau}  + \frac{s^2}{2\tau} .\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-75" class="example"><strong>Example 3.18  </strong></span><em>Verify the calculation using the stock price
+historical data from the table below.</em></p>
+</div>
+<p><strong>Solution:</strong> See an accompanied Excel file.</p>
+<div class="figure">
+<embed src="VolatilityEstimation2.pdf" id="fig:volatility" style="width:7in" />
+<p class="caption">Computation of volatility</p>
+</div>
+
+</div>
+</div>
+<div id="chapter-two" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Chapter TWO</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bonds-and-inflation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-three.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329/blob/master/index.Rmd",
+"text": null
+},
+"download": ["SCMA329Bookdownproj.pdf", "SCMA329Bookdownproj.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

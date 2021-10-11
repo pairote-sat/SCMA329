@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 The pool of tears | Practical Mathematical Financial Modelling in Excel</title>
-  <meta name="description" content="Chapter 4 The pool of tears | Practical Mathematical Financial Modelling in Excel" />
+  <title>Chapter 2 Dates and date functions | Practical Mathematical Financial Modelling in Excel</title>
+  <meta name="description" content="Chapter 2 Dates and date functions | Practical Mathematical Financial Modelling in Excel" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 The pool of tears | Practical Mathematical Financial Modelling in Excel" />
+  <meta property="og:title" content="Chapter 2 Dates and date functions | Practical Mathematical Financial Modelling in Excel" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 The pool of tears | Practical Mathematical Financial Modelling in Excel" />
+  <meta name="twitter:title" content="Chapter 2 Dates and date functions | Practical Mathematical Financial Modelling in Excel" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="working-with-text.html"/>
-<link rel="next" href="a-caucus-race-and-a-long-tale.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="working-with-text.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -127,7 +127,10 @@
 <li class="chapter" data-level="3.4" data-path="working-with-text.html"><a href="working-with-text.html#joining-two-or-more-cells"><i class="fa fa-check"></i><b>3.4</b> Joining two or more cells</a></li>
 <li class="chapter" data-level="3.5" data-path="working-with-text.html"><a href="working-with-text.html#examples-of-the-use-of-text-functions-in-excel"><i class="fa fa-check"></i><b>3.5</b> Examples of the use of text functions in Excel</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>4</b> The pool of tears</a></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#datacamp-light"><i class="fa fa-check"></i><b>4.1</b> DataCamp Light</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>5</b> A caucus-race and a long tale</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -148,17 +151,111 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-pool-of-tears" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> The pool of tears</h1>
+<div id="dates-and-date-functions" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Dates and date functions</h1>
+<p>Dates and date functions will be discussed in this section. Depending on
+the system setting, the dates used in this section corresponds to the
+U.S. setting, i.e. month/day/year. Thus, 7/1/2017 corresponds to 1 July
+2017.</p>
+<p>The following date formats are recognized by Excel:</p>
+<ul>
+<li><p>7/1/2017, 7/1/17</p></li>
+<li><p>7-1-2017, 7-1-17,</p></li>
+<li><p>7-1/2017, 7-1/17,</p></li>
+<li><p>July 1, 2017</p></li>
+<li><p>1-Jul-2017</p></li>
+</ul>
+<p>if the date input is without the year, then it is the date on the
+current year, i.e. 7-1, 7/1, July 1, Jul 1, corresponds to 1 July 2018.</p>
+<div id="inconsistent-date-entries" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Inconsistent date entries</h2>
+<div class="example">
+<p><span id="exm:unlabeled-div-1" class="example"><strong>Example 2.1  </strong></span><strong>Example 1</strong>. <em>What will be the output when we enter dates by using the
+following two digits for the years:</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>7/1/01</em></p></li>
+<li><p><em>7/1/60</em></p></li>
+</ol>
+</div>
+<p>Excel interprets two digit years between 00 and 29 as 21st century
+dates, and two digit years between 30 and 99 as 20th century dates.</p>
+</div>
+<div id="date-serial-number" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Date serial number</h2>
+<p>Excel stores dates as sequential serial numbers so that they can be used
+in calculations. For example,</p>
+<ul>
+<li><p>1 January 1900 is serial number 1,</p></li>
+<li><p>1 January 2018 is serial number 43101 because it is 43101 days after
+1 January 1900.</p></li>
+</ul>
+</div>
+<div id="date-functions" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Date functions</h2>
+<p>The list of date functions can be seen by choosing</p>
+<p><strong>Formulas <span class="math inline">\(\rightarrow\)</span> Function Library <span class="math inline">\(\rightarrow\)</span> Function Library <span class="math inline">\(\rightarrow\)</span> Date &amp; Time</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Function</strong></th>
+<th align="left"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">DATE</td>
+<td align="left">Returns the serial number of a particular date</td>
+</tr>
+<tr class="even">
+<td align="left">DATEVALUE</td>
+<td align="left">Converts a date in the form of text to a serial number</td>
+</tr>
+<tr class="odd">
+<td align="left">DAY</td>
+<td align="left">Converts a serial number to a day of the month</td>
+</tr>
+<tr class="even">
+<td align="left">DAYS</td>
+<td align="left">Returns the number of days between two dates</td>
+</tr>
+<tr class="odd">
+<td align="left">WEEKDAY</td>
+<td align="left">Converts a serial number to a day of the week</td>
+</tr>
+<tr class="even">
+<td align="left">NETWORKDAYS</td>
+<td align="left">Returns the difference between two dates, excluding weekend days (Saturdays and Sundays)</td>
+</tr>
+<tr class="odd">
+<td align="left">WORKDAY</td>
+<td align="left">Returns a number that represents a date that is the indicated number of working days before or after a date (the starting date)</td>
+</tr>
+<tr class="even">
+<td align="left">EDATE</td>
+<td align="left">Returns the serial number that represents the date that is the indicated number of months before or after a specified date</td>
+</tr>
+<tr class="odd">
+<td align="left">EOMONTH</td>
+<td align="left">Returns the serial number for the last day of the month that is the indicated number of months before or after a specified date</td>
+</tr>
+<tr class="even">
+<td align="left">YEARFRAC</td>
+<td align="left">Returns a decimal value that represents fractional years between two dates</td>
+</tr>
+</tbody>
+</table>
+<p>For a complete list, see the date and time functions available online.
+More detailed examples are also given in the Excel lab.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="working-with-text.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="a-caucus-race-and-a-long-tale.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="working-with-text.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -190,7 +287,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/pairote-sat/SCMA329/edit/master/04-tears.Rmd",
+"link": "https://github.com/pairote-sat/SCMA329/edit/master/02-2020SCMA329ExcelSection1_DateFunctions.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -198,7 +295,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/pairote-sat/SCMA329/blob/master/04-tears.Rmd",
+"link": "https://github.com/pairote-sat/SCMA329/blob/master/02-2020SCMA329ExcelSection1_DateFunctions.Rmd",
 "text": null
 },
 "download": null,
