@@ -1690,7 +1690,45 @@ in arrear, to be redeemed at par.*
 :::
 
 
+**Solution:**
+
+1. The bond is redeemed at par. Therefore, the redemption amount is 100 THB which is greater than the bond price, and the capital gain tax is **payable**.
+
+The payments of the investor are shown in the table below.
+
+Time (year) | 0 | 1 | 2 | 3 | $\ldots$ |  9  | 10  
+:-:  | :-:  | :-:  | :-:  | :-:  | :-:  | :-: | :-: 
+Cashflow | -96 | 8 | 8 | 8 | $\ldots$ | 8 |  8 + 100 - 0.2(100 - 96)
+
+Let $i$ denote the yield per year that the first investor obtains.
+Working at time 10, the equation of value of the cashflows is 
+$$ f(i) =  -96 (1+i)^{10} + 8 s^i_{\angl{10}} +  99.2 = 0.$$
+By linear interpolation, we have
+$$ f(0.08) = 7.836, \quad f(0.09) = -6.523, $$
+and hence, the approximate of $i$ is $i^* \approx 0.08546 = 8.546\%$.
+
+2. We know that $P = 96$ is equivalent to yield approximately equal to $8.546\%$. 
+
+To obtain a yield of $7\%$, this should imply that $P > 96$. If $P \ge R = 100$, no CGT is payable. This would change the equation we need to calculate the bond price. Two cases to be considered are 
+
+* **CGT is payable:** The equation of value is
+$$ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%$$
+
+* **CGT is not payable:** The equation of value is
+$$ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%$$
+
 **Note** In this example, we can guess whether CGT is payable because we have calculated the price to yield 8.546\% from the above question. Then we can use the appropriate equation to calculate the bond price and check whether or not our initial guess was correct.
+
+According to the note, let us guess that $P > 100$, i.e. CGT is **not** payable.
+
+$$ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%,$$
+which implies that $P = 107.02 > 100$. So our initial guess was correct and CGT is **not** payable.
+
+3. Here $9\% > 8.546\%$. Let us guess that $P < 100$, i.e. CGT is payable.
+$$ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%,$$
+which implies that $P = 92.99 < 100$. So our initial guess was correct and CGT is payable.
+
+**Note** The algorithm to test whether CGT will be payable will be discussed elsewhere in the course "Theory of Interest".  
 
 
 Inflation
@@ -1777,10 +1815,6 @@ ggplot(dat,aes(x = Date, y = CPI)) + geom_point()
 ```
 
 
-
-![image](CPIGraph.eps)
-
-[\[fig:digraph\]]{#fig:digraph label="fig:digraph"}
 
 ::: {.example}
 *An investment contract made on January 2018 promises
@@ -1895,7 +1929,16 @@ Calculate the yield to a non-tax paying investor*
     payment in term of time 0 unit by dividing the monetary amounts by
     the **proportional** increase in the inflation index from 0 to $t$.*
 
-    *The real yield $i'$ p.a. effective solve the equation of value as
+  Time | 0 | 1 | 2 | 3 | 4 | 5 
+  :-: | :-: | :-: | :-: | :-: | :-: | :-: 
+  Year | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 
+  Cashflow | -100 | 8 | 8 | 8 | 8 | 8 + 100
+  CPI | 98.25 | 100.15 | 99.74 | 99.21 | 100.75 | 101.44
+  Real value of cashflow at $t = 0$ | -100 | $\frac{(8)(98.25)}{100.15}$ | $\frac{(8)(98.25)}{99.74}$ | $\frac{(8)(98.25)}{99.21}$ | $\frac{(8)(98.25)}{100.75}$  | $\frac{(8)(98.25)}{101.44}$
+  Real value of cashflow at $t = 0$   | -100 | = 7.85 | = 7.88 | = 7.91 | = 7.80 | = 104.60 
+
+
+  *The real yield $i'$ p.a. effective solve the equation of value as
     follows:
     $$f(i') = -100 + 7.85 v  + 7.88v^2 + 7.91v^3 + 7.80v^6 + 104.6v^5 = 0,$$
     which gives $i' \approx 7.30\%$ by the linear interpolation.*

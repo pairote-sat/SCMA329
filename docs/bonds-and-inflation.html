@@ -24,7 +24,7 @@
 <meta name="author" content="Pairote Satiracoo" />
 
 
-<meta name="date" content="2021-10-11" />
+<meta name="date" content="2021-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -543,7 +543,63 @@ effective?</em> (see note below)</p></li>
 </p></li>
 </ol>
 </div>
+<p><strong>Solution:</strong></p>
+<ol style="list-style-type: decimal">
+<li>The bond is redeemed at par. Therefore, the redemption amount is 100 THB which is greater than the bond price, and the capital gain tax is <strong>payable</strong>.</li>
+</ol>
+<p>The payments of the investor are shown in the table below.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Time (year)</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center"><span class="math inline">\(\ldots\)</span></th>
+<th align="center">9</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cashflow</td>
+<td align="center">-96</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+<td align="center">8</td>
+<td align="center">8 + 100 - 0.2(100 - 96)</td>
+</tr>
+</tbody>
+</table>
+<p>Let <span class="math inline">\(i\)</span> denote the yield per year that the first investor obtains.
+Working at time 10, the equation of value of the cashflows is
+<span class="math display">\[ f(i) =  -96 (1+i)^{10} + 8 s^i_{\angl{10}} +  99.2 = 0.\]</span>
+By linear interpolation, we have
+<span class="math display">\[ f(0.08) = 7.836, \quad f(0.09) = -6.523, \]</span>
+and hence, the approximate of <span class="math inline">\(i\)</span> is <span class="math inline">\(i^* \approx 0.08546 = 8.546\%\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>We know that <span class="math inline">\(P = 96\)</span> is equivalent to yield approximately equal to <span class="math inline">\(8.546\%\)</span>.</li>
+</ol>
+<p>To obtain a yield of <span class="math inline">\(7\%\)</span>, this should imply that <span class="math inline">\(P &gt; 96\)</span>. If <span class="math inline">\(P \ge R = 100\)</span>, no CGT is payable. This would change the equation we need to calculate the bond price. Two cases to be considered are</p>
+<ul>
+<li><p><strong>CGT is payable:</strong> The equation of value is
+<span class="math display">\[ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%\]</span></p></li>
+<li><p><strong>CGT is not payable:</strong> The equation of value is
+<span class="math display">\[ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%\]</span></p></li>
+</ul>
 <p><strong>Note</strong> In this example, we can guess whether CGT is payable because we have calculated the price to yield 8.546% from the above question. Then we can use the appropriate equation to calculate the bond price and check whether or not our initial guess was correct.</p>
+<p>According to the note, let us guess that <span class="math inline">\(P &gt; 100\)</span>, i.e. CGT is <strong>not</strong> payable.</p>
+<p><span class="math display">\[ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%,\]</span>
+which implies that <span class="math inline">\(P = 107.02 &gt; 100\)</span>. So our initial guess was correct and CGT is <strong>not</strong> payable.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Here <span class="math inline">\(9\% &gt; 8.546\%\)</span>. Let us guess that <span class="math inline">\(P &lt; 100\)</span>, i.e. CGT is payable.
+<span class="math display">\[ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%,\]</span>
+which implies that <span class="math inline">\(P = 92.99 &lt; 100\)</span>. So our initial guess was correct and CGT is payable.</li>
+</ol>
+<p><strong>Note</strong> The algorithm to test whether CGT will be payable will be discussed elsewhere in the course “Theory of Interest”.</p>
 </div>
 </div>
 <div id="inflation" class="section level2" number="2.2">
@@ -759,11 +815,6 @@ to December 2019.</p>
 Figure 2.1: The monthly consumer price indices from January 2011 to December 2019
 </p>
 </div>
-<div class="figure">
-<embed src="CPIGraph.eps" />
-<p class="caption">image</p>
-</div>
-<p><span id="fig:digraph" label="fig:digraph"><span class="math display">\[fig:digraph\]</span></span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-53" class="example"><strong>Example 2.10  </strong></span><em>An investment contract made on January 2018 promises
 to pay an investor of ฿10,000 in 5 years’ time. Assume the average
@@ -857,12 +908,81 @@ the following equation of value
 <li><p><em>in real terms with reference to the CPI.</em></p>
 <p><em>Taking into account of the inflation rates, we calculate the real
 payment in term of time 0 unit by dividing the monetary amounts by
-the <strong>proportional</strong> increase in the inflation index from 0 to <span class="math inline">\(t\)</span>.</em></p>
+the <strong>proportional</strong> increase in the inflation index from 0 to <span class="math inline">\(t\)</span>.</em></p></li>
+</ol>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Time</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Year</td>
+<td align="center">2013</td>
+<td align="center">2014</td>
+<td align="center">2015</td>
+<td align="center">2016</td>
+<td align="center">2017</td>
+<td align="center">2018</td>
+</tr>
+<tr class="even">
+<td align="center">Cashflow</td>
+<td align="center">-100</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">8 + 100</td>
+</tr>
+<tr class="odd">
+<td align="center">CPI</td>
+<td align="center">98.25</td>
+<td align="center">100.15</td>
+<td align="center">99.74</td>
+<td align="center">99.21</td>
+<td align="center">100.75</td>
+<td align="center">101.44</td>
+</tr>
+<tr class="even">
+<td align="center">Real value of cashflow at <span class="math inline">\(t = 0\)</span></td>
+<td align="center">-100</td>
+<td align="center"><span class="math inline">\(\frac{(8)(98.25)}{100.15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(8)(98.25)}{99.74}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(8)(98.25)}{99.21}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(8)(98.25)}{100.75}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{(8)(98.25)}{101.44}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Real value of cashflow at <span class="math inline">\(t = 0\)</span></td>
+<td align="center">-100</td>
+<td align="center">= 7.85</td>
+<td align="center">= 7.88</td>
+<td align="center">= 7.91</td>
+<td align="center">= 7.80</td>
+<td align="center">= 104.60</td>
+</tr>
+</tbody>
+</table>
 <p><em>The real yield <span class="math inline">\(i&#39;\)</span> p.a. effective solve the equation of value as
 follows:
 <span class="math display">\[f(i&#39;) = -100 + 7.85 v  + 7.88v^2 + 7.91v^3 + 7.80v^6 + 104.6v^5 = 0,\]</span>
-which gives <span class="math inline">\(i&#39; \approx 7.30\%\)</span> by the linear interpolation.</em></p></li>
-</ol>
+which gives <span class="math inline">\(i&#39; \approx 7.30\%\)</span> by the linear interpolation.</em></p>
 </div>
 <p>In general, the real yield <span class="math inline">\(i&#39;\)</span> for a series of cashflows
 <span class="math inline">\(C(t_1), C(t_2), \ldots, C(t_n)\)</span>, given associated inflation index

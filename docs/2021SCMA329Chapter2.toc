@@ -1,0 +1,67 @@
+\contentsline {chapter}{\numberline {1}Cashflows, Interest and the Time Value of Money}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction to Financial Modelling}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Cashflows}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Interest and the Time Value of Money}{7}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Simple interest}{11}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Effective rate of interest}{13}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Compounding over any number of time units}{19}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Changing the time period of the effective rates of interest}{20}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}Non-constant interest rates}{24}{subsection.1.3.5}
+\contentsline {subsection}{\numberline {1.3.6}Accumulation factors}{26}{subsection.1.3.6}
+\contentsline {subsection}{\numberline {1.3.7}Present values and discount factors}{29}{subsection.1.3.7}
+\contentsline {section}{\numberline {1.4}Cashflows and Annuities}{34}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Level Annuities certain}{38}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Level Annuities Due}{43}{subsection.1.4.2}
+\contentsline {subsubsection}{The rate of discount}{44}{section*.2}
+\contentsline {subsection}{\numberline {1.4.3}Deferred annuities}{52}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Increasing annuities}{56}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}Compound increasing annuities}{58}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.6}Annuities payable more than once per time unit}{60}{subsection.1.4.6}
+\contentsline {section}{\numberline {1.5}Nominal Rates of Interest}{62}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Nominal Rates of Discount}{69}{subsection.1.5.1}
+\contentsline {section}{\numberline {1.6}Principle of Equivalence, Yields and Equation of Value}{72}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Equation of value and yields}{77}{subsection.1.6.1}
+\contentsline {subsection}{\numberline {1.6.2}The method to estimate the yield}{81}{subsection.1.6.2}
+\contentsline {section}{\numberline {1.7}Loan schedules}{83}{section.1.7}
+\contentsline {subsection}{Repay as late as possible:}{84}{section*.3}
+\contentsline {subsection}{Repay interest only during the term and repay the capital at the end of the term:}{84}{section*.4}
+\contentsline {subsection}{Repay loan by regular instalments of interest and capital throughout term of loan:}{84}{section*.5}
+\contentsline {subsection}{\numberline {1.7.1}The loan schedule}{85}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.2}Changing the term of a loan}{88}{subsection.1.7.2}
+\contentsline {subsection}{\numberline {1.7.3}Changing the interest rate}{91}{subsection.1.7.3}
+\contentsline {chapter}{\numberline {2}Bonds and Inflation}{94}{chapter.2}
+\contentsline {section}{\numberline {2.1}Bonds}{94}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Characteristics of Bonds}{95}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Bond prices}{101}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}No tax}{106}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Income tax}{107}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Capital gains tax (CGT)}{109}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}Inflation}{113}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Real rates of interest}{121}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Real yields}{123}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Calculating real yields given constant inflation assumptions}{126}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Index-linked securities}{128}{subsection.2.2.4}
+\contentsline {chapter}{\numberline {3}Processes for stock prices}{134}{chapter.3}
+\contentsline {section}{\numberline {3.1}Force of interest}{135}{section.3.1}
+\contentsline {section}{\numberline {3.2}Stochastic processes}{142}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}A simple random walk}{144}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Sample paths}{148}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Simulating a simple random walk}{150}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Monte Carlo Methods}{152}{section.3.3}
+\contentsline {section}{\numberline {3.4}The Markov Property}{155}{section.3.4}
+\contentsline {section}{\numberline {3.5}Wiener processes}{157}{section.3.5}
+\contentsline {subsubsection}{\numberline {3.5.0.1}Simulating a standard Brownian motion}{162}{subsubsection.3.5.0.1}
+\contentsline {section}{\numberline {3.6}Generalised Wiener process (Brownian Motion with Drift)}{166}{section.3.6}
+\contentsline {subsubsection}{\numberline {3.6.0.1}Simulating a generalised Wiener process}{173}{subsubsection.3.6.0.1}
+\contentsline {section}{\numberline {3.7}The process for a stock price}{176}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Model Assumptions of the Geometric Brownian Motion}{177}{subsection.3.7.1}
+\contentsline {subsubsection}{\numberline {3.7.1.1}Proportional return on stocks are normally distributed}{180}{subsubsection.3.7.1.1}
+\contentsline {subsection}{Stock prices are lognormally distributed}{185}{section*.6}
+\contentsline {subsection}{\numberline {3.7.2}More accurate simulation : the lognormal model}{191}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}The distribution of the rate of return}{192}{subsection.3.7.3}
+\contentsline {subsection}{\numberline {3.7.4}The two expected returns (this section may be skipped)}{193}{subsection.3.7.4}
+\contentsline {subsection}{\numberline {3.7.5}Estimating volatility}{195}{subsection.3.7.5}
+\contentsline {section}{\numberline {3.8}Chapter TWO}{199}{section.3.8}
+\contentsline {chapter}{\numberline {4}Chapter THREE}{201}{chapter.4}
+\contentsline {chapter}{\numberline {5}Applications}{202}{chapter.5}
+\contentsline {section}{\numberline {5.1}DataCamp Light}{202}{section.5.1}
