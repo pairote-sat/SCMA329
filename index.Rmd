@@ -388,7 +388,7 @@ Discuss the results obtained (How long does it take to double the investment? Ho
 :::
  
 
-The effect of compounding is to increase the total amount of accumulation. The effect is greater when the interest rate is high. Table 1.1 shows two examples of the accumulated amount of ฿100 under the simple interest approach and the compound interest approach. As can be seen, the compound interest method makes the principle increase much faster than the simple interest method when the interest rate is high.
+The effect of compounding is to increase the total amount of accumulation. The effect is greater when the interest rate is high. This example shows two examples of the accumulated amount of ฿100 under the simple interest approach and the compound interest approach. As can be seen, the compound interest method makes the principle increase much faster than the simple interest method when the interest rate is high.
 
 
 ## Frequency of Compounding
@@ -440,10 +440,10 @@ is taken into account, the interest income of an investor at the
 quarterly convertible nominal interest rate of 10% p.a. is 12.55 (or
 12.55%. p.a. effective)
 
-**Note** $i^{(p)}$ is a nominal rate of interest which is equivalent to $i^{(p)}/p$ applied for
-each $p$th of a period. The interest is paid $p$ times per measurement period. 
+**Note** $i^{(m)}$ is a nominal rate of interest which is equivalent to $i^{(m)}/m$ applied for
+each $m$th of a period. The interest is paid $m$ times per measurement period. 
 
-The value at time $n$ can be considered as the **annuity** with a cashflow of $i^{(p)}/p$ per period for $n$ years together with the capital at time $n$ as shown in the following figure. 
+The value at time $n$ can be considered as the **annuity** with a cashflow of $i^{(m)}/m$ per period for $n$ years together with the capital at time $n$ as shown in the following figure. 
 Therefore, the accumulated value in 1 year can also be calculated as $100( 1 + 0.03 s_{\angl{4}}^{3\%})$. The concept of annuity will be discussed in the subsequent section.
 
 
@@ -545,25 +545,25 @@ In general, we have
 % Text Node
 \draw (61,131.5) node   [align=left] {$\displaystyle 0$};
 % Text Node
-\draw (180,145.5) node   [align=left] {$\displaystyle \frac{1}{p}$};
+\draw (180,145.5) node   [align=left] {$\displaystyle \frac{1}{m}$};
 % Text Node
-\draw (302,146.5) node   [align=left] {$\displaystyle \frac{2}{p}$};
+\draw (302,146.5) node   [align=left] {$\displaystyle \frac{2}{m}$};
 % Text Node
 \draw (571,129.5) node   [align=left] {$\displaystyle 1$};
 % Text Node
 \draw (601,90) node   [align=left] {Year};
 % Text Node
-\draw (420,146.5) node   [align=left] {$\displaystyle \frac{3}{p}$};
+\draw (420,146.5) node   [align=left] {$\displaystyle \frac{3}{m}$};
 % Text Node
 \draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
 % Text Node
-\draw (182,38) node   [align=left] {$\displaystyle \frac{i^{( p)}}{p}$};
+\draw (182,38) node   [align=left] {$\displaystyle \frac{i^{( m)}}{m}$};
 % Text Node
-\draw (301,37) node   [align=left] {$\displaystyle \frac{i^{( p)}}{p}$};
+\draw (301,37) node   [align=left] {$\displaystyle \frac{i^{( m)}}{m}$};
 % Text Node
-\draw (421,37) node   [align=left] {$\displaystyle \frac{i^{( p)}}{p}$};
+\draw (421,37) node   [align=left] {$\displaystyle \frac{i^{( m)}}{m}$};
 % Text Node
-\draw (571,37) node   [align=left] {$\displaystyle \frac{i^{( p)}}{p} +1$};
+\draw (571,37) node   [align=left] {$\displaystyle \frac{i^{( m)}}{m} +1$};
 \end{tikzpicture}
 ```
 
