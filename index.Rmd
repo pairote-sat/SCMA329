@@ -1,4 +1,4 @@
---- 
+---
 title: "SCMA329 Practical Mathematical Financial Modeling"
 author: "Pairote Satiracoo"
 date: "`r Sys.Date()`"
@@ -11,14 +11,14 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
-Cashflows, Interest and the Time Value of Money
-===============================================
+# Cashflows, Interest and the Time Value of Money
 
-Introduction to Financial Modelling
------------------------------------
+## Introduction to Financial Modelling
 
 A financial model is a financial representation of a real world
 financial situation, which is either a mathematical or statistical model
@@ -48,8 +48,12 @@ problem. Here are some types of financial models.
 -   **Pricing models:** This models the way prices are set within a
     market in order to maximise profits.
 
-Cashflows
----------
+This chapter covers the basic concepts of calculating interest,
+including simple and compound interest, the frequency of compounding,
+the effective interest rate and the discount rate, and the present and
+future values of a single payment.
+
+## Cashflows
 
 Cashflows are amounts of money which are received (or income, positive
 cashflows) or paid (or outgo, negative cashflows) at particular times.
@@ -75,9 +79,8 @@ Those payments arise from a financial transaction, e.g
     Index-linked bonds are issued by governments to mitigate the effects
     of inflation by paying a real return plus accrued inflation.
 
--   an annuity: An annuity is a contract issued and sold by financial
-    institutions in which funds are invested for the purpose of paying
-    out a fixed income later.
+-   an annuity: An annuity is a series of payments made at regular
+    intervals, such as equal monthly payments on a mortgage.
 
 -   a capital project etc.
 
@@ -87,8 +90,8 @@ cashflows**. The net cashflow at a given point in time is the difference
 between expenses and income.
 
 ::: {.example}
-*A series of payments into and out of a bank account is
-given as follows:*
+*A series of payments into and out of a bank account is given as
+follows:*
 
 -   *payments into the account : ฿1000 on 1 January 2014 and ฿100 on 1
     January 2016*
@@ -100,8 +103,75 @@ given as follows:*
 In practice, cashflows can be represented by a timeline as can be
 illustrated in this example.
 
-Interest and the Time Value of Money
-------------------------------------
+```{tikz, tikz-ex1, fig.cap = "an example of a timeline", fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+\tikzset{every picture/.style={line width=0.75pt}} 
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (49.5,111) -- (622.5,110) ;
+\draw [shift={(624.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (65,105) -- (65,116) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (186,106) -- (186,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (306,105) -- (306,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (543,106) -- (543,117) ;
+%Straight Lines [id:da6916216612158876] 
+\draw    (425,105) -- (425,116) ;
+%Straight Lines [id:da5378437724389864] 
+\draw    (65,65) -- (64.53,94) ;
+\draw [shift={(64.5,96)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (306,68) -- (305.53,97) ;
+\draw [shift={(305.5,99)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da048688156533002847] 
+\draw    (244,150) -- (243.53,179) ;
+\draw [shift={(243.5,181)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15939998725879834] 
+\draw    (544,148) -- (543.53,177) ;
+\draw [shift={(543.5,179)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6370813272398017] 
+\draw    (245,106) -- (245,117) ;
+%Straight Lines [id:da9187291775490731] 
+\draw    (365,106) -- (365,117) ;
+%Straight Lines [id:da1823632976469891] 
+\draw    (363,149) -- (362.53,178) ;
+\draw [shift={(362.5,180)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (66,131.5) node   [align=left] {$\displaystyle 1/1/2014$};
+% Text Node
+\draw (185,132.5) node   [align=left] {$\displaystyle 1/1/2015$};
+% Text Node
+\draw (309,131.5) node   [align=left] {$\displaystyle 1/1/2016$};
+% Text Node
+\draw (544,132.5) node   [align=left] {$\displaystyle 1/1/2018$};
+% Text Node
+\draw (426,131.5) node   [align=left] {$\displaystyle 1/1/2017$};
+% Text Node
+\draw (66,49) node   [align=left] {$\displaystyle 1000$};
+% Text Node
+\draw (307,52) node   [align=left] {$\displaystyle 100$};
+% Text Node
+\draw (245,195) node   [align=left] {$\displaystyle 200$};
+% Text Node
+\draw (545,194) node   [align=left] {$\displaystyle 400$};
+% Text Node
+\draw (594,30) node   [align=left] {Inflows};
+% Text Node
+\draw (600,219) node   [align=left] {Outflows};
+% Text Node
+\draw (364,194) node   [align=left] {$\displaystyle 300$};
+% Text Node
+\draw (606,90) node   [align=left] {Time};
+\end{tikzpicture}
+```
+
+## Interest and the Time Value of Money
 
 This section introduces the time value of money using the concepts of
 compound interest and discounting. The effect of interest rates on the
@@ -112,17 +182,35 @@ considered.
 We illustrate the time value of money by considering the following
 examples.
 
-::: {.example #egpv}
-*An investor want to make a payment of ฿10000 in 2
-years. Suppose that a bank pays compound interest at 4% per annum
-effective. How much should the initial investment?*
+::: {#egpv .example}
+*An investor want to make a payment of ฿10000 in 2 years. Suppose that a
+bank pays compound interest at 4% per annum effective. How much should
+the initial investment?*
 :::
 
 **Note** The amount we need to invest now (i.e. the initial investment
 in this example) is called the *present value (PV)* or *discounted
-value* of the payments. **Solution:** By the end of 2 years an initial
-payment of ฿X will have accumulated to: $$X  \cdot  1.04^2 = 10000.$$
-Hence, $X = 9245.56213$.
+value* of the payments.
+
+**Solution:** The interest for year 1 is
+
+$$ X \cdot 0.04.$$ For year 2 the principal is
+
+$$ X + X \cdot 0.04 = X \cdot (1 + 0.04)$$ so that the interest for the
+year is
+
+$$ X \cdot (1 + 0.04) \cdot 0.04.$$
+
+By the end of 2 years an initial payment of ฿X will have accumulated to:
+
+$$X\cdot (1 + 0.04) + X \cdot (1 + 0.04) \cdot 0.04 =   X  \cdot  1.04^2 = 10000.$$
+Hence,
+
+$$X = \frac{10000}{1.04^2} = 9245.56213,$$
+
+**Note** We refer to the amount to which the capital accumulates with
+the addition of interest as *accumulation* or *accumulated value*.
+
 
 ::: {.example}
 *Consider the following arguments*
@@ -130,12 +218,28 @@ Hence, $X = 9245.56213$.
 -   *It is obvious that you would prefer to have ฿1100 now than ฿1000
     now.*
 
--   *Is it obvious that your would be better off with ฿1100 in 2 years
-    than ฿1000 now?*
-
 -   *If we receive and hold ฿1 now, then it is worth more than receiving
     and holding ฿1 at some time in the future? Why is this?*
+
+-   *Is it obvious that your would be better off with ฿1100 in 2 years
+    than ฿1000 now?*
 :::
+
+**Solution:**
+
+For the second argument, this one baht will grow to $1 + r$ in the first
+year, $(1 + r)^2$ in two years, and so on. These amounts are clearly
+worth more than receiving and holding ฿1 at the same time in the future.
+
+For the last argument, we need to compare the values of the amounts
+\*\*received at different times. To do this, we can look at the today's
+values of ฿1100 received in 2 years assuming that we can invest at an
+annual interest rate of $r$ percent.
+
+The present value of this amount $X$ in year 2 is $$ 1100/(1 + r)^2.$$ Assuming $r = 5\%$, the present value of $X$ is `r 1100/(1 + 0.05)^2`.
+
+Comparing the values in today's baths, it is better to
+have ฿1000 now than to have ฿1100 in 2 years.
 
 **Notes** From the above example,
 
@@ -153,7 +257,9 @@ Hence, $X = 9245.56213$.
 ### Simple interest
 
 Simple interest is a calculation of interest that does not take into
-account the effect of compounding. Suppose an amount $C$ is deposited in
+account the effect of compounding. Under simple interest, the amount of interest that accrues over time is proportional to the length of the period.
+
+Suppose an amount $C$ is deposited in
 an account that pays simple interest at the rate of $i$% per annum. Then
 after $n$ years the deposit will have accumulated to
 $$C( 1 + i \cdot n).$$ Hence, the interest accrued over $n$ years is
@@ -163,8 +269,8 @@ $$\text{Simple Interest}  = C \cdot i \cdot n.$$
 interest loans.
 
 ::: {.example}
-*An investor deposits ฿10000 in a bank account that
-pays simple interest at a rate of 5% per annum. Calculate*
+*An investor deposits ฿10000 in a bank account that pays simple interest
+at a rate of 5% per annum. Calculate*
 
 1.  *interest he will earn after the first two years.*
 
@@ -172,7 +278,9 @@ pays simple interest at a rate of 5% per annum. Calculate*
 :::
 
 **Note** When $n$ is not an integer, interest is paid on a pro-rate
-basis (in proportion). **Solution:**
+basis (in proportion). 
+
+**Solution:**
 
 1.  At the end of 2 years the interest earned is
     $$10000 \cdot 0.05 \cdot 2 = 1000.$$
@@ -182,59 +290,426 @@ basis (in proportion). **Solution:**
     interest per month is 5%/12 = 0.4167% and hence the interest earned
     can be calculated as $$10000 \cdot 0.004167 \cdot 3 = 125.$$
 
+### Compound interest
+
+In compound interest, the accumulated amount over a period of time is the capital of the following period. Therefore, a capital of 1 unit at the end of the year increases to $1 + i$ units, which becomes the capital for the following year. 
+
+For year 2, the principal is $1 + i$ and the interest for the year is 
+$( 1 + i ) \cdot i$. By the end of 2 years, an initial payment of 1 will have accumuulated to 
+$$ (1+i) + ( 1 + i ) \cdot i = (1+i)^2.$$
+
+As this progression continues, the accumulated amount of $X$ units at the end of year $n$ becomes
+  $$ X\cdot(1 + i)^n. $$
+
+\theNote In this case, we can take money out and reinvest it as new capital illustrated in the timeline.
+
+```{tikz, tikz-ex2, fig.cap = "a timeline of compounding interest", fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+\tikzset{every picture/.style={line width=0.75pt}} 
+
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,105) -- (60,116) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da5378437724389864] 
+\draw    (60,65) -- (59.53,94) ;
+\draw [shift={(59.5,96)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,68) -- (300.53,97) ;
+\draw [shift={(300.5,99)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da048688156533002847] 
+\draw    (180,150) -- (179.53,179) ;
+\draw [shift={(179.5,181)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15939998725879834] 
+\draw    (571,148) -- (570.53,177) ;
+\draw [shift={(570.5,179)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1823632976469891] 
+\draw    (300,149) -- (299.53,178) ;
+\draw [shift={(299.5,180)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da4614876306299549] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (182,211) .. controls (112.85,289.61) and (142.2,-72.35) .. (179.93,34.36) ;
+\draw [shift={(180.5,36)}, rotate = 251.26] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da39377803570031134] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (282,211) .. controls (212.85,289.61) and (242.2,-72.35) .. (279.93,34.36) ;
+\draw [shift={(280.5,36)}, rotate = 251.26] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (419,105) -- (419,116) ;
+%Straight Lines [id:da09499270145029604] 
+\draw    (418,149) -- (417.53,178) ;
+\draw [shift={(417.5,180)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,131.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle n$};
+% Text Node
+\draw (61,49) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,52) node   [align=left] {$\displaystyle \textcolor[rgb]{0.29,0.56,0.89}{( 1+i)^{2}}$};
+% Text Node
+\draw (181,195) node   [align=left] {$\displaystyle ( 1+i)$};
+% Text Node
+\draw (572,194) node   [align=left] {$\displaystyle ( 1+i)^{n}$};
+% Text Node
+\draw (301,194) node   [align=left] {$\displaystyle ( 1+i)^{2}$};
+% Text Node
+\draw (601,90) node   [align=left] {Time};
+% Text Node
+\draw (182,53) node   [align=left] {$\displaystyle \textcolor[rgb]{0.29,0.56,0.89}{(}\textcolor[rgb]{0.29,0.56,0.89}{1+i}\textcolor[rgb]{0.29,0.56,0.89}{)}$};
+% Text Node
+\draw (420,131.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (419,194) node   [align=left] {$\displaystyle ( 1+i)^{3}$};
+% Text Node
+\draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+\end{tikzpicture}
+```
+
+::: {.exercise} 
+(Excel)  Use Excel to create a table showing the accumulated amounts at the end of each year for 15 years for a principal of ฿100 under the simple interest approach and the compound interest approach with $r = 6\%$ for both cases.
+Discuss the results obtained (How long does it take to double the investment? How much will the principal grow over a 15-year period?)
+:::
+ 
+
+The effect of compounding is to increase the total amount of accumulation. The effect is greater when the interest rate is high. Table 1.1 shows two examples of the accumulated amount of ฿100 under the simple interest approach and the compound interest approach. As can be seen, the compound interest method makes the principle increase much faster than the simple interest method when the interest rate is high.
+
+
+## Frequency of Compounding
+
+Even though the interest rate is typically expressed in annual terms, an investment's interest is frequently paid more frequently than once per year. For example, a savings account may offer an interest rate of 4% per year, credited quarterly. This interest rate is usually referred to as **nominal rate of interest**, i.e., 4% due four times per year. 
+
+We will see that the frequency of interest payments, also known as the frequency of compounding, has a significant impact on the total amount accrued and the interest collected. Consequently, it is crucial to precisely specify the rate of interest.
+
+We use $i^{(m)}$ to represent the nominal rate of interest payable $m$ times a year in order to underline the significance of the frequency of compounding. Therefore, $m$ is the
+frequency of compounding per year and $1/m$ year is the **compounding period** or **conversion period**.
+
+**Note** The nominal rate of interest payable $m$ times per period is also known as the rate of interest convertible $m$thly or compounded $m$thly.
+
+
+::: {.example}
+Calculate the accumulated value in 1 year of a deposit of ฿100 in a saving account that earns interest at 10% payable quarterly.
+:::
+
+**Solution:** In this example, the nominal rate of interest of $i^{(4)} = 10\%$ p.a. convertible
+quarterly means an interest rate of 10%/4 = 2.5% per quarter. In this case, the interest rate of 2.5% is called *effective interest*. The effective interest rate of $i$ per unit of time (which may be month, quarter, etc.) is the amount of interest received at the end of a unit of time per ฿1 invested at the beginning of that unit.
+
+Therefore, the nominal interest rate $i^{(4)} = 10\%$ is equivalent to an
+*effective interest rate* of $2.5\%$ per quarter. 
+The accumulated value in
+1 year is $100 (1 + \frac{10\%}{4})^4 = 100 (1 + 2.5\%)^4 = 110.3813$. 
+
+Note that after compound interest is
+taken into account, the interest income of an investor at the quarterly
+convertible nominal interest rate of 10% p.a. is 10.3813 (or 10.3813%.p.a. effective)
+
+
+::: {.example}
+*At a rate of 12% p.a. effective, draw a timeline to show cashflows if
+฿100 is invested at the start of the year.*
+:::
+
+**Solution:** The accumulated value of ฿100 at the end of the year is
+$100 (1 + 12\%) = 112$.
+
+::: {.example}
+*At a rate of 12% p.a. compounding quarterly, draw a time line to show
+cashflows if ฿100 is invested at the start of the year.*
+:::
+
+**Solution:** The nominal interest rate $i^{(4)} = 12\%$ is equivalent
+to an effective interest rate of $3\%$ per quarter. The accumulated
+value in 1 year is $100 (1 + 3\%)^4 = 112.55$. After compound interest
+is taken into account, the interest income of an investor at the
+quarterly convertible nominal interest rate of 10% p.a. is 12.55 (or
+12.55%. p.a. effective)
+
+**Note** $i^{(p)}$ is a nominal rate of interest which is equivalent to $i^{(p)}/p$ applied for
+each $p$th of a period. The interest is paid $p$ times per measurement period. 
+
+The value at time $n$ can be considered as the **annuity** with a cashflow of $i^{(p)}/p$ per period for $n$ years together with the capital at time $n$ as shown in the following figure. 
+Therefore, the accumulated value in 1 year can also be calculated as $100( 1 + 0.03 s_{\angl{4}}^{3\%})$. The concept of annuity will be discussed in the subsequent section.
+
+
+
+
+```{tikz, tikz-ex5, fig.cap = "Frequency of Compouding vs Annuity", fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 179.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (519,106) -- (519,117) ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,69) -- (300.53,98) ;
+\draw [shift={(300.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (420,105) -- (420,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (421,69) -- (420.53,98) ;
+\draw [shift={(420.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (520,69) -- (519.53,98) ;
+\draw [shift={(519.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,145.5) node   [align=left] {$\displaystyle \frac{1}{4}$};
+% Text Node
+\draw (302,146.5) node   [align=left] {$\displaystyle \frac{2}{4}$};
+% Text Node
+\draw (520,129.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (591,90) node   [align=left] {Year};
+% Text Node
+\draw (420,146.5) node   [align=left] {$\displaystyle \frac{3}{4}$};
+% Text Node
+\draw (182,38) node   [align=left] {$\displaystyle \frac{12\%}{4}$};
+% Text Node
+\draw (301,37) node   [align=left] {$\displaystyle \frac{12\%}{4}$};
+% Text Node
+\draw (421,37) node   [align=left] {$\displaystyle \frac{12\%}{4}$};
+% Text Node
+\draw (520,37) node   [align=left] {$\displaystyle \frac{12\%}{4} +100$};
+
+
+\end{tikzpicture}
+```
+
+In general, we have
+
+
+
+```{tikz, tikz-ex4, fig.cap = "Frequency of Compouding vs Annuity", fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+\tikzset{every picture/.style={line width=0.75pt}}         
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 179.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,69) -- (300.53,98) ;
+\draw [shift={(300.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (420,105) -- (420,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (421,69) -- (420.53,98) ;
+\draw [shift={(420.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (571,69) -- (570.53,98) ;
+\draw [shift={(570.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,145.5) node   [align=left] {$\displaystyle \frac{1}{p}$};
+% Text Node
+\draw (302,146.5) node   [align=left] {$\displaystyle \frac{2}{p}$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (601,90) node   [align=left] {Year};
+% Text Node
+\draw (420,146.5) node   [align=left] {$\displaystyle \frac{3}{p}$};
+% Text Node
+\draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (182,38) node   [align=left] {$\displaystyle \frac{i^{( p)}}{p}$};
+% Text Node
+\draw (301,37) node   [align=left] {$\displaystyle \frac{i^{( p)}}{p}$};
+% Text Node
+\draw (421,37) node   [align=left] {$\displaystyle \frac{i^{( p)}}{p}$};
+% Text Node
+\draw (571,37) node   [align=left] {$\displaystyle \frac{i^{( p)}}{p} +1$};
+\end{tikzpicture}
+```
+
+
 ### Effective rate of interest
+
+The compounding frequency affects the accumulated amount. As a result, it may be inaccurate to compare two investment strategies only based on their nominal rates of return without also taking into account their frequency of compounding.  It is necessary to compare different investment strategies on an equal basis. The measure known as the **effective interest rate** is often used for this purpose.
 
 The effective rate of interest of $i$ per time unit is the amount of
 interest received at the end of one time unit per ฿1 invested at the
 start of that time unit.
 
 ::: {.example}
-*An investor invests ฿1 at 7.5% p.a. (per annum)
-effective. Then $i = 0.075$. Calculate the value of investment after one
-year.*
+*An investor invests ฿1 at 7.5% p.a. (per annum) effective. Then*
+$i = 0.075$. Calculate the value of investment after one year.
 :::
 
 **Solution:** The value of investment after one year at this rate is
 $$1 \times ( 1 + 0.075) = 1.075.$$
+In particular, the amount of 
+interest received at the end of the year per ฿1 invested is 0.075.
 
 ::: {.example}
-*An investor invests ฿1000 at 5.25% per half-year
-effective. Then $i = 0.0525$. Calculate the value of investment after
-half a year.*
+*An investor invests ฿1000 at 5.25% per half-year effective. Then*
+$i = 0.0525$. Calculate the value of investment after half a year.
 :::
 
 **Solution:** The value of investment after half year at this rate is
 $$1000 \times ( 1 + 0.0525) = 1052.5.$$
+Again, the amount ofinterest received at the end of the quarter of ฿1 invested is 0.0525.
 
 **Note** The time unit is an **essential part of the definition**.
 
 ::: {.example}
-*An investor invests ฿1 at effective rate $i$% per time
-unit for $n$ time units. Calculate the value of investment after two,
-three, $\ldots$, $n$ time units.*
+*An investor invests ฿1 at effective rate* $i$% per time unit for $n$
+time units. Calculate the value of investment after two, three,
+$\ldots$, $n$ time units.
 :::
 
 **Note** Here we assume that we can take money out and reinvest it as
 new capital (see the timeline).
 
+
+
+```{tikz, tikz-ex6, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+\tikzset{every picture/.style={line width=0.75pt}} 
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,105) -- (60,116) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da5378437724389864] 
+\draw    (60,65) -- (59.53,94) ;
+\draw [shift={(59.5,96)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,68) -- (300.53,97) ;
+\draw [shift={(300.5,99)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da048688156533002847] 
+\draw    (180,150) -- (179.53,179) ;
+\draw [shift={(179.5,181)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15939998725879834] 
+\draw    (571,148) -- (570.53,177) ;
+\draw [shift={(570.5,179)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1823632976469891] 
+\draw    (300,149) -- (299.53,178) ;
+\draw [shift={(299.5,180)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da4614876306299549] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (182,211) .. controls (112.85,289.61) and (142.2,-72.35) .. (179.93,34.36) ;
+\draw [shift={(180.5,36)}, rotate = 251.26] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da39377803570031134] 
+\draw [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ] [dash pattern={on 4.5pt off 4.5pt}]  (282,211) .. controls (212.85,289.61) and (242.2,-72.35) .. (279.93,34.36) ;
+\draw [shift={(280.5,36)}, rotate = 251.26] [color={rgb, 255:red, 74; green, 144; blue, 226 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (419,105) -- (419,116) ;
+%Straight Lines [id:da09499270145029604] 
+\draw    (418,149) -- (417.53,178) ;
+\draw [shift={(417.5,180)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,131.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle n$};
+% Text Node
+\draw (61,49) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,52) node   [align=left] {$\displaystyle \textcolor[rgb]{0.29,0.56,0.89}{( 1+i)^{2}}$};
+% Text Node
+\draw (181,195) node   [align=left] {$\displaystyle ( 1+i)$};
+% Text Node
+\draw (572,194) node   [align=left] {$\displaystyle ( 1+i)^{n}$};
+% Text Node
+\draw (301,194) node   [align=left] {$\displaystyle ( 1+i)^{2}$};
+% Text Node
+\draw (601,90) node   [align=left] {Time};
+% Text Node
+\draw (182,53) node   [align=left] {$\displaystyle \textcolor[rgb]{0.29,0.56,0.89}{(}\textcolor[rgb]{0.29,0.56,0.89}{1+i}\textcolor[rgb]{0.29,0.56,0.89}{)}$};
+% Text Node
+\draw (420,131.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (419,194) node   [align=left] {$\displaystyle ( 1+i)^{3}$};
+% Text Node
+\draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+
+
+\end{tikzpicture}
+```
+
+
+
 ::: {.example}
-*An investor invests ฿200 at $3$% pa effective. What
-will be the deposit have accumulated to after 5 years.*
+*An investor invests ฿200 at* $3$% pa effective. What will be the
+deposit have accumulated to after 5 years.
 :::
 
 **Solution:** The deposit accumulates to
 $200 \cdot (1.03)^5 = 231.854815$ after 5 years.
 
-**Note** We refer to the amount to which the capital accumulates with
-the addition of interest as *accumulation* or *accumulating value*.
 
-::: {.example}
+::: {.example} 
+Consider the following problems.
 
-1.  *An investor invests ฿500 at $2.75$% per quarter effective. What
-    will be the deposit have accumulated to after 9 months.*
+1.  *An investor invests ฿500 at* $2.75$% per quarter effective. What
+    will be the deposit have accumulated to after 9 months.
 
-2.  *An investor invests ฿2000 at $6$% per half-year effective. What
-    will be the deposit have accumulated to after 2 years.*
+2.  *An investor invests ฿2000 at* $6$% per half-year effective. What
+    will be the deposit have accumulated to after 2 years.
 :::
 
 **Solution:**
@@ -245,10 +720,52 @@ the addition of interest as *accumulation* or *accumulating value*.
 2.  After 2 years the accumulation is
     $$2000 \cdot (1.06)^4 = 2524.95392.$$
 
-**Note** The model under the effective rate of interest condition is a
+**Notes** 
+
+1. The model under the effective rate of interest condition is a
 model of *compound interest*, where interest is earned on interest
 previously earned. Unless state otherwise, we shall assume that $i$ is
 the compound interest rate.
+
+2.  In practice, it is easier to work with the effective rate of
+interest which is defined in a suitable time unit.
+
+The following formula can be used to convert between the effective rate
+$i$ p.a. and the nominal rate $i^{(m)}$ p.a.:
+$$( 1 + i) = \left( 1 + \frac{i^{(m)}}{m}\right)^m.$$
+
+
+::: {.example}
+Consider the following problems.
+
+1.  *Express a nominal annual interest rate of 9% convertible
+    half-yearly as a monthly effective interest.*
+
+2.  *Express a two-monthly effective interest of 3% as a nominal annual
+    interest rate convertible two-monthly.*
+:::
+
+**Solution:**
+
+1.  The effective rate $i$% p.a. is $$i = ( 1 + \frac{0.09}{2})^2 - 1.$$
+    Hence the monthly effective rate is
+    $j = (1 + i)^{1/12} - 1 = ( 1 + \frac{0.09}{2})^{2/12} - 1 = 0.007363$.
+
+2.  A nominal annual interest rate convertible two-monthly is
+    $6 \cdot 3\% = 18\%$.
+
+::: {.example}
+*Express each of the following effective rates per annum as a nominal
+rate, and vice versa.*
+
+| ***Effective Rate*** | ***Nominal Rate***    |
+|:---------------------|:----------------------|
+| $i$ = 0.04           | $i^{(4)} = 0.039412$  |
+| $i$ = 0.10           | $i^{(12)} = 0.095690$ |
+| $i$ = 0.06152        | $i^{(2)} = 0.06$      |
+| $i$ = 0.126825       | $i^{(12)} = 0.12$     |
+:::
+
 
 ### Compounding over any number of time units
 
@@ -256,12 +773,11 @@ Suppose an amount ฿1 is invested at the rate of $i$% per time unit. At
 time $t$ the accumulation is $(1 + i)^t$.
 
 ::: {.example}
+1.  *An investor invests ฿4000 at* $8.5$% per quarter effective. What
+    will be the deposit have accumulated to after 1 month.
 
-1.  *An investor invests ฿4000 at $8.5$% per quarter effective. What
-    will be the deposit have accumulated to after 1 month.*
-
-2.  *An investor invests ฿800 at $6$% per half-year effective. What will
-    be the deposit have accumulated to after 2.6 years.*
+2.  *An investor invests ฿800 at* $6$% per half-year effective. What
+    will be the deposit have accumulated to after 2.6 years.
 :::
 
 **Solution:**
@@ -271,6 +787,14 @@ time $t$ the accumulation is $(1 + i)^t$.
 
 2.  The accumulation after 2.6 years is
     $800 \cdot 1.06^{5.2} = 1083.129754.$
+
+
+::: {.exercise} 
+(Excel)  Use Excel to create a table showing the accumulated amounts after 1 year under several different compounding frequencies (yearly, quarterly, monthly, daily) for a principal of ฿100 under with nominal rate of $r = 4\%$ per annum.
+
+Discuss the results obtained. What happens if the compounding is made over infinitely small intervals (i.e. as $m \rightarrow \infty$)?
+:::
+ 
 
 ### Changing the time period of the effective rates of interest
 
@@ -284,8 +808,8 @@ regarded as one time unit. Let $j$ be the effective rate of interest per
 $t_j$ years.
 
 ::: {.example}
-*Find the condition under which the two effective
-rates of interest $i$ and $j$ are equivalent.*
+*Find the condition under which the two effective rates of interest* $i$
+and $j$ are equivalent.
 :::
 
 **Solution:** Suppose we invest 1 for one year. Then at the end of the
@@ -297,7 +821,6 @@ $$(1+i)^{1/t_i} = (1+j)^{1/t_j}.$$ Solving the equation for $j$ yields
 $$j = (1+i)^{t_j/t_i} - 1.$$
 
 ::: {.example}
-
 1.  *If the effective rate of interest is 6% per annum, what is the
     effective rate of interest per half-year?*
 
@@ -326,9 +849,9 @@ shall assume that the rates in every future time periods are known in
 advance.
 
 ::: {.example}
-*The effective rate of interest per annum was 4%
-during 2015, 4.5% during 2016 and 5% during 2017. Calculate the
-accumulation of ฿200 invested on*
+*The effective rate of interest per annum was 4% during 2015, 4.5%
+during 2016 and 5% during 2017. Calculate the accumulation of ฿200
+invested on*
 
 1.  *01/01/2015 for 3 years*
 
@@ -365,16 +888,15 @@ We define
     $$A(s,t).$$
 
 ::: {.example}
-*The effective rate of interest per annum was 6%
-during 2015, 8% during 2016 and 10% during 2017. Calculate the following
-accumulation factors.*
+*The effective rate of interest per annum was 6% during 2015, 8% during
+2016 and 10% during 2017. Calculate the following accumulation factors.*
 
-1.  *$A(01/01/15, 01/01/18),$ i.e. the accumulation at 01/01/18 of an
-    investent of 1 at 01/01/15*
+1.  $A(01/01/15, 01/01/18),$ i.e. the accumulation at 01/01/18 of an
+    investent of 1 at 01/01/15
 
-2.  *$A(01/07/15, 01/07/17)$*
+2.  $A(01/07/15, 01/07/17)$
 
-3.  *$A(01/04/16, 01/10/17)$*
+3.  $A(01/04/16, 01/10/17)$
 :::
 
 **Solution:**
@@ -387,17 +909,18 @@ accumulation factors.*
 
 ### Present values and discount factors
 
-Recall from Example \@ref(exm:egpv) that the amount $\displaystyle{\frac{10000}{1.04^2}}$
-we need to invest now to obtain ฿10000 in two years is called the
-*present value (PV)* or *discounted value* of the payments.
+Recall from Example \@ref(exm:egpv) that the amount
+$\displaystyle{\frac{10000}{1.04^2}}$ we need to invest now to obtain
+฿10000 in two years is called the *present value (PV)* or *discounted
+value* of the payments.
 
 We define the discount factor $v$ per annum, at rate $i$ p.a. effective
 to be the present value of a payment of 1 due in 1 year?s time, i.e.
 $$v = \frac{1}{1+i}.$$
 
 ::: {.example}
-*Calculate the present of ฿25000 due in 3 years at an
-effective rate of interest of 6% per annum.*
+*Calculate the present of ฿25000 due in 3 years at an effective rate of
+interest of 6% per annum.*
 :::
 
 **Solution:** The present value is
@@ -405,8 +928,8 @@ $$25000 \cdot \frac{1}{1.06^3} = 20990.482076.$$ It is the discounted
 value of 25000 due in 3 years.
 
 ::: {.example}
-*How much should we invest now to meet a liability of
-฿50000 in 5 years at an effective rate of interest of 3% per half-year.*
+*How much should we invest now to meet a liability of ฿50000 in 5 years
+at an effective rate of interest of 3% per half-year.*
 :::
 
 **Solution:** The amount we need to invest now to meet the future
@@ -418,8 +941,7 @@ effective rate of interest per time unit is
 $$PV = \frac{1}{(1+i)^t} = v^t.$$
 
 ::: {.example}
-*Given the discount factor per year $v = 0.9$,
-calculate*
+*Given the discount factor per year* $v = 0.9$, calculate
 
 1.  *the effective rate of interest per year.*
 
@@ -454,8 +976,7 @@ Similarly, we define
 
     -   $V(r,t) = V(r,s) V(s,t)$
 
-Cashflows and Annuities
------------------------
+## Cashflows and Annuities
 
 Consider a series of cashflows defined by (see the timeline)
 
@@ -489,24 +1010,23 @@ The above formula can be obtained by summing these two components:
     at any time at that effective rate of interest.
 
 ::: {.example}
-*Let $i = 4\%$ effective per time unit. Cashflows are
-given as follows:*
+*Let* $i = 4\%$ effective per time unit. Cashflows are given as follows:
 
--   *$C_1 = 200$ at time $t_1 = 1$.*
+-   $C_1 = 200$ at time $t_1 = 1$.
 
--   *$C_2 = 300$ at time $t_2 = 3$.*
+-   $C_2 = 300$ at time $t_2 = 3$.
 
--   *$C_3 = -100$ at time $t_3 = 5$.*
+-   $C_3 = -100$ at time $t_3 = 5$.
 
--   *$C_4 = -50$ at time $t_4 = 6$.*
+-   $C_4 = -50$ at time $t_4 = 6$.
 
 *Calculate*
 
-1.  *the accumulation at time $t = 7$.*
+1.  *the accumulation at time* $t = 7$.
 
-2.  *the present value at time $t = 0$.*
+2.  *the present value at time* $t = 0$.
 
-3.  *the present value at time $t = 4$.*
+3.  *the present value at time* $t = 4$.
 :::
 
 **Solution:**
@@ -542,24 +1062,22 @@ made for a specific period of time, they are called *annuity certain*.
 -   If each payment is for the same amount, this is a *level* annuity.
 
 ::: {.example}
-*Let $i$ be the constant effective rate of interest
-per time unit. Show that the accumulated value of a level annuity
-certain having cashflow of 1 unit at the end of each of the next $n$
-time units is $$\frac{(1+i)^n -1 }{i}.$$ Such accumulated value of the
-annuity is denoted by $s_\angl{n}$ (pronounced \"S.N.\")*
+*Let* $i$ be the constant effective rate of interest per time unit. Show
+that the accumulated value of a level annuity certain having cashflow of
+1 unit at the end of each of the next $n$ time units is
+$$\frac{(1+i)^n -1 }{i}.$$ Such accumulated value of the annuity is
+denoted by $s_\angl{n}$ (pronounced "S.N.")
 :::
 
-**Solution:** Based on the first principles, 
+**Solution:** Based on the first principles,
 
+```{=tex}
 \begin{align} 
  s_\angl{n} &= \sum_{r=1}^n C_r \cdot A(t_r,n) \\
     &= (1+i)^{n-1} + (1+i)^{n-2} + \ldots + (1+i) + 1. (\#eq:firstEq) 
-\end{align} 
-
-
-Multiplying Eq.\@ref(eq:firstEq)
-through by (1+i) gives 
-\begin{equation}
+\end{align}
+```
+Multiplying Eq.\@ref(eq:firstEq) through by (1+i) gives \begin{equation}
     (1+i) \cdot s_\angl{n}  = (1+i)^{n} + (1+i)^{n-1} + \ldots + (1+i)^2 + (1+i). 
 \end{equation} Subtracting the two equations results in
 $$\begin{aligned}
@@ -567,11 +1085,11 @@ $$\begin{aligned}
         s_\angl{n} &= \frac{(1+i)^{n} - 1}{i}.\end{aligned}$$
 
 ::: {.example}
-*Let $i$ be the constant effective rate of interest
-per time unit. Show that the present value at time 0 of a level annuity
-certain, denoted by $a_\angl{n}$ (pronounced \"A.N.\") , having cashflow
-of 1 unit at the end of each of the next $n$ time units is
-$$a_\angl{n} = \frac{1 - v^n }{i}.$$*
+*Let* $i$ be the constant effective rate of interest per time unit. Show
+that the present value at time 0 of a level annuity certain, denoted by
+$a_\angl{n}$ (pronounced "A.N.") , having cashflow of 1 unit at the end
+of each of the next $n$ time units is
+$$a_\angl{n} = \frac{1 - v^n }{i}.$$
 :::
 
 **Solution:** Taking the accumulated value at time $n$ and discounting
@@ -581,8 +1099,7 @@ back to time 0 gives $$\begin{aligned}
             &=  \frac{1 - v^n }{i}.\end{aligned}$$
 
 ::: {.example}
-*Given the effective rate of interest of $8\%$ p.a.,
-calculate*
+*Given the effective rate of interest of* $8\%$ p.a., calculate
 
 1.  *the accumulation at 12 years of ฿500 payable yearly in arrears for
     the next 12 years.*
@@ -646,8 +1163,8 @@ now to accumulate to 1 in $n$ year is $$\frac{1}{(1+i)^n} = (1-d)^n.$$
 See the timeline below for illustration.
 
 ::: {.example}
-*Discount ฿2,000 for 3 years using the effective rate
-of discount of 5% per annum.*
+*Discount ฿2,000 for 3 years using the effective rate of discount of 5%
+per annum.*
 :::
 
 **Solution:** After 1 year the discount will be $0.05 \cdot 2000 = 100,$
@@ -659,9 +1176,9 @@ years, the discounted value of the payment will be
 $$2000 \cdot (1 - d)^3 = 2000 \cdot (1 - 0.05)^3 = 1714.75 .$$
 
 ::: {.example}
-*The effective rate of discount $d$ per time unit can
-be regarded as the interest paid in advance at time 0, which is
-equivalent to the effective rate of interest $i$ payable in arrears.*
+*The effective rate of discount* $d$ per time unit can be regarded as
+the interest paid in advance at time 0, which is equivalent to the
+effective rate of interest $i$ payable in arrears.
 :::
 
 **Solution:** To show this, suppose that the bank added interest of $x$
@@ -686,11 +1203,11 @@ regarded as the interest paid in advance at time 0, which is equivalent
 to the effective rate of interest $i$ payable in arrears.
 
 ::: {.example}
-*Let $i$ be the constant effective rate of interest
-per time unit. Show that the accumulated value of a level annuity due,
-denoted by $\ddot{s}_\angl{n}$ (pronounced \"S-due N\", having cashflow
-of 1 unit at the start of each of the next $n$ time units is
-$$\ddot{s}_\angl{n} = \frac{(1+i)^n -1 }{d}.$$*
+*Let* $i$ be the constant effective rate of interest per time unit. Show
+that the accumulated value of a level annuity due, denoted by
+$\ddot{s}_\angl{n}$ (pronounced "S-due N", having cashflow of 1 unit at
+the start of each of the next $n$ time units is
+$$\ddot{s}_\angl{n} = \frac{(1+i)^n -1 }{d}.$$
 :::
 
 **Solution:** Using the previous results, it follows that
@@ -703,10 +1220,10 @@ $$\begin{aligned}
             &=  \frac{(1+i)^n -1 }{d}.\end{aligned}$$
 
 ::: {.example}
-*Let $i$ be the constant effective rate of interest
-per time unit. Show that the present value at time 0 of a level annuity
-due having cashflow of 1 unit at the start of each of the next $n$ time
-units is $$\ddot{a}_\angl{n} =  \frac{1 - v^n }{d}.$$*
+*Let* $i$ be the constant effective rate of interest per time unit. Show
+that the present value at time 0 of a level annuity due having cashflow
+of 1 unit at the start of each of the next $n$ time units is
+$$\ddot{a}_\angl{n} =  \frac{1 - v^n }{d}.$$
 :::
 
 **Solution:** The present values of the payments can be obtained by
@@ -716,8 +1233,7 @@ discounting $\ddot{a}_\angl{n}$ back to time 0, i.e. $$\begin{aligned}
             &=\frac{1 - v^n}{d}.\end{aligned}$$
 
 ::: {.example}
-*Given the effective rate of interest of $8\%$ p.a.,
-calculate*
+*Given the effective rate of interest of* $8\%$ p.a., calculate
 
 1.  *the accumulation at 12 years of ฿500 payable yearly in advance for
     the next 12 years.*
@@ -764,9 +1280,8 @@ $$\begin{aligned}
     &= v^m \cdot  a_\angl{n}.\end{aligned}$$
 
 ::: {.example}
-*Calculate the present value at time 0 of an annuity
-of 1 p.a. in arrears for 6 years and deferred for 10 at 6% effective
-rate p.a.*
+*Calculate the present value at time 0 of an annuity of 1 p.a. in
+arrears for 6 years and deferred for 10 at 6% effective rate p.a.*
 :::
 
 This is an annuity with 6 unit payments for which the first payment is
@@ -780,16 +1295,16 @@ $$\begin{aligned}
     &= 2.745808.\end{aligned}$$
 
 ::: {.example}
-*Give the reason or show that the present value of a
-series of $(n+m)$ payments of one unit payable at the end of each time
-period is equal to the sum of*
+*Give the reason or show that the present value of a series of* $(n+m)$
+payments of one unit payable at the end of each time period is equal to
+the sum of
 
-1.  *present value of $m$ payments of one units payable at the end of
-    each time period (denoted by $a_\angl{m}$) and*
+1.  *present value of* $m$ payments of one units payable at the end of
+    each time period (denoted by $a_\angl{m}$) and
 
-2.  *present value of $n$ payments of one units payable at the end of
+2.  *present value of* $n$ payments of one units payable at the end of
     each time period deferred for $m$ years (denoted by
-    $_{m \textbar}a_\angl{n}$).*
+    $_{m \textbar}a_\angl{n}$).
 :::
 
 **Solution:** The present value of a series of (m+n) payments is
@@ -808,9 +1323,9 @@ be evaluated by $$\sum_{i=1}^n X_i v^{t_i} = \sum_{i=1}^n i v^{t_i},$$
 where the $i$th payment of amount $X_i = i$ at time $t_i = i$.
 
 ::: {.example}
-*Derive the formula for the present value of a simple
-increasing annuity payable yearly in arrears with the effective rate
-$i\%$ p.a. for $n$ years.*
+*Derive the formula for the present value of a simple increasing annuity
+payable yearly in arrears with the effective rate* $i\%$ p.a. for $n$
+years.
 :::
 
 **Solution:** The cashflows of the simple increasing annuity payable
@@ -834,10 +1349,10 @@ The following example considers the value of compound increasing
 annuities where the payments increase by a constant factor each time.
 
 ::: {.example}
-*Assume that the effective rate of interest is 6% p.a.
-Calculate the present value as at 1 January 2010 of an annuity payable
-annually in arrears for 8 years. The first payment is ฿10 and subsequent
-payments increase by 2% per annum compound.*
+*Assume that the effective rate of interest is 6% p.a. Calculate the
+present value as at 1 January 2010 of an annuity payable annually in
+arrears for 8 years. The first payment is ฿10 and subsequent payments
+increase by 2% per annum compound.*
 :::
 
 **Solution:**
@@ -873,9 +1388,9 @@ $$s^{(m)i}_\angl{n}   = \frac{1}{m}  s^j_\angl{n\cdot m},$$ where $j$ is
 the effective rate per $1/m$ time unit.
 
 ::: {.example}
-*Calculate the accumulation at 1 January 2020 of an
-annuity of ฿100 per month, payable in arrears from 1 January 2010 at an
-effective rate of interest of 4% p.a.*
+*Calculate the accumulation at 1 January 2020 of an annuity of ฿100 per
+month, payable in arrears from 1 January 2010 at an effective rate of
+interest of 4% p.a.*
 :::
 
 **Solution:** The annual payment is 1200 and the effective rate per
@@ -883,8 +1398,7 @@ month equivalent to 4% p.a. is $j = (1.04)^{1/12} - 1 = 0.003274$ per
 month. Hence,
 $$1200 s^{(12)4\%}_\angl{10}   = 100  s^j_\angl{12\cdot 10} = 14669.59.$$
 
-Nominal Rates of Interest
--------------------------
+## Nominal Rates of Interest
 
 Nominal interest rates are the interest rates before taking inflation
 into account. They may also refer to the advertised (in bank accounts)
@@ -895,19 +1409,19 @@ assumed to be **one year**.
 -   **Effective rate of interest** is the interest $i$ paid at the end
     of the year on an amount ฿1 at the start of the year.
 
--   **Nominal interest rate payable $p$ times per period**, denoted by
+-   **Nominal interest rate payable** $p$ times per period, denoted by
     $i^{(p)}$ is an effective rate of interest of $i^{(p)}/p$ applied
     for each $p$th of a period. The interest is paid more frequently
     than once per measurement period.
 
 The nominal rate of interest payable $p$ times per period is also known
-as **the rate of interest convertible $p$thly or compounded $p$thly.**
+as **the rate of interest convertible** $p$thly or compounded $p$thly.
 
 ::: {.example}
-*A nominal rate of interest of $i^{(4)} = 10\%$ p.a.
-convertible quarterly means an interest rate of 10/4 = 2.5% per quarter
-effective. Calculate the accumulated value in 1 year of a payment of
-฿100 at the given nominal rate.*
+*A nominal rate of interest of* $i^{(4)} = 10\%$ p.a. convertible
+quarterly means an interest rate of 10/4 = 2.5% per quarter effective.
+Calculate the accumulated value in 1 year of a payment of ฿100 at the
+given nominal rate.
 :::
 
 **Solution:** When working with the nominal interest rate, the nominal
@@ -923,17 +1437,16 @@ p.a. effective)
 unit year.
 
 ::: {.example}
-*At a rate of 12% p.a. effective, draw a timeline to
-show cashflows if ฿100 is invested at the start of the year.*
+*At a rate of 12% p.a. effective, draw a timeline to show cashflows if
+฿100 is invested at the start of the year.*
 :::
 
 **Solution:** The accumulated value of ฿100 at the end of the year is
 $100 (1 + 12\%) = 112$.
 
 ::: {.example}
-*At a rate of 12% p.a. compounding quarterly, draw a
-time line to show cashflows if ฿100 is invested at the start of the
-year.*
+*At a rate of 12% p.a. compounding quarterly, draw a time line to show
+cashflows if ฿100 is invested at the start of the year.*
 :::
 
 **Solution:** The nominal interest rate $i^{(4)} = 12\%$ is equivalent
@@ -958,7 +1471,6 @@ $i$ p.a. and the nominal rate $i^{(m)}$ p.a.:
 $$( 1 + i) = \left( 1 + \frac{i^{(m)}}{m}\right)^m.$$
 
 ::: {.example}
-
 1.  *Express a nominal annual interest rate of 9% convertible
     half-yearly as a monthly effective interest.*
 
@@ -973,18 +1485,18 @@ $$( 1 + i) = \left( 1 + \frac{i^{(m)}}{m}\right)^m.$$
     $j = (1 + i)^{1/12} - 1 = ( 1 + \frac{0.09}{2})^{2/12} - 1 = 0.007363$.
 
 2.  A nominal annual interest rate convertible two-monthly is
-    $6 \cdot 3\%  = 18\%$.
+    $6 \cdot 3\% = 18\%$.
 
 ::: {.example}
-*Express each of the following effective rates per
-annum as a nominal rate, and vice versa.*
+*Express each of the following effective rates per annum as a nominal
+rate, and vice versa.*
 
-  ***Effective Rate***   ***Nominal Rate***
-  ---------------------- -------------------------
-  *$i$ = 0.04*           *$i^{(4)} = 0.039412$*
-  *$i$ = 0.10*           *$i^{(12)} = 0.095690$*
-  *$i$ = 0.06152*        *$i^{(2)} = 0.06$*
-  *$i$ = 0.126825*       *$i^{(12)} = 0.12$*
+| ***Effective Rate*** | ***Nominal Rate***    |
+|:---------------------|:----------------------|
+| $i$ = 0.04           | $i^{(4)} = 0.039412$  |
+| $i$ = 0.10           | $i^{(12)} = 0.095690$ |
+| $i$ = 0.06152        | $i^{(2)} = 0.06$      |
+| $i$ = 0.126825       | $i^{(12)} = 0.12$     |
 :::
 
 ### Nominal Rates of Discount
@@ -993,7 +1505,7 @@ The effective rate of discount per annum is $d = 1 -v$. It is the amount
 of interest payable at the start of the time unit which is equivalent to
 $i$ payable at the end of the time unit.
 
-**The nominal rate of discount payable $p$ times per period $d^{(m)}$**
+**The nominal rate of discount payable** $p$ times per period $d^{(m)}$
 (or convertible $p$thly or compounded $p$thly is interest of $d^{(m)}/m$
 paid at the start of each $1/m$ of a year.
 
@@ -1002,7 +1514,6 @@ nominal rate of discount payable $m$ times a year is
 $$1 - d = \left(1 - \frac{d^{(m)}}{m}\right)^m.$$
 
 ::: {.example}
-
 1.  *Express a nominal annual discount rate of 6% convertible
     half-yearly as an annual effective discount.*
 
@@ -1019,15 +1530,14 @@ $$1 - d = \left(1 - \frac{d^{(m)}}{m}\right)^m.$$
     satisfy the following equation. $$v =  1- d.$$ Hence the discount
     factor over half-year is $1 - 0.1 = 0.9$. The discount factor $v$
     for one year (or 2 half-year) is $$(1-0.1)^2 = 0.9^2 = 0.81.$$ It
-    follows that the discount rate per annum is $d =  1- 0.81 = 0.19$,
+    follows that the discount rate per annum is $d = 1- 0.81 = 0.19$,
     and the nominal annual discount rate convertible quarterly $d^{(4)}$
     is given by $$\begin{aligned}
          d^{(m)} &= m \cdot \left( 1-      (1 - d)^{1/m}  \right) \\
          d^{(4)} &= 4 \cdot \left( 1-      (1 - 0.19)^{1/4}  \right) = 0.205267.
         \end{aligned}$$
 
-Principle of Equivalence, Yields and Equation of Value
-------------------------------------------------------
+## Principle of Equivalence, Yields and Equation of Value
 
 The principle of equivalence is used to compare two different cashflows
 whether one is worth more than the other.
@@ -1064,9 +1574,9 @@ $t \in \mathbb{R}$ such that $$PV^C(t)  = PV^D(t).$$
     investor in return for a series of future cashflows.
 
 ::: {.example}
-*Calculate the maximum price an investor wish to pay
-in return for an investment that will pay ฿500 at the end of each of the
-next 15 months given that the interest rate is 0.2% per month.*
+*Calculate the maximum price an investor wish to pay in return for an
+investment that will pay ฿500 at the end of each of the next 15 months
+given that the interest rate is 0.2% per month.*
 :::
 
 The present value of these payments of 500 at the end of the next 15
@@ -1075,8 +1585,8 @@ $$PV(0) = 500 a^{0.002}_{\angl{15}} =  500 \cdot \left(  \frac{1 - (1.002)^{-15}
 Therefore, the investor would be willing to pay a maximum of 7381.35.
 
 ::: {.example}
-*Determine whether the following series of cashflows
-are equivalent given that an interest rate is 6% per annum effective.*
+*Determine whether the following series of cashflows are equivalent
+given that an interest rate is 6% per annum effective.*
 
 1.  *One single payment of amount 6,691.127888 at year 5.*
 
@@ -1089,7 +1599,7 @@ are equivalent given that an interest rate is 6% per annum effective.*
 
 **Solution:**
 
-1.  The present value is $6,691.127888 \times (1.06)^{-5}  = 5000$.
+1.  The present value is $6,691.127888 \times (1.06)^{-5} = 5000$.
 
 2.  The present value is
     $$300 a^{0.06}_{\angl{5}}   + 5000 \times (1.06)^{-5}  = 5000.$$
@@ -1143,21 +1653,21 @@ return, money-weighted rate of return**).
 2.  In most practice situations, there is a unique positive real root.
 
 ::: {.example}
-*An investor pays ฿1,000 in order to receive ฿600 back
-in 2 years and ฿800 back in 4 years. Calculate the annual effective rate
-of interest earned on this investment (or the yield on the investment).*
+*An investor pays ฿1,000 in order to receive ฿600 back in 2 years and
+฿800 back in 4 years. Calculate the annual effective rate of interest
+earned on this investment (or the yield on the investment).*
 :::
 
 **Solution:** The yield of the investment $i\%$ satisfies the equation
 of value $$PV_i(0) =  -1000 + 600(1+i)^{-2} + 800(1+i)^{-4} = 0.$$ To
-solve the equation for $i$, we define $z =  (1+i)^{-2}$, resulting in
+solve the equation for $i$, we define $z = (1+i)^{-2}$, resulting in
 $$8z^2 + 6z - 10 = 0.$$ Therefore $z = 0.804248$ and $i = 0.115078.$
 
-::: {.example #exampleYield}
-*An investor pays ฿1,000 in order to receive ฿300 back
-at the end of the first 2 years and ฿400 back at the end of the third,
-forth and fifth year. Calculate the annual effective rate of interest
-earned on this investment (or the yield on the investment).*
+::: {#exampleYield .example}
+*An investor pays ฿1,000 in order to receive ฿300 back at the end of the
+first 2 years and ฿400 back at the end of the third, forth and fifth
+year. Calculate the annual effective rate of interest earned on this
+investment (or the yield on the investment).*
 :::
 
 **Solution:** The yield of the investment $i\%$ p.a. satisfies the
@@ -1186,7 +1696,8 @@ that one can get a good approximation by taking values that are either
 side of the true value and about 1% apart.
 
 ::: {.example}
-*Approximate the yield of the transaction in Example \@ref(exm:exampleYield).*
+*Approximate the yield of the transaction in Example*
+\@ref(exm:exampleYield)*.*
 :::
 
 **Solution:** Here, When $i_1 = 0.21$, $P_1 = PV_{0.21}(0) = 19.448$ and
@@ -1195,8 +1706,7 @@ approximately equal to $$\begin{aligned}
  i &\approx 0.21 - (0.22 - 0.21) \left(  \frac{19.448}{-3.698 - 19.448} \right) \\
    &= 0.218402 \text{ p.a. effective.}\end{aligned}$$
 
-Loan schedules
---------------
+## Loan schedules
 
 In this section, we describe how a loan may be repaid. A schedule of
 repayment together with the interest and capital components of an
@@ -1223,22 +1733,21 @@ Each repayment must pay first for interest due and the remainder is used
 to repay some of the capital outstanding.
 
 ::: {.example}
-*You borrow ฿5,000 for a term of 3 years at a fixed
-interest rate of 10% pa. The loan is to be repaid by 3 level annual
-repayments of ฿2,010.57 at the end of each year. Calculate the interest
-content, capital content from each repayment and capital outstanding
-after such repayment.*
+*You borrow ฿5,000 for a term of 3 years at a fixed interest rate of 10%
+pa. The loan is to be repaid by 3 level annual repayments of ฿2,010.57
+at the end of each year. Calculate the interest content, capital content
+from each repayment and capital outstanding after such repayment.*
 :::
 
 **Note** The loan payments can be expressed in the form of a **Loan
 Schedule** as follows:
 
-   Time   Repayment   Intest content   Capital content   Capital outstanding
-  ------ ----------- ---------------- ----------------- ---------------------
-    0                                                           5000
-    1      2010.57         500             1510.57             3489.43
-    2      2010.57       348,943          1661.627             1827.80
-    3      2010.57       182.780           1827.79              0.01
+| Time | Repayment | Intest content | Capital content | Capital outstanding |
+|:----:|:---------:|:--------------:|:---------------:|:-------------------:|
+|  0   |           |                |                 |        5000         |
+|  1   |  2010.57  |      500       |     1510.57     |       3489.43       |
+|  2   |  2010.57  |    348,943     |    1661.627     |       1827.80       |
+|  3   |  2010.57  |    182.780     |     1827.79     |        0.01         |
 
 ### The loan schedule
 
@@ -1252,23 +1761,23 @@ A more general form of loan payments can be expressed as follows: Let
 -   $i$ be the effective rate of interest per time unit charged on the
     loan.
 
-     Time     Repayment   Intest content    Capital content            Capital outstanding
-  ---------- ----------- ---------------- -------------------- ------------------------------------
-      0                                                                       $L_0$
-      1         $X_1$         $iL_0$         $(X_1 - iL_0)$         $L_1 = L_0 - (X_1 - iL_0)$
-      2         $X_2$         $iL_1$         $(X_2 - iL_1)$         $L_2 = L_1 - (X_2 - iL_1)$
-   $\vdots$                                                    
-      t         $X_t$       $iL_{t-1}$     $(X_t - iL_{t-1})$   $L_t = L_{t-1} - (X_t - iL_{t-1})$
-   $\vdots$                                                    
-     $n$        $X_n$       $iL_{n-1}$     $(X_n - iL_{n-1})$                   0
+    | ime Rep  | ayment Int | est content Ca   | pital content          |        Capital outstanding         |
+    |----------|------------|------------------|:-----------------------|:----------------------------------:|
+    | 0        |            |                  |                        |               $L_0$                |
+    | 1 \$     | X_1\$      | $iL_0$ \$        | (X_1 - iL_0)\$         |     $L_1 = L_0 - (X_1 - iL_0)$     |
+    | 2 \$     | X_2\$      | $iL_1$ \$        | (X_2 - iL_1)\$         |     $L_2 = L_1 - (X_2 - iL_1)$     |
+    | $\vdots$ |            |                  |                        |                                    |
+    | t \$     | X_t\$ \$   | iL\_{t-1}\$ \$(X | *t - iL*{t-1})\$ \$L\_ | t = L\_{t-1} - (X_t - iL\_{t-1})\$ |
+    | $\vdots$ |            |                  |                        |                                    |
+    | n\$ \$   | X_n\$ \$   | iL\_{n-1}\$ \$(X | *n - iL*{n-1})\$       |                 0                  |
 
 **Note** The capital outstanding after the $k$th payment is
 $X a_{\angl{n-k}}$, which is the present value of future repayments.
 This holds even when the repayments and interest rates are not constant.
 
 ::: {.example}
-*A loan of ฿20,000 is repayable by equal monthly
-payments for 4 years, with interest rate payable at 10% pa effective.*
+*A loan of ฿20,000 is repayable by equal monthly payments for 4 years,
+with interest rate payable at 10% pa effective.*
 
 1.  *Calculate the amount of each monthly payment.*
 
@@ -1304,39 +1813,39 @@ The repayment amount will then need to be calculated according to the
 condition(s) as given in the change.
 
 ::: {.example}
-*A person takes out a loan of ฿100,000 to be repaid by
-level monthly instalments in arrears over 7 years where the bank charges
-an effective annual rate of interest of 6%*
+*A person takes out a loan of ฿100,000 to be repaid by level monthly
+instalments in arrears over 7 years where the bank charges an effective
+annual rate of interest of 6%*
 
 1.  *Calculate the monthly repayment **Solution:** Working in months, we
-    define $j\%$ per month effective equivalent to 6% pa effective.
+    define* $j\%$ per month effective equivalent to 6% pa effective.
     $$j = (1.06)^{(1/12)} - 1 = 0.007974.$$ The loan equation followed
     the equation of value is given by
     $$PV_j(0) = 100000 - X a^j_{\angl{84}} = 0$$ Solving for $X$ gives
-    $X =1453.25$.*
+    $X =1453.25$.
 
 2.  *Calculate the new repayment amount if the the term of loan can be
     extended by 1 year, immediately after the 60th repayment has been
-    made. **Solution:** The capital outstanding after 60th repayment =
+    made. **Solution:** The capital outstanding after 60th repayment =*
     $L_{60} = X a^j_{\angl{24}} = 32842.48.$ Now the remaining term
     becomes 3 years (or 36 months). The new repayment amount $X'$
     satisfies $$PV_j(0) = 32842.48 - X' a^j_{\angl{36}} = 0.$$ Solving
-    for $X'$ gives $X' = 996.77$.*
+    for $X'$ gives $X' = 996.77$.
 
 3.  *Instead of extending the term, the person had requested to miss the
     61st and 62nd repayments. Calculate the remaining installments.
     **Solution:** After missing the 61st and 62nd repayments, the
-    capital outstanding at time 62 =
+    capital outstanding at time 62 =*
     $L_{60}\cdot (1+j)^2 = 32842.48 (1.004868)^2 = 33162.99.$ Hence, the
-    remaining number of payments is 22.*
+    remaining number of payments is 22.
 
 4.  *Calculate the new repayment amount if the person repaid ฿10,000 at
     the time he made the 60th repayment together with the 60th
     repayment. **Solution:** The revised capital outstanding after
-    repayment of 10000 (the 60th repayment) is
+    repayment of 10000 (the 60th repayment) is*
     $32842.48 - 10000 = 22842.48.$ The new repayment amount $X''$
     satisfies $$PV_j(0) = 22842.48 - X'' a^j_{\angl{24}} = 0.$$ Solving
-    for $X''$ gives $X'' = 1010.76$.*
+    for $X''$ gives $X'' = 1010.76$.
 :::
 
 ### Changing the interest rate
@@ -1352,10 +1861,10 @@ reasons for varying rates of interest could be the following:
     conditions.
 
 ::: {.example}
-*You borrow ฿20,000 for a term of 20 years to be
-repaid by level annual instalments. The rate of interest will be 7% pa
-effective for the first 10 years and 8% pa effective thereafter.
-Calculate the annual repayment.*
+*You borrow ฿20,000 for a term of 20 years to be repaid by level annual
+instalments. The rate of interest will be 7% pa effective for the first
+10 years and 8% pa effective thereafter. Calculate the annual
+repayment.*
 :::
 
 **Solution:** Let $X$ be the annual repayment. Using an equation of
@@ -1364,11 +1873,10 @@ $$20000 = X a^{7\%}_{\angl{10}} + (1.07)^{-10} X a^{8\%}_{\angl{10}}.$$
 Then solving for $X$ gives $X = 1916.69$.
 
 ::: {.example}
-*You borrow ฿20,000 for a term of 15 years to be
-repaid by level annual instalments where the bank charges an effective
-annual rate of interest of 6%. After the 10th repayment has been made,
-the bank raises the interest rate to 6.5% pa effective. Calculate the
-new repayment amount.*
+*You borrow ฿20,000 for a term of 15 years to be repaid by level annual
+instalments where the bank charges an effective annual rate of interest
+of 6%. After the 10th repayment has been made, the bank raises the
+interest rate to 6.5% pa effective. Calculate the new repayment amount.*
 :::
 
 **Solution:** The annual repayment $X$ **for a term of 15 years** before
@@ -1381,11 +1889,9 @@ adjustment of the interest rate, the new repayment amount $X'$ satisfies
 satisfies $$PV_{6.5\%}(0) = 8674.332 - X' a^{6.5\%}_{\angl{5}} = 0.$$
 Solving for $X'$ gives $X' = 2087.34$.
 
-Bonds and Inflation
-===================
+# Bonds and Inflation
 
-Bonds
-------------
+## Bonds
 
 A government or corporation can raise money in the capital markets by
 issuing *fixed interest securities (FIS)*, also called *bonds*. Bonds
@@ -1395,7 +1901,6 @@ This means that investors will lend money to the issuer (for e.g. the
 government or coporation) and in return will receive fixed interest
 payments known as *coupons* at fixed dates plus repayment of the loan at
 the end of the term.
-
 
 **Note** The loan is usually split into smaller units that can be traded
 on a stock exchange. For example, a company raises ฿1,000,000,000 by
@@ -1440,27 +1945,27 @@ be bought and sold on a stock exchange.
     and lender.
 
 ::: {.example}
-*Each bond of ฿100 nominal value carries coupons of 6%
-pa payable half-yearly.*
+*Each bond of ฿100 nominal value carries coupons of 6% pa payable
+half-yearly.*
 :::
-**Solution:** The coupon rate of 6% pa payable half-yearly means that bondholders will receive
+
+**Solution:** The coupon rate of 6% pa payable half-yearly means that
+bondholders will receive
 $$ \frac{6\%}{2} \times 100 = ฿ 3 \text{ every half-year}.$$
 
-
-
 ::: {.example}
-*An investor purchases ฿95 for a 5-year fixed interest
-bond with face value (or nominal amount of) ฿100. The bond pays coupon
-of 6% pa half-yearly in arrear and the lump sum equal to the nominal
-amount in 5 years' time. The cashflows related to the payments of the
-bond can be shown as follows:*
+*An investor purchases ฿95 for a 5-year fixed interest bond with face
+value (or nominal amount of) ฿100. The bond pays coupon of 6% pa
+half-yearly in arrear and the lump sum equal to the nominal amount in 5
+years' time. The cashflows related to the payments of the bond can be
+shown as follows:*
 :::
-**Solution:**  Cashflows are given in the following table.
 
-Time (year) | 0 | 0.5 | 1 | 1.5 | $\ldots$ | 5  
-:-:  | :-:  | :-:  | :-:  | :-:  | :-:  | :-:  
-Cashflow | -95 | 3 | 3 | 3 | $\ldots$ | $3 + 100$
+**Solution:** Cashflows are given in the following table.
 
+| Time (year) |  0  | 0.5 |  1  | 1.5 | $\ldots$ |     5     |
+|:-----------:|:---:|:---:|:---:|:---:|:--------:|:---------:|
+|  Cashflow   | -95 |  3  |  3  |  3  | $\ldots$ | $3 + 100$ |
 
 Examples of bonds include
 
@@ -1473,15 +1978,16 @@ Examples of bonds include
 -   debenture bonds issued by corporations.
 
 ::: {#exampleBondPrice .example}
-*A company issues a 10-year bond, to be redeemed at
-102%, with coupon of 6% pa payable half-yearly in arrears. The nominal
-amount of each bond is ฿100. What repayments are made?*
+*A company issues a 10-year bond, to be redeemed at 102%, with coupon of
+6% pa payable half-yearly in arrears. The nominal amount of each bond is
+฿100. What repayments are made?*
 :::
-**Solution:**  Cashflows are given in the following table.
 
-Time (year) | 0 | 0.5 | 1 | 1.5 | $\ldots$ |  9.5  | 10  
-:-:  | :-:  | :-:  | :-:  | :-:  | :-:  | :-: | :-: 
-Cashflow | $P$  | 3 | 3 | 3 | $\ldots$ | $3$ |  $3 + 102$
+**Solution:** Cashflows are given in the following table.
+
+| Time (year) |  0  | 0.5 |  1  | 1.5 | $\ldots$ | 9.5 |    10     |
+|:-----------:|:---:|:---:|:---:|:---:|:--------:|:---:|:---------:|
+|  Cashflow   | $P$ |  3  |  3  |  3  | $\ldots$ | $3$ | $3 + 102$ |
 
 Here the bond price in the table above is denoted by $P$.
 
@@ -1499,22 +2005,22 @@ Given a yield $i\%$, the price of a bond can be computed by discounting
 all the future payments received net of any tax.
 
 ::: {#exampleBondPrice2 .example}
-*A tax-exempt investor buy the bond in Example \@ref(exm:exampleBondPrice) on its issue date. Calculate the price the
+*A tax-exempt investor buy the bond in Example*
+\@ref(exm:exampleBondPrice) *on its issue date. Calculate the price the
 investor should pay to obtain a yield of 9%.*
 :::
-**Solution:**
-Appplying the Principle of Equivalence: by equate the present value of the future incomes at 9\% with the unknown price $P$.
 
-$$P = \frac{6}{2} a^j_{\angl{20}} + 102 (\frac{1}{1.09})^{20},$$
-where $j = (1.09)^{(1/2)} - 1 = 0.044031.$
-This gives $P = 82.44$. It should be emphasised that the price in this example differs from the nominal amount of 100.
+**Solution:** Appplying the Principle of Equivalence: by equate the
+present value of the future incomes at 9% with the unknown price $P$.
 
-
+$$P = \frac{6}{2} a^j_{\angl{20}} + 102 (\frac{1}{1.09})^{20},$$ where
+$j = (1.09)^{(1/2)} - 1 = 0.044031.$ This gives $P = 82.44$. It should
+be emphasised that the price in this example differs from the nominal
+amount of 100.
 
 ::: {.example}
-*Refer to Examples
-\@ref(exm:exampleBondPrice) and
-\@ref(exm:exampleBondPrice2). After the 10th coupon has been paid, the
+*Refer to Examples* \@ref(exm:exampleBondPrice) *and*
+\@ref(exm:exampleBondPrice2)*. After the 10th coupon has been paid, the
 investor sells the bond. At that time the market yield on comparable
 5-year bonds is 7% pa effective.*
 
@@ -1527,32 +2033,32 @@ investor sells the bond. At that time the market yield on comparable
 
 **Solution:**
 
-1. The remaining payments are shown in the table below.
+1.  The remaining payments are shown in the table below.
 
-Time (half-year) | 10 | 11 | 12 | 13 | $\ldots$ |  19  | 20  
-:-:  | :-:  | :-:  | :-:  | :-:  | :-:  | :-: | :-: 
-Cashflow | $-$ | 3 | 3 | 3 | $\ldots$ | $3$ |  $3 + 102$
+| Time (half-year) | 10  | 11  | 12  | 13  | $\ldots$ | 19  |    20     |
+|:----------------:|:---:|:---:|:---:|:---:|:--------:|:---:|:---------:|
+|     Cashflow     | $-$ |  3  |  3  |  3  | $\ldots$ | $3$ | $3 + 102$ |
 
-Working in unit of half-year, we first calculate the effective rate per half-year, denoted by $k$, that is equivalent to $i = 7\%$.
+Working in unit of half-year, we first calculate the effective rate per
+half-year, denoted by $k$, that is equivalent to $i = 7\%$.
 
 $$ k = (1.07)^{(1/2)} - 1 = 0.034408. $$
 
 The price $P'$ that he will obtain follows from the following equation.
 $$P' = 3 a^k_{\angl{10}} + 102 (\frac{1}{1.07})^{5} = 97.75.$$
 
-2. The payments of the investor are shown in the table below.
+2.  The payments of the investor are shown in the table below.
 
-Time (half-year) | 0 | 1 | 2 | 3 | $\ldots$ |  9  | 10  
-:-:  | :-:  | :-:  | :-:  | :-:  | :-:  | :-: | :-: 
-Cashflow | -82.44 | 3 | 3 | 3 | $\ldots$ | $3$ |  $3 + 97.75$
+| Time (half-year) |   0    |  1  |  2  |  3  | $\ldots$ |  9  |     10      |
+|:----------------:|:------:|:---:|:---:|:---:|:--------:|:---:|:-----------:|
+|     Cashflow     | -82.44 |  3  |  3  |  3  | $\ldots$ | $3$ | $3 + 97.75$ |
 
-Let $i$ denote the yield (per half-year) that the first investor obtains.
-Working at time 10, the equation of value of the cashflows is 
-$$ f(i) = 82.44 (1+i)^{10} - 3 s^i_{\angl{10}} - 97.75 = 0.$$
-By linear interpolation, we have
-$$ f(0.05) = -1.1976, \quad f(0.06) = 10.3451, $$
-and hence, the approximate of $i$ is $i^* \approx 0.051038$. The annual yield is then approximately equal to $(1 + 0.051038)^2 - 1 = 10.468\%$ 
-
+Let $i$ denote the yield (per half-year) that the first investor
+obtains. Working at time 10, the equation of value of the cashflows is
+$$ f(i) = 82.44 (1+i)^{10} - 3 s^i_{\angl{10}} - 97.75 = 0.$$ By linear
+interpolation, we have $$ f(0.05) = -1.1976, \quad f(0.06) = 10.3451, $$
+and hence, the approximate of $i$ is $i^* \approx 0.051038$. The annual
+yield is then approximately equal to $(1 + 0.051038)^2 - 1 = 10.468\%$
 
 **Notes**
 
@@ -1601,7 +2107,6 @@ example a period of half a year as shown in the previous examples. Then
 the formula can be written as
 $$P = \frac{D}{2} a_{\angl{2n}} + R v^{2n}$$
 
-
 ### Income tax
 
 Suppose an investor is subject to income tax at rate $t_1$ on the
@@ -1613,25 +2118,25 @@ $$P = (1 - t_1) D a_{\angln}^{(p)} + R v^n$$ at rate $i$ per annum. Here
 the rate is called the *net yield*.
 
 ::: {.example}
-*An investor liable to income tax at 30% buys a 15-year
-fixed interest bond which is redeemable at par and pays coupons of 8% pa
-half-yearly in arrear. Calculate the price the investor should pay to
-obtain a net yield of 9% pa.*
+*An investor liable to income tax at 30% buys a 15-year fixed interest
+bond which is redeemable at par and pays coupons of 8% pa half-yearly in
+arrear. Calculate the price the investor should pay to obtain a net
+yield of 9% pa.*
 :::
-**Solution:** Coupon payments after tax are 
-  $$ (1 - t_1) D = (1 - 0.3) \frac{8\%}{2} \times 100 = 2.8.$$
+
+**Solution:** Coupon payments after tax are
+$$ (1 - t_1) D = (1 - 0.3) \frac{8\%}{2} \times 100 = 2.8.$$
 
 The payments of the investor are shown in the table below.
 
-Time (half-year) | 0 | 1 | 2 | 3 | $\ldots$ |  29  | 30  
-:-:  | :-:  | :-:  | :-:  | :-:  | :-:  | :-: | :-: 
-Cashflow | $P$ | 2.8 | 2.8 | 2.8 | $\ldots$ | 2.8 |  $2.8 + 100$
+| Time (half-year) |  0  |  1  |  2  |  3  | $\ldots$ | 29  |     30      |
+|:----------------:|:---:|:---:|:---:|:---:|:--------:|:---:|:-----------:|
+|     Cashflow     | $P$ | 2.8 | 2.8 | 2.8 | $\ldots$ | 2.8 | $2.8 + 100$ |
 
-
-The price the investor should pay to obtain a net yield of 9% pa can be calculated from
-$$P = 2.8 a^j_{\angl{30}} + 100 (\frac{1}{1+j})^{30} = 73.59,$$
-where where $j = (1.09)^{(1/2)} - 1 = 0.044031$ per half-year effective.
-
+The price the investor should pay to obtain a net yield of 9% pa can be
+calculated from
+$$P = 2.8 a^j_{\angl{30}} + 100 (\frac{1}{1+j})^{30} = 73.59,$$ where
+where $j = (1.09)^{(1/2)} - 1 = 0.044031$ per half-year effective.
 
 ### Capital gains tax (CGT)
 
@@ -1639,11 +2144,13 @@ Capital gains tax is a tax levied on the capital gain made on the
 redemption of a bond (or the sale of the bond if sold earlier). The
 capital gain is simply the difference between
 
-Note that **capital gain** refers to an increase in a capital asset's value and is considered to be realized when the asset is sold. A **capital loss** is incurred when there is a decrease in the capital asset value compared to an asset's purchase price.
+Note that **capital gain** refers to an increase in a capital asset's
+value and is considered to be realized when the asset is sold. A
+**capital loss** is incurred when there is a decrease in the capital
+asset value compared to an asset's purchase price.
 
 ::: {.example}
-*An investor liable to the capital gains tax at 20%
-purchases two bonds*
+*An investor liable to the capital gains tax at 20% purchases two bonds*
 
 -   *Bond A for the price of ฿102 and*
 
@@ -1652,15 +2159,18 @@ purchases two bonds*
 *Calculate the capital gains tax on each bond if the investor sells them
 both one year later for ฿100 each.*
 :::
+
 **Solution:**
 
--   Bond A: Tax payment is $0.2 \times \max\{100 - 102,0 \} = 0$ (i.e. capital loss)
+-   Bond A: Tax payment is $0.2 \times \max\{100 - 102,0 \} = 0$ (i.e.
+    capital loss)
 
--   Bond B: Tax payment is $0.2 \times \max\{100 - 98,0 \} = 0.4$ (i.e. capital gain)
+-   Bond B: Tax payment is $0.2 \times \max\{100 - 98,0 \} = 0.4$ (i.e.
+    capital gain)
 
-Here we assume that no 'relief', i.e. we cannot add the two bonds together and say we bought the two bonds for ฿200 and sold the bonds for ฿200.
-
-
+Here we assume that no 'relief', i.e. we cannot add the two bonds
+together and say we bought the two bonds for ฿200 and sold the bonds for
+฿200.
 
 **Notes**
 
@@ -1676,63 +2186,73 @@ Here we assume that no 'relief', i.e. we cannot add the two bonds together and s
     determine whether CGT is payable.
 
 ::: {.example}
-*An investor liable to the capital gains tax at 20%
-purchases a 10-year bond with an annual coupon of 8% pa payable yearly
-in arrear, to be redeemed at par.*
+*An investor liable to the capital gains tax at 20% purchases a 10-year
+bond with an annual coupon of 8% pa payable yearly in arrear, to be
+redeemed at par.*
 
 1.  *Calculate the redemption yield the investor obtain if the price is
     ฿96 per ฿100 nominal.*
 
 2.  *What price should the investor pay to obtain a yield of 7% pa
     effective?* (see note below)
-    
-3.  *What price should the investor pay to obtain a yield of 9% pa effective?*   
-:::
 
+3.  *What price should the investor pay to obtain a yield of 9% pa
+    effective?*\
+:::
 
 **Solution:**
 
-1. The bond is redeemed at par. Therefore, the redemption amount is 100 THB which is greater than the bond price, and the capital gain tax is **payable**.
+1.  The bond is redeemed at par. Therefore, the redemption amount is 100
+    THB which is greater than the bond price, and the capital gain tax
+    is **payable**.
 
 The payments of the investor are shown in the table below.
 
-Time (year) | 0 | 1 | 2 | 3 | $\ldots$ |  9  | 10  
-:-:  | :-:  | :-:  | :-:  | :-:  | :-:  | :-: | :-: 
-Cashflow | -96 | 8 | 8 | 8 | $\ldots$ | 8 |  8 + 100 - 0.2(100 - 96)
+| Time (year) |  0  |  1  |  2  |  3  | $\ldots$ |  9  |           10            |
+|:-----------:|:---:|:---:|:---:|:---:|:--------:|:---:|:-----------------------:|
+|  Cashflow   | -96 |  8  |  8  |  8  | $\ldots$ |  8  | 8 + 100 - 0.2(100 - 96) |
 
 Let $i$ denote the yield per year that the first investor obtains.
-Working at time 10, the equation of value of the cashflows is 
-$$ f(i) =  -96 (1+i)^{10} + 8 s^i_{\angl{10}} +  99.2 = 0.$$
-By linear interpolation, we have
-$$ f(0.08) = 7.836, \quad f(0.09) = -6.523, $$
+Working at time 10, the equation of value of the cashflows is
+$$ f(i) =  -96 (1+i)^{10} + 8 s^i_{\angl{10}} +  99.2 = 0.$$ By linear
+interpolation, we have $$ f(0.08) = 7.836, \quad f(0.09) = -6.523, $$
 and hence, the approximate of $i$ is $i^* \approx 0.08546 = 8.546\%$.
 
-2. We know that $P = 96$ is equivalent to yield approximately equal to $8.546\%$. 
+2.  We know that $P = 96$ is equivalent to yield approximately equal to
+    $8.546\%$.
 
-To obtain a yield of $7\%$, this should imply that $P > 96$. If $P \ge R = 100$, no CGT is payable. This would change the equation we need to calculate the bond price. Two cases to be considered are 
+To obtain a yield of $7\%$, this should imply that $P > 96$. If
+$P \ge R = 100$, no CGT is payable. This would change the equation we
+need to calculate the bond price. Two cases to be considered are
 
-* **CGT is payable:** The equation of value is
-$$ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%$$
+-   **CGT is payable:** The equation of value is
+    $$ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%$$
 
-* **CGT is not payable:** The equation of value is
-$$ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%$$
+-   **CGT is not payable:** The equation of value is
+    $$ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%$$
 
-**Note** In this example, we can guess whether CGT is payable because we have calculated the price to yield 8.546\% from the above question. Then we can use the appropriate equation to calculate the bond price and check whether or not our initial guess was correct.
+**Note** In this example, we can guess whether CGT is payable because we
+have calculated the price to yield 8.546% from the above question. Then
+we can use the appropriate equation to calculate the bond price and
+check whether or not our initial guess was correct.
 
-According to the note, let us guess that $P > 100$, i.e. CGT is **not** payable.
+According to the note, let us guess that $P > 100$, i.e. CGT is **not**
+payable.
 
-$$ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%,$$
-which implies that $P = 107.02 > 100$. So our initial guess was correct and CGT is **not** payable.
+$$ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%,$$ which
+implies that $P = 107.02 > 100$. So our initial guess was correct and
+CGT is **not** payable.
 
-3. Here $9\% > 8.546\%$. Let us guess that $P < 100$, i.e. CGT is payable.
-$$ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%,$$
-which implies that $P = 92.99 < 100$. So our initial guess was correct and CGT is payable.
+3.  Here $9\% > 8.546\%$. Let us guess that $P < 100$, i.e. CGT is
+    payable.
+    $$ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%,$$
+    which implies that $P = 92.99 < 100$. So our initial guess was
+    correct and CGT is payable.
 
-**Note** The algorithm to test whether CGT will be payable will be discussed elsewhere in the course "Theory of Interest".  
+**Note** The algorithm to test whether CGT will be payable will be
+discussed elsewhere in the course "Theory of Interest".
 
-
-Inflation
----------
+## Inflation
 
 Inflation is a measure of the rate of change in the price of consumer
 goods and services, such as food and beverages, transportation and
@@ -1755,9 +2275,8 @@ satisfies $$(1 + \bar{q})^{t-s} = \frac{Q(t)}{Q(s)},$$ and hence
 $$\bar{q} = \left( \frac{Q(t)}{Q(s)}  \right)^{1/(t-s)} - 1.$$
 
 ::: {.example}
-*A set of goods costs ฿98.25 in January 2013 and
-฿101.44 in January 2018. Calculate the average inflation rate $\bar{q}$
-over this period.*
+*A set of goods costs ฿98.25 in January 2013 and ฿101.44 in January
+2018. Calculate the average inflation rate* $\bar{q}$ over this period.
 :::
 
 **Solution:** The increase from Jan 2013 to Jan 2018 (5 years) is
@@ -1768,29 +2287,25 @@ $\bar{q} = 0.64\%$.
 Therefore, ฿1 in January 2013 buys as much as ฿1.032 in January 2018.
 
 The following table shows the monthly consumer price indices from
-January 2011 to December 2019. Source:
-http://www.price.moc.go.th/ 
+January 2011 to December 2019. Source: <http://www.price.moc.go.th/>
 
+| Year | 1      | 2      | 3      | 4      | 5      | 6      | 7      | 8      | 9      | 10     | 11     | 12     |
+|------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 2011 | 91.93  | 92.3   | 92.75  | 94.03  | 94.35  | 94.47  | 94.64  | 95.05  | 94.73  | 94.91  | 95.12  | 94.66  |
+| 2012 | 95.03  | 95.38  | 95.95  | 96.35  | 96.73  | 96.89  | 97.22  | 97.61  | 97.93  | 98.06  | 97.71  | 98.09  |
+| 2013 | 98.25  | 98.46  | 98.52  | 98.68  | 98.92  | 99.07  | 99.17  | 99.16  | 99.32  | 99.49  | 99.59  | 99.73  |
+| 2014 | 100.15 | 100.39 | 100.6  | 101.1  | 101.51 | 101.4  | 101.32 | 101.23 | 101.06 | 100.96 | 100.84 | 100.33 |
+| 2015 | 99.74  | 99.86  | 100.03 | 100.05 | 100.22 | 100.32 | 100.25 | 100.03 | 99.98  | 100.18 | 99.86  | 99.47  |
+| 2016 | 99.21  | 99.36  | 99.57  | 100.11 | 100.68 | 100.71 | 100.36 | 100.32 | 100.36 | 100.52 | 100.46 | 100.59 |
+| 2017 | 100.75 | 100.79 | 100.33 | 100.49 | 100.64 | 100.66 | 100.53 | 100.64 | 101.22 | 101.38 | 101.45 | 101.37 |
+| 2018 | 101.44 | 101.21 | 101.12 | 101.57 | 102.14 | 102.05 | 102.00 | 102.27 | 102.57 | 102.63 | 102.40 | 101.73 |
+| 2019 | 101.71 | 101.95 | 102.37 | 102.82 | 103.31 | 102.94 | 103.00 | 102.80 | 102.90 | 102.74 | 102.61 | 102.62 |
 
-Table: (\#tab:tableCPI) The monthly consumer price indices from
-January 2011 to December 2019.
-
-
-  Year | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 
----|---|---|---|---|---|---|---|---|---|---|---|---
-2011 | 91.93 | 92.3 | 92.75 | 94.03 | 94.35 | 94.47 | 94.64 | 95.05 | 94.73 | 94.91 | 95.12 | 94.66
-2012 | 95.03 | 95.38 | 95.95 | 96.35 | 96.73 | 96.89 | 97.22 | 97.61 | 97.93 | 98.06 | 97.71 | 98.09
-2013 | 98.25 | 98.46 | 98.52 | 98.68 | 98.92 | 99.07 | 99.17 | 99.16 | 99.32 | 99.49 | 99.59 | 99.73
-2014 | 100.15 | 100.39 | 100.6 | 101.1 | 101.51 | 101.4 | 101.32 | 101.23 | 101.06 | 100.96 | 100.84 | 100.33
-2015 | 99.74 | 99.86 | 100.03 | 100.05 | 100.22 | 100.32 | 100.25 | 100.03 | 99.98 | 100.18 | 99.86 | 99.47
-2016 | 99.21 | 99.36 | 99.57 | 100.11 | 100.68 | 100.71 | 100.36 | 100.32 | 100.36 | 100.52 | 100.46 | 100.59
-2017 | 100.75 | 100.79 | 100.33 | 100.49 | 100.64 | 100.66 | 100.53 | 100.64 | 101.22 | 101.38 | 101.45 | 101.37
-2018 | 101.44 | 101.21 | 101.12 | 101.57  | 102.14 | 102.05 | 102.00  | 102.27  | 102.57  | 102.63  | 102.40  | 101.73 
-2019 | 101.71 | 101.95 | 102.37 | 102.82 | 103.31 | 102.94 | 103.00 | 102.80 | 102.90 | 102.74 | 102.61 | 102.62  
-
-
-Figure \@ref(fig:figCPI) shows the monthly consumer price indices from January 2011
+: (\#tab:tableCPI) The monthly consumer price indices from January 2011
 to December 2019.
+
+Figure \@ref(fig:figCPI) shows the monthly consumer price indices from
+January 2011 to December 2019.
 
 ```{r, include=FALSE}
 
@@ -1814,24 +2329,22 @@ dat <- dat %>% mutate(JAN = as.numeric(JAN)) %>% pivot_longer(cols = JAN:DEC, na
 ggplot(dat,aes(x = Date, y = CPI)) + geom_point()
 ```
 
-
-
 ::: {.example}
-*An investment contract made on January 2018 promises
-to pay an investor of ฿10,000 in 5 years' time. Assume the average
-inflation rate at $\bar{q} = 0.64\%$ for the next 5 years.*
+*An investment contract made on January 2018 promises to pay an investor
+of ฿10,000 in 5 years' time. Assume the average inflation rate at*
+$\bar{q} = 0.64\%$ for the next 5 years.
 
 *If a bowl of noodles costs ฿100 in 2018, then ฿10,000 could buy 100
 bowls. How many bowls of noodles would the payment of ฿10,000 buy in the
 next 5 years?*
 
-***Solution:** In Jan 2018, ฿100 buys as much as $100 (1.0064)^5 =$
-฿103.2 in Jan 2023.*
+***Solution:** In Jan 2018, ฿100 buys as much as* $100 (1.0064)^5 =$
+฿103.2 in Jan 2023.
 
-*So ฿10000 in Jan 2023 could buy
+*So ฿10000 in Jan 2023 could buy*
 $$\frac{10000}{103.2} \approx 96 \text{ bowls}.$$ Notice that we divide
 by $(1 + \bar{q})^5$ to calculate how much your money is worth at the
-end of the next five years.*
+end of the next five years.
 
 -   *The quantity of goods that can be bought with 10,000 in January
     2023 reduces from 100 to 96 bowls.*
@@ -1845,18 +2358,18 @@ end of the next five years.*
     change hands.*
 
 -   *The **real payment of ฿10,000 (due at time 5 years) in time 0
-    unit** is $$\begin{aligned}
+    unit** is* $$\begin{aligned}
     10000 \frac{Q(0)}{Q(5)} &=  10000  \frac{1}{(1.0064)^5} \\
                              &=  9686.05.\end{aligned}$$ Here we have
     less purchasing power with your money at the end of the five years
-    than you had at the start of the year.*
+    than you had at the start of the year.
 
 -   *The real payment (in time 0) is the purchase power of 10,000 paid
     in 5 years relative to today. **It is the amount of cash in hand at
     the end of the period reduced for the effects of inflation**.*
 
--   *In general, ฿X at time $t$ has the purchasing power relative to
-    time $s$ of $$X \cdot \frac{Q(s)}{Q(t)}.$$*
+-   *In general, ฿X at time* $t$ has the purchasing power relative to
+    time $s$ of $$X \cdot \frac{Q(s)}{Q(t)}.$$
 :::
 
 ### Real rates of interest
@@ -1867,11 +2380,10 @@ called a **money (or monetary or nominal) rate of interest**.
 The **real rate of interest** is calculated using real payments.
 
 ::: {.example}
-*An investor deposits 100 at time 0 and receives 120
-after one year.*
+*An investor deposits 100 at time 0 and receives 120 after one year.*
 
--   *The monetary rate of interest effective is
-    $$\frac{120}{100} - 1 = 20\%.$$*
+-   *The monetary rate of interest effective is*
+    $$\frac{120}{100} - 1 = 20\%.$$
 
 -   *Suppose that the inflation rate over this one year period is 4%.
     Calculate the real payment of 120 at time 1 and the real rate of
@@ -1883,16 +2395,16 @@ after one year.*
         by*
 
         *Here, the real payment of 120 due in 1 year in terms of time 0
-        unit is $\displaystyle{120 \cdot \frac{1}{1.04} = 115.38}$.
-        Hence the real rate of interest is 15.38%.*
+        unit is* $\displaystyle{120 \cdot \frac{1}{1.04} = 115.38}$.
+        Hence the real rate of interest is 15.38%.
 
     -   *In term of time 1 money unit, the transaction is represented
         by*
 
         *Similarly, we instead calculate the real payment of 100
-        relative to time 1, which gives $100 \cdot 1.04 = 104$. The real
-        rate of interest is $$\frac{120}{104} - 1 = 15.38\%,$$ which is
-        the same as the previous case.*
+        relative to time 1, which gives* $100 \cdot 1.04 = 104$. The
+        real rate of interest is $$\frac{120}{104} - 1 = 15.38\%,$$
+        which is the same as the previous case.
 :::
 
 ### Real yields
@@ -1904,15 +2416,15 @@ be obtained by expressing payments in units of the same purchasing power
 **at some specific date**.
 
 ::: {.example}
-*A 5-year bond with nominal value of ฿100 was issued
-in January 2013. The coupon rate was 8% p.a. payable yearly in arrears.
-Redemption was at par after 5 years. The bond was issued at 100%.
-Calculate the yield to a non-tax paying investor*
+*A 5-year bond with nominal value of ฿100 was issued in January 2013.
+The coupon rate was 8% p.a. payable yearly in arrears. Redemption was at
+par after 5 years. The bond was issued at 100%. Calculate the yield to a
+non-tax paying investor*
 
 1.  *in monetary terms **Solution:***
 
-    *The transaction together with the inflation indices $Q(t)$ at time
-    $t$ is shown as follows:*
+    *The transaction together with the inflation indices* $Q(t)$ at time
+    $t$ is shown as follows:
 
     *Clearly, the monetary rate of return on this transaction is 8%.
     This is because the investor receives the interest payment of ฿8 at
@@ -1920,28 +2432,44 @@ Calculate the yield to a non-tax paying investor*
     five years.*
 
     *Alternatively, one can solve for the monetary rate of return from
-    the following equation of value
-    $$f(i) = -100 + 8 a^i_{\actuarialangle{5}} + 100\frac{1}{(1+i)^5} = 0.$$*
+    the following equation of value*
+    $$f(i) = -100 + 8 a^i_{\actuarialangle{5}} + 100\frac{1}{(1+i)^5} = 0.$$
 
 2.  *in real terms with reference to the CPI.*
 
     *Taking into account of the inflation rates, we calculate the real
     payment in term of time 0 unit by dividing the monetary amounts by
-    the **proportional** increase in the inflation index from 0 to $t$.*
+    the **proportional** increase in the inflation index from 0 to* $t$.
 
-  Time | 0 | 1 | 2 | 3 | 4 | 5 
-  :-: | :-: | :-: | :-: | :-: | :-: | :-: 
-  Year | 2013 | 2014 | 2015 | 2016 | 2017 | 2018 
-  Cashflow | -100 | 8 | 8 | 8 | 8 | 8 + 100
-  CPI | 98.25 | 100.15 | 99.74 | 99.21 | 100.75 | 101.44
-  Real value of cashflow at $t = 0$ | -100 | $\frac{(8)(98.25)}{100.15}$ | $\frac{(8)(98.25)}{99.74}$ | $\frac{(8)(98.25)}{99.21}$ | $\frac{(8)(98.25)}{100.75}$  | $\frac{(8)(98.25)}{101.44}$
-  Real value of cashflow at $t = 0$   | -100 | = 7.85 | = 7.88 | = 7.91 | = 7.80 | = 104.60 
++---------+---------+---------+---------+---------+---------+---------+
+| Time    | 0       | 1       | 2       | 3       | 4       | 5       |
++:=======:+:=======:+:=======:+:=======:+:=======:+:=======:+:=======:+
+| Year    | 2013    | 2014    | 2015    | 2016    | 2017    | 2018    |
++---------+---------+---------+---------+---------+---------+---------+
+| C       | -100    | 8       | 8       | 8       | 8       | 8 + 100 |
+| ashflow |         |         |         |         |         |         |
++---------+---------+---------+---------+---------+---------+---------+
+| CPI     | 98.25   | 100.15  | 99.74   | 99.21   | 100.75  | 101.44  |
++---------+---------+---------+---------+---------+---------+---------+
+| Real    | -100    | $\      | \$ \fra | \$ \fra | $\      | $\      |
+| value   |         | fr      | c{      | c{      | fr      | fr      |
+| of c    |         | ac {( 8 | (8)(9 8 | (8)(9 8 | ac {( 8 | ac {( 8 |
+| ashflow |         | )(98 .  | .25)}{  | .25)}{  | )(98 .  | )(98 .  |
+| at      |         | 25)}{1  | 9       | 9       | 25)}{1  | 25)}{1  |
+| $t = 0$ |         | 00.15}$ | 9.74}\$ | 9.21}\$ | 00.75}$ | 01.44}$ |
++---------+---------+---------+---------+---------+---------+---------+
+| Real    | -100    | = 7.85  | = 7.88  | = 7.91  | = 7.80  | =       |
+| value   |         |         |         |         |         | 104.60  |
+| of c    |         |         |         |         |         |         |
+| ashflow |         |         |         |         |         |         |
+| at      |         |         |         |         |         |         |
+| $t = 0$ |         |         |         |         |         |         |
++---------+---------+---------+---------+---------+---------+---------+
 
-
-  *The real yield $i'$ p.a. effective solve the equation of value as
-    follows:
-    $$f(i') = -100 + 7.85 v  + 7.88v^2 + 7.91v^3 + 7.80v^6 + 104.6v^5 = 0,$$
-    which gives $i' \approx 7.30\%$ by the linear interpolation.*
+*The real yield* $i'$ p.a. effective solve the equation of value as
+follows:
+$$f(i') = -100 + 7.85 v  + 7.88v^2 + 7.91v^3 + 7.80v^6 + 104.6v^5 = 0,$$
+which gives $i' \approx 7.30\%$ by the linear interpolation.
 :::
 
 In general, the real yield $i'$ for a series of cashflows
@@ -1986,21 +2514,20 @@ reasons for these types of security are
     index-link liability can be matched with the index-link asset.
 
 ::: {.example}
-*Consider an index-link bond of a nominal of ฿100
-issued at time $t_0$, bearing an annual coupon of $C\%$ payable $m$
-times a year and a redemption is at $R\%$. Then per ฿100 nominal, the
-monetary amount (actual cashflow) of an interest payment $D(t_k)$ at
-time $t_k$ is*
+*Consider an index-link bond of a nominal of ฿100 issued at time* $t_0$,
+bearing an annual coupon of $C\%$ payable $m$ times a year and a
+redemption is at $R\%$. Then per ฿100 nominal, the monetary amount
+(actual cashflow) of an interest payment $D(t_k)$ at time $t_k$ is
 
-*The monetary amount of the redemption amount at time $t_n$ is*
+*The monetary amount of the redemption amount at time* $t_n$ is
 :::
 
 ::: {#exampleILB .example}
-*An investor purchased a 3-year index-linked bond in
-January 2015. The investor received payments at the end of each year
-plus a final redemption amount, all of which were adjusted in line with
-the CPI values reported in Table \@ref(tab:tableCPI).
-Calculate the actual payments received by the investor.*
+*An investor purchased a 3-year index-linked bond in January 2015. The
+investor received payments at the end of each year plus a final
+redemption amount, all of which were adjusted in line with the CPI
+values reported in Table* \@ref(tab:tableCPI)*. Calculate the actual
+payments received by the investor.*
 :::
 
 **Note** In practice, due to delays in calculating the index, the
@@ -2018,18 +2545,17 @@ The term $Q(t_0 - \frac{s}{12})$ is called the base inflation figure
 (the base CPI figure).
 
 ::: {.example}
-*Repeat Example\@ref(exm:exampleILB)
-for a 3-year index linked bond. The indexation adjustments are made
-according to the CPI three months before each payment, i.e. $s = 3$
-months.*
+*Repeat Example*\@ref(exm:exampleILB) *for a 3-year index linked bond.
+The indexation adjustments are made according to the CPI three months
+before each payment, i.e.* $s = 3$ months.
 :::
 
 ::: {#exampleILB2 .example}
-*In January 2015, the government issued an
-index-linked bond of term 10 years. Coupons are payable half-yearly in
-arrears, and the annual nominal coupon rate is 4%. The coupons and
-redemption amount are adjusted with reference to the inflation index
-value 3 months before the payment is made.*
+*In January 2015, the government issued an index-linked bond of term 10
+years. Coupons are payable half-yearly in arrears, and the annual
+nominal coupon rate is 4%. The coupons and redemption amount are
+adjusted with reference to the inflation index value 3 months before the
+payment is made.*
 
 *Assume the constant inflation rate from February 2018 is 2% p.a.*
 
@@ -2048,8 +2574,7 @@ value 3 months before the payment is made.*
     assumptions.*
 :::
 
-Processes for stock prices
-==========================
+# Processes for stock prices
 
 In this chapter, we will consider some models (or processes) that are
 used to model stock price. The prices of stocks are continuous in time
@@ -2064,8 +2589,7 @@ interest** (or **continuous compounding**). The process for a stock
 price and an algorithm to simulate stock prices will be presented after
 main concepts of random walks and Brownian motion are given.
 
-Force of interest
------------------
+## Force of interest
 
 Given an annual effective rate $i$, a principal of 1 accumulates to
 $(1 + i)$ at the end of the first year. The following formula provides
@@ -2078,14 +2602,14 @@ $\displaystyle{\frac{i^{(2)}}{2}}$ is the half-yearly effect interest
 rate equivalent to $i$.
 
 ::: {.example}
-*Given the annual effective rate $i = 4\%$,*
+*Given the annual effective rate* $i = 4\%$,
 
-1.  *calculate the equivalent nominal rates of interest convertible $n$
-    times a year for $n = 2,4,12, 52,$ and 365,*
+1.  *calculate the equivalent nominal rates of interest convertible* $n$
+    times a year for $n = 2,4,12, 52,$ and 365,
 
-2.  *find the limit of $i^{(n)}$ as $n$ tends to infinity, and*
+2.  *find the limit of* $i^{(n)}$ as $n$ tends to infinity, and
 
-3.  *plot the graph of $i^{(n)}$ as a function of $n$.*
+3.  *plot the graph of* $i^{(n)}$ as a function of $n$.
 :::
 
 **Notes**
@@ -2111,13 +2635,13 @@ rate equivalent to $i$.
     $$1 + i = \exp(\delta) \quad \text { or } \delta = \ln(1+i).$$
 
 ::: {.example}
-*฿200 is invested in an account which pays a force of
-interest of 4% pa. Calculate the amount in the account after 3 years.*
+*฿200 is invested in an account which pays a force of interest of 4% pa.
+Calculate the amount in the account after 3 years.*
 :::
 
 ::: {.example}
-*A payment of ฿500 is due in 5 years' time. Calculate
-the present value of this payment at a force of interest of 4% pa.*
+*A payment of ฿500 is due in 5 years' time. Calculate the present value
+of this payment at a force of interest of 4% pa.*
 :::
 
 For a force of interest $\delta$, the accumulation at time $t$ of 1 unit
@@ -2144,10 +2668,10 @@ time $s$ at the annual effective rate $i$ and the force of interest
 $\delta(t)$.
 
 ::: {.example}
-*A payment of ฿1000 is due in 1 years' time. Calculate
-the accumulated amount at time 1 of this payment at a force of interest
-of $\delta(t)$ pa, where $$\delta(t) = a + b t + c t^2,$$ $a,b$ and $c$
-are given constants.*
+*A payment of ฿1000 is due in 1 years' time. Calculate the accumulated
+amount at time 1 of this payment at a force of interest of* $\delta(t)$
+pa, where $$\delta(t) = a + b t + c t^2,$$ $a,b$ and $c$ are given
+constants.
 :::
 
 ## Stochastic processes
@@ -2210,8 +2734,7 @@ randomly by 1 unit with equal probability. In this case, the process is
 known as a **symmetric** random walk.
 
 ::: {.example}
-*Calculate the expectation and variance of the random
-variable $Z_i$.*
+*Calculate the expectation and variance of the random variable* $Z_i$.
 :::
 
 **Solution:** $$\begin{aligned}
@@ -2223,8 +2746,8 @@ $$\begin{aligned}
             &= 4pq.\end{aligned}$$
 
 ::: {.example}
-*Calculate the expectation and variance of the process
-$X_n$ at time $n$.*
+*Calculate the expectation and variance of the process* $X_n$ at time
+$n$.
 :::
 
 **Solution:** $$\begin{aligned}
@@ -2237,12 +2760,12 @@ The next example shows how to use a coin to simulate price paths of a
 stock.
 
 ::: {.example}
-*We flip the coin once to represent each trading day.
-If the coin comes up head then the stock price goes up by 1 baht; if it
-comes up tail then the stock price goes down by 1 baht. Assume that the
-initial stock price is $X_0 = 100$. Let us flip the coin 20 times and
-then draw the graph of the stock price against time (in day). Repeat
-this process 4 more times.*
+*We flip the coin once to represent each trading day. If the coin comes
+up head then the stock price goes up by 1 baht; if it comes up tail then
+the stock price goes down by 1 baht. Assume that the initial stock price
+is* $X_0 = 100$. Let us flip the coin 20 times and then draw the graph
+of the stock price against time (in day). Repeat this process 4 more
+times.
 :::
 
 **Solution:** See the Excel worksheet.
@@ -2255,7 +2778,6 @@ has an infinite number of **stochastic realisations**. A **sample path**
 is then just the sequence of a particular set of experiments. Graphs of
 some stochastic realisations of the simple random walk with $p = 0.5$
 and $a = 100$ are shown in Figure are shown in Figure \@ref(fig:FigRW).
-
 
 ```{r FigRW, fig.cap= 'Some stochastic realisations of the simple random walk', echo = FALSE}
 
@@ -2285,8 +2807,8 @@ rwPathsGather %>% ggplot(aes(x,y,col = path)) + geom_line() +  scale_x_continuou
 ```
 
 ::: {.example}
-*For the random process, calculate
-$$\Pr(X_2 = 98, X_5 = 99 | X_0 = 100).$$*
+*For the random process, calculate*
+$$\Pr(X_2 = 98, X_5 = 99 | X_0 = 100).$$
 :::
 
 **Solution:** The process $X_n$ must decrease on the first two days,
@@ -2360,10 +2882,9 @@ $$\mathbbm{1}_A(x) =
 \end{cases*}$$
 
 ::: {.example}
-*Using Monte Carlo estimation, approximate the
-expectation $\mathrm{E}[X]$ where $X \sim \mathcal{N}(0,1)$, and
-estimate the percent of values lie within two standard deviation of the
-mean of $X$*
+*Using Monte Carlo estimation, approximate the expectation*
+$\mathrm{E}[X]$ where $X \sim \mathcal{N}(0,1)$, and estimate the
+percent of values lie within two standard deviation of the mean of $X$
 :::
 
 **Solution:** We generate samples $X_1,X_2,...,X_N$ from the model $X$
@@ -2468,8 +2989,8 @@ can be described by a variable $W$ having the following properties:
         both normally distributed $N(0,0.5)$.
 
 ::: {.example}
-*Given that $W(0) = a$, what is the probability
-distribution of the value of W at 3 months, i.e. $W(0.25)$?*
+*Given that* $W(0) = a$, what is the probability distribution of the
+value of W at 3 months, i.e. $W(0.25)$?
 :::
 
 **Solution:** $$\begin{aligned}
@@ -2544,18 +3065,18 @@ In the following example, we do not assume that $W_0 = 0$ with
 probability 1.
 
 ::: {.example}
-*Consider a Wiener process denoted by $W(t)$ with
-$W(0) = a$ with probability 1. The time is measured in years.*
+*Consider a Wiener process denoted by* $W(t)$ with $W(0) = a$ with
+probability 1. The time is measured in years.
 
 1.  *What is the probability distribution of the value of the variable
-    at the end of one year, i.e. $W(1)$?*
+    at the end of one year, i.e.* $W(1)$?
 
 2.  *What is the probability distribution of the value of the variable,
-    i.e. $W(4)$? and what is the mean and the standard deviation of
-    $W(4)$.*
+    i.e.* $W(4)$? and what is the mean and the standard deviation of
+    $W(4)$.
 
 *What is the probability distribution of the change in the value of W
-during 3 months, i.e. $W(0.25) - W(0) = W(0.25)$?*
+during 3 months, i.e.* $W(0.25) - W(0) = W(0.25)$?
 :::
 
 ## Generalised Wiener process (Brownian Motion with Drift)
@@ -2591,10 +3112,10 @@ processcan be obtained from the properties of the standard Wiener
 process.
 
 ::: {.example}
-*Calculate the probability that the generalised Wiener
-process $X(t)$ with the drift parameter $a = 0.5$ and the variance
-$b^2 = 0.16$ takes the values between 3 and 4 at time $t = 4$. Assume
-that its initial value $X(0) = 1$.*
+*Calculate the probability that the generalised Wiener process* $X(t)$
+with the drift parameter $a = 0.5$ and the variance $b^2 = 0.16$ takes
+the values between 3 and 4 at time $t = 4$. Assume that its initial
+value $X(0) = 1$.
 :::
 
 **Solution:** The change of process over 4 units of time is given by
@@ -2634,16 +3155,15 @@ standard normal distribution.
     are functions of $X$ and $t$.
 
 ::: {.example}
-*Consider the cash position of a company measured in
-millions of Thai baht. Assume that it follows a generalised Wiener
-process with a drift of 10 per year and a variance rate of 400 per year.
-Let $X(0) = 50$.*
+*Consider the cash position of a company measured in millions of Thai
+baht. Assume that it follows a generalised Wiener process with a drift
+of 10 per year and a variance rate of 400 per year. Let* $X(0) = 50$.
 
 1.  *What is the distribution of the process at the end of the first
-    year, $X(1)$?*
+    year,* $X(1)$?
 
-2.  *What is the distribution of the process at the end of 6 months,
-    $X(1/2)$?*
+2.  *What is the distribution of the process at the end of 6 months,*
+    $X(1/2)$?
 
 3.  *What is the probability that the cash position will be at least 60
     million baht at the end of 6 months?*
@@ -2667,7 +3187,7 @@ Let $X(0) = 50$.*
             &= 1 - 0.638 = 0.362.
         \end{aligned}$$
 
-#### Simulating a generalised Wiener process 
+#### Simulating a generalised Wiener process
 
 Simulating a generalised Wiener process over $[0,T]$ is similar to a
 standard Wiener process.
@@ -2677,11 +3197,11 @@ standard Wiener process.
 
 2.  Denote $X(t_j)$ by $X_j$. The value $X_j$ can be approximated by
     $$X_j = X_{j-1} + a \Delta t + b \Delta W_j,$$ where each
-    $\Delta  W_j = W(t_j) - W(t_{j-1})$ is an independent random
-    variable of the form $\sqrt{\Delta t} N(0,1)$.
+    $\Delta W_j = W(t_j) - W(t_{j-1})$ is an independent random variable
+    of the form $\sqrt{\Delta t} N(0,1)$.
 
 ![Simulating a sample path of the generalised Wiener process with
-$a =0.5$ and $b = 2$. ](GW2.pdf){#fig:GW width="8in"}
+$a =0.5$ and $b = 2$.](GW2.pdf){#fig:GW width="8in"}
 
 **One-Period Simple Return**
 
@@ -2716,8 +3236,8 @@ implies the following properties for stock prices.
     is normally distributed.
 
 ::: {.example}
-*Explain why a generalised Wiener (GW) process is
-inappropriate to model a stock price.*
+*Explain why a generalised Wiener (GW) process is inappropriate to model
+a stock price.*
 :::
 
 **Solution:** The GW model assumes that the expected change (not the
@@ -2787,17 +3307,17 @@ $\sigma^2 \Delta t$. In particular, $$\begin{aligned}
 \frac{\Delta S}{S} = N( \mu \Delta t , \sigma^2  \Delta t).\end{aligned}$$
 
 ::: {.example}
-*Consider a stock that pays no dividends, provide an
-expected return of 20% per annum with continuous compounding and has a
-volatility of 40% per annum. Assume that the current stock price is ฿20
-and $\epsilon$ sampled from the standard normal distribution is 0.6.*
+*Consider a stock that pays no dividends, provide an expected return of
+20% per annum with continuous compounding and has a volatility of 40%
+per annum. Assume that the current stock price is ฿20 and* $\epsilon$
+sampled from the standard normal distribution is 0.6.
 
 1.  *Calculate the change of the stock price over 1 day, assuming that
     there are 250 trading days per year.*
 
-2.  *Calculate the stock price over 10 days if the random samples for
+2.  *Calculate the stock price over 10 days if the random samples for*
     $\epsilon$ are given in Figure [3.6](#fig:GBM){reference-type="ref"
-    reference="fig:GBM"}.*
+    reference="fig:GBM"}.
 :::
 
 **Solution:**
@@ -2821,7 +3341,7 @@ and $\epsilon$ sampled from the standard normal distribution is 0.6.*
 2.  Leave as an exercise.
 
 ![Simulating a sample path of a geometric Brownian motion with
-$\mu =0.2$ and $\sigma = 0.4$. ](GBM.pdf){#fig:GBM width="8in"}
+$\mu =0.2$ and $\sigma = 0.4$.](GBM.pdf){#fig:GBM width="8in"}
 
 **Notes**
 
@@ -2844,8 +3364,8 @@ $\mu =0.2$ and $\sigma = 0.4$. ](GBM.pdf){#fig:GBM width="8in"}
     a **relatively long period** of time $T$, it is approximately equal
     to $\sigma \sqrt{T}$.
 
-    As a result, **the volatility $\sigma$ can be interpreted as the
-    standard deviation of the change in the stock price in 1 year**.
+    As a result, **the volatility** $\sigma$ can be interpreted as the
+    standard deviation of the change in the stock price in 1 year.
 
 ### Stock prices are lognormally distributed {#stock-prices-are-lognormally-distributed .unnumbered}
 
@@ -2885,18 +3405,17 @@ lognormal distribution.
     $\mathrm{E}[X] = e^{\mu + \frac{1}{2}\sigma^2}, \, \mathrm{Var}[X] = e^{2\mu + \sigma^2}\left( e^{\sigma^2 - 1} \right).$
 
 ::: {.example}
-*Consider a stock that pays no dividends, provide an
-expected return of 20% per annum with continuous compounding and has a
-volatility of 40% per annum. Assume that the current stock price is
-฿20.*
+*Consider a stock that pays no dividends, provide an expected return of
+20% per annum with continuous compounding and has a volatility of 40%
+per annum. Assume that the current stock price is ฿20.*
 
 1.  *Find the probability distribution of the logarithm of the stock
-    price $S_T$ in 3 months' time.*
+    price* $S_T$ in 3 months' time.
 
-2.  *Calculate the mean and the standard deviation of $\ln S_T$ in 3
-    months' time.*
+2.  *Calculate the mean and the standard deviation of* $\ln S_T$ in 3
+    months' time.
 
-3.  *Find the 95% confidence interval of $S_T$ in 3 months' time.*
+3.  *Find the 95% confidence interval of* $S_T$ in 3 months' time.
 :::
 
 **Solution:**
@@ -2937,11 +3456,10 @@ $\ln \mathrm{E}[S_T] \neq \mathrm{E}[\ln S_T]$.
     $$\mathrm{Var}[S_T] = S_0^2 \exp(2 \mu T) (\exp(\sigma^2 T) - 1).$$
 
 ::: {.example}
-*Consider a stock that pays no dividends, provide an
-expected return of 20% per annum with continuous compounding and has a
-volatility of 40% per annum. Assume that the current stock price is ฿20.
-Calculate the mean and the standard deviation of the stock price $S_T$
-in 1 year.*
+*Consider a stock that pays no dividends, provide an expected return of
+20% per annum with continuous compounding and has a volatility of 40%
+per annum. Assume that the current stock price is ฿20. Calculate the
+mean and the standard deviation of the stock price* $S_T$ in 1 year.
 :::
 
 **Solution:** The mean of $S_1$ is
@@ -3004,7 +3522,7 @@ $$\begin{aligned}
 As we have seen, there are two different expected returns of stocks,
 $\mu$ and $\mu - \sigma^2/2$.
 
--   Equation [\[propReturn\]](#propReturn){reference-type="eqref"
+-   Equation [$$propReturn$$](#propReturn){reference-type="eqref"
     reference="propReturn"} shows that the expected percentage change
     (or proportional change) in the stock price in a very short period
     of time, $\Delta t$ is $\mu \Delta t$.
@@ -3016,7 +3534,7 @@ $\mu$ and $\mu - \sigma^2/2$.
     compounded rate of return per year for finite intervals of time**
     (like days or years), i.e. realised over a period of time of length
     $T$ (as shown in Equation
-    [\[returnRate\]](#returnRate){reference-type="eqref"
+    [$$returnRate$$](#returnRate){reference-type="eqref"
     reference="returnRate"}).
 
 **Notes**
@@ -3073,18 +3591,17 @@ the length of observation time interval in years.
     $\sqrt{250}$.
 
 **Note** It follows from
-[\[returnRate\]](#returnRate){reference-type="eqref"
+[$$returnRate$$](#returnRate){reference-type="eqref"
 reference="returnRate"} that the estimated expected return $\hat{\mu}$
 is given by
 $$\hat{\mu}  =  \frac{\bar{u}}{\tau}  + \frac{\hat{\sigma}^2}{2} = \frac{\bar{u}}{\tau}  + \frac{s^2}{2\tau} .$$
 
 ::: {.example}
-*Verify the calculation using the stock price
-historical data from the table below.*
+*Verify the calculation using the stock price historical data from the
+table below.*
 :::
 
 **Solution:** See an accompanied Excel file.
 
 ![Computation of volatility](VolatilityEstimation2.pdf){#fig:volatility
 width="7in"}
-
