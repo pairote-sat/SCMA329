@@ -1,0 +1,49 @@
+\contentsline {chapter}{\numberline {1}Cashflows, Interest and the Time Value of Money}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction to Financial Modelling}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Cashflows}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Interest and the Time Value of Money}{8}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Simple interest}{12}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Compound interest}{14}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}Frequency of Compounding}{17}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Effective rate of interest}{21}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Compounding over any number of time units}{26}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Changing the time period of the effective rates of interest}{28}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Non-constant interest rates}{30}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}Accumulation factors}{32}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.6}Present values and discount factors}{33}{subsection.1.4.6}
+\contentsline {section}{\numberline {1.5}Cashflows and Annuities}{37}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Level Annuities certain}{40}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Level Annuities Due}{45}{subsection.1.5.2}
+\contentsline {subsubsection}{The rate of discount}{45}{section*.2}
+\contentsline {subsection}{\numberline {1.5.3}Deferred annuities}{53}{subsection.1.5.3}
+\contentsline {subsection}{\numberline {1.5.4}Increasing annuities}{55}{subsection.1.5.4}
+\contentsline {subsection}{\numberline {1.5.5}Compound increasing annuities}{57}{subsection.1.5.5}
+\contentsline {subsection}{\numberline {1.5.6}Annuities payable more than once per time unit}{59}{subsection.1.5.6}
+\contentsline {section}{\numberline {1.6}Nominal Rates of Interest}{60}{section.1.6}
+\contentsline {subsection}{\numberline {1.6.1}Nominal Rates of Discount}{64}{subsection.1.6.1}
+\contentsline {section}{\numberline {1.7}Principle of Equivalence, Yields and Equation of Value}{66}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Equation of value and yields}{70}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.2}The method to estimate the yield}{73}{subsection.1.7.2}
+\contentsline {section}{\numberline {1.8}Loan schedules}{75}{section.1.8}
+\contentsline {subsection}{Repay as late as possible:}{76}{section*.3}
+\contentsline {subsection}{Repay interest only during the term and repay the capital at the end of the term:}{76}{section*.4}
+\contentsline {subsection}{Repay loan by regular instalments of interest and capital throughout term of loan:}{76}{section*.5}
+\contentsline {subsection}{\numberline {1.8.1}The loan schedule}{77}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.2}Changing the term of a loan}{80}{subsection.1.8.2}
+\contentsline {subsection}{\numberline {1.8.3}Changing the interest rate}{82}{subsection.1.8.3}
+\contentsline {chapter}{\numberline {2}Bonds and Inflation}{85}{chapter.2}
+\contentsline {section}{\numberline {2.1}Bonds}{85}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Characteristics of Bonds}{86}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Bond prices}{90}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}No tax}{95}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Income tax}{95}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Capital gains tax (CGT)}{97}{subsection.2.1.5}
+\contentsline {section}{\numberline {2.2}Inflation}{103}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Real rates of interest}{109}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Real yields}{111}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Calculating real yields given constant inflation assumptions}{114}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Index-linked securities}{115}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Chapter TWO}{118}{section.2.3}
+\contentsline {chapter}{\numberline {3}Chapter THREE}{119}{chapter.3}
+\contentsline {chapter}{\numberline {4}Applications}{120}{chapter.4}
+\contentsline {section}{\numberline {4.1}DataCamp Light}{120}{section.4.1}
