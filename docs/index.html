@@ -24,7 +24,7 @@
 <meta name="author" content="Pairote Satiracoo" />
 
 
-<meta name="date" content="2022-08-30" />
+<meta name="date" content="2022-09-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -187,7 +187,7 @@
 <div id="header">
 <h1 class="title">SCMA329 Practical Mathematical Financial Modeling</h1>
 <p class="author"><em>Pairote Satiracoo</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2022-08-30</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>2022-09-04</em></p>
 </div>
 <div id="cashflows-interest-and-the-time-value-of-money" class="section level1" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Cashflows, Interest and the Time Value of Money</h1>
@@ -749,6 +749,7 @@ cashflows up to time <span class="math inline">\(t\)</span>, and</p></li>
 <li><p>for all <span class="math inline">\(t_r &gt; t\)</span> , adding up the discounted values of these
 individual cashflows back to time <span class="math inline">\(t\)</span>.</p></li>
 </ul>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex7-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>Notes</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>At a fixed effective rate of interest, the original series of
@@ -774,6 +775,7 @@ at any time at that effective rate of interest.</p></li>
 </ol>
 </div>
 <p><strong>Solution:</strong></p>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex8-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol style="list-style-type: decimal">
 <li><p>The series of cashflows is shown in the following timeline. The
 accumulation at time <span class="math inline">\(t = 7\)</span> is <span class="math display">\[\begin{aligned}
@@ -788,13 +790,15 @@ accumulation at time <span class="math inline">\(t = 7\)</span> back to time <sp
 </ol>
 <div id="level-annuities-certain" class="section level3" number="1.5.1">
 <h3><span class="header-section-number">1.5.1</span> Level Annuities certain</h3>
-<p><strong>Annuities</strong> are financial products that provide a guaranteed income
-stream and are primarily used for retirement savings. They are regular
-series of payments (cashflows). When they are specific payments to be
-made for a specific period of time, they are called <em>annuity certain</em>.</p>
+<p>An <strong>annuity</strong> is a series of payments made at equal intervals. There are many practical examples of financial transactions involving annuities, such as.</p>
 <ul>
-<li><p>If the payments are made at the end of each time period, they are
-paid <em>in arrears</em>.</p></li>
+<li><p>a car loan that is repaid in equal monthly instalments</p></li>
+<li><p>a pensioner who purchases an annuity from an insurance company upon retirement</p></li>
+<li><p>a life insurance policy that is taken out with monthly premiums</p></li>
+</ul>
+<p>When certain payments are to be made for a certain period of time, they are called <em>annuity certain</em>.</p>
+<ul>
+<li><p>If the payments are made at the end of each time period, they are paid <em>in arrears</em>.</p></li>
 <li><p>Otherwise, payments are made at the beginning of each time period,
 they are pain <em>in advance</em>.</p></li>
 <li><p>An annuity paid in advance is also known as an <em>annuity due</em></p></li>
@@ -807,6 +811,7 @@ that the accumulated value of a level annuity certain having cashflow of
 <span class="math display">\[\frac{(1+i)^n -1 }{i}.\]</span> Such accumulated value of the annuity is
 denoted by <span class="math inline">\(s_\angl{n}\)</span> (pronounced “S.N.”)</p>
 </div>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex9-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>Solution:</strong> Based on the first principles,</p>
 <span class="math display" id="eq:firstEq">\[\begin{align} 
  s_\angl{n} &amp;= \sum_{r=1}^n C_r \cdot A(t_r,n) \\
@@ -843,9 +848,12 @@ the next 12.5 years.</em></p></li>
 </div>
 <p><strong>Solution:</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>The timeline of this transaction is shown in the figure below.</p>
-<p>The accumulation of the payments is
-<span class="math display">\[500 \cdot s_\angl{12}  = 500 \cdot \frac{1.08^{12} - 1 }{0.08 } = 9488.563230.\]</span></p></li>
+<li>The timeline of this transaction is shown in the figure below.</li>
+</ol>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>The accumulation of the payments is
+$$500 \cdot s_\angl{12}  = 500 \cdot \frac{1.08^{12} - 1 }{0.08 } = 9488.563230.$$</code></pre>
+<ol start="2" style="list-style-type: decimal">
 <li><p>The present value of the payments is
 <span class="math display">\[2000\cdot a_\angl{6}  = 2000 \cdot \frac{1 - 1.08^{-6} }{0.08 } = 9245.759328.\]</span></p></li>
 <li><p>An interest rate of 8% p.a. is equivalent to an effective
@@ -872,6 +880,7 @@ discount rates.</p>
 <p>Suppose an amount of ฿1 is due after 1 year with an effective rate of
 <span class="math inline">\(i \%\)</span> p.a. (see the timeline below). What is the amount of money
 required to invested now to accumulate to 1?</p>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex12-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>The amount of money required now to accumulate to ฿1 in one year is
 <span class="math display">\[v =  \frac{1}{1+i}.\]</span> Note that <span class="math display">\[\frac{1}{1+i} = 1 - \frac{i}{1+i}.\]</span>
 We define the effective rate of discount <span class="math inline">\(d\)</span> per annum
@@ -883,6 +892,7 @@ p.a.</p>
 effective rate of <span class="math inline">\(i \%\)</span> p.a. The amount of money required to invested
 now to accumulate to 1 in <span class="math inline">\(n\)</span> year is <span class="math display">\[\frac{1}{(1+i)^n} = (1-d)^n.\]</span>
 See the timeline below for illustration.</p>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex14-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-28" class="example"><strong>Example 1.25  </strong></span><em>Discount ฿2,000 for 3 years using the effective rate of discount of 5%
 per annum.</em></p>
@@ -904,6 +914,7 @@ to an account of an amount of 1 unit at the start of the period. Assume
 that the interest amount of <span class="math inline">\(x\)</span> can be withdrawn and invested in another
 bank that earn the rate of interest <span class="math inline">\(i\%\)</span> effective per time unit. The
 principle of 1 unit is still in the first bank.</p>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex15-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>At the end of the year, we have</p>
 <ul>
 <li><p>the principle of 1 unit in the first bank, and</p></li>
@@ -924,6 +935,7 @@ that the accumulated value of a level annuity due, denoted by
 the start of each of the next <span class="math inline">\(n\)</span> time units is
 <span class="math display">\[\ddot{s}_\angl{n} = \frac{(1+i)^n -1 }{d}.\]</span></p>
 </div>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex16-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>Solution:</strong> Using the previous results, it follows that
 <span class="math display">\[\begin{aligned}
  \ddot{s}_\angl{n} &amp;= (1+i)^n + (1+i)^{n-1} + \cdots + (1+i)^2 + (1+i) \\
@@ -980,6 +992,7 @@ payments deferred for <span class="math inline">\(m\)</span> time units (the fir
 <span class="math inline">\(m+1\)</span>), denoted by <span class="math inline">\(_{m \textbar}a_\angl{n}\)</span>, we first calculate the
 present value at the end of the deferred period and then discount back
 to the start of the period.</p>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex17-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><span class="math display">\[\begin{aligned}
     _{m \textbar} a_\angl{n}  &amp;= v^{m+1} + v^{m+2} + \cdots +v^{m+n}  \\
     &amp;= v^m  \left( v + v^2 + \cdots + v^n  \right) \\
@@ -988,6 +1001,7 @@ to the start of the period.</p>
 <p><span id="exm:unlabeled-div-33" class="example"><strong>Example 1.30  </strong></span><em>Calculate the present value at time 0 of an annuity of 1 p.a. in
 arrears for 6 years and deferred for 10 at 6% effective rate p.a.</em></p>
 </div>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex18-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>This is an annuity with 6 unit payments for which the first payment is
 at time 11. Hence the present values of such payments is
 <span class="math display">\[\begin{aligned}
@@ -1033,6 +1047,7 @@ yearly in arrears is illustrated below. The present value of payments of
 1 at time 1, 2 at time 2, <span class="math inline">\(\ldots, n\)</span> at time <span class="math inline">\(n\)</span> denoted by
 <span class="math inline">\((Ia)_\angl{n}\)</span> is given by
 <span class="math display">\[(Ia)^{i}_\angl{n}   = \frac{\ddot{a}^{i}_{\actuarialangle{n}} - nv^n}{i}.\]</span></p>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex19-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p><strong>Notes</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>An increasing annuity but with payments in advance is given by
@@ -1053,6 +1068,7 @@ arrears for 8 years. The first payment is ฿10 and subsequent payments
 increase by 2% per annum compound.</em></p>
 </div>
 <p><strong>Solution:</strong></p>
+<p><img src="SCMA329Bookdownproj_files/figure-html/tikz-ex20-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>At 1/1/2010, the present value of the payment is given by
 <span class="math display">\[\begin{aligned}
     PV &amp;= 10 \cdot \frac{1}{1.06} + 10 \cdot \frac{1.02}{(1.06)^2} + \cdots +  10 \cdot \frac{(1.02)^7}{(1.06)^8} \\

@@ -938,4 +938,570 @@ Similarly, we define
 \end{enumerate}
 
 
+
+
+\hypertarget{cashflows-and-annuities}{%
+\section{Cashflows and Annuities}\label{cashflows-and-annuities}}
+
+Consider a series of cashflows defined by (see the timeline)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  the times of payments (cashflows), denoted by \(t_1, t_2, \ldots,\)
+  and
+\item
+  the amount of payments, denoted by \(C_{r}\) (or \(C_{t_r}\)), which
+  will be paid at time \(t_r\), for \(r = 1,2, \ldots\). The amounts can
+  be positive or negative
+\end{enumerate}
+
+The present value at any time \(t\) of this series of cashflow is
+\[PV(t) = \sum_{r=1}^\infty C_r (1 + i)^{t - t_r} = \sum_{r=1}^\infty C_r v^{t _r - t}\]
+where \(i\) is the effective rate of interest.
+
+The above formula can be obtained by summing these two components:
+
+\begin{itemize}
+\item
+  for all \(t_r < t\), adding up the accumulations of these individual
+  cashflows up to time \(t\), and
+\item
+  for all \(t_r > t\) , adding up the discounted values of these
+  individual cashflows back to time \(t\).
+\end{itemize}
+
+\begin{center}\includegraphics{tikz-ex7-1} \end{center}
+
+\textbf{Notes}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  At a fixed effective rate of interest, the original series of
+  cashflows is equivalent to a single payment of amount \(PV(t)\) at
+  time \(t\).
+\item
+  If two different series of cashflows have the same \(PV\) at one time
+  at a given effective rate of interest, then they have the same \(PV\)
+  at any time at that effective rate of interest.
+\end{enumerate}
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-24}{}\label{exm:unlabeled-div-24}
+
+\emph{Let} \(i = 4\%\) effective per time unit. Cashflows are given as follows:
+
+\begin{itemize}
+\item
+  \(C_1 = 200\) at time \(t_1 = 1\).
+\item
+  \(C_2 = 300\) at time \(t_2 = 3\).
+\item
+  \(C_3 = -100\) at time \(t_3 = 5\).
+\item
+  \(C_4 = -50\) at time \(t_4 = 6\).
+\end{itemize}
+
+\emph{Calculate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{the accumulation at time} \(t = 7\).
+\item
+  \emph{the present value at time} \(t = 0\).
+\item
+  \emph{the present value at time} \(t = 4\).
+\end{enumerate}
+
+\end{example}
+
+\textbf{Solution:}
+
+\begin{center}\includegraphics{tikz-ex8-1} \end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The series of cashflows is shown in the following timeline. The
+  accumulation at time \(t = 7\) is \[\begin{aligned}
+      \sum_{r=1}^4 A(t_r,7) &= 200 \cdot A(1,7) +  300 \cdot A(3,7) -  100 \cdot A(5,7) -  50 \cdot A(6,7) \\
+      &= 200 \cdot 1.04^6 + 300 \cdot 1.04^4 - 100 \cdot 1.04^2 - 50 \cdot 1.04 \\
+      & = 443.861372\end{aligned}\]
+\item
+  The present value at time \(t = 0\) can be obtained by discounting the
+  accumulation at time \(t = 7\) back to time \(t = 0\), which is
+  \[443.861372  \cdot V(0,7) = 443.861372  \cdot \frac{1}{1.04^7} = 337.298163.\]
+\item
+  The present value at time \(t = 4\) is
+  \[443.861372  \cdot V(4,7) = 443.861372  \cdot \frac{1}{1.04^3} = 394.591143.\]
+\end{enumerate}
+
+\hypertarget{level-annuities-certain}{%
+\subsection{Level Annuities certain}\label{level-annuities-certain}}
+
+An \textbf{annuity} is a series of payments made at equal intervals. There are many practical examples of financial transactions involving annuities, such as.
+
+\begin{itemize}
+\item
+  a car loan that is repaid in equal monthly instalments
+\item
+  a pensioner who purchases an annuity from an insurance company upon retirement
+\item
+  a life insurance policy that is taken out with monthly premiums
+\end{itemize}
+
+When certain payments are to be made for a certain period of time, they are called \emph{annuity certain}.
+
+\begin{itemize}
+\item
+  If the payments are made at the end of each time period, they are paid \emph{in arrears}.
+\item
+  Otherwise, payments are made at the beginning of each time period,
+  they are pain \emph{in advance}.
+\item
+  An annuity paid in advance is also known as an \emph{annuity due}
+\item
+  If each payment is for the same amount, this is a \emph{level} annuity.
+\end{itemize}
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-25}{}\label{exm:unlabeled-div-25}
+
+\emph{Let} \(i\) be the constant effective rate of interest per time unit. Show
+that the accumulated value of a level annuity certain having cashflow of
+1 unit at the end of each of the next \(n\) time units is
+\[\frac{(1+i)^n -1 }{i}.\] Such accumulated value of the annuity is
+denoted by \(s_\angl{n}\) (pronounced ``S.N.'')
+
+\end{example}
+
+\begin{center}\includegraphics{tikz-ex9-1} \end{center}
+
+\textbf{Solution:} Based on the first principles,
+
+\begin{align} 
+ s_\angl{n} &= \sum_{r=1}^n C_r \cdot A(t_r,n) \\
+    &= (1+i)^{n-1} + (1+i)^{n-2} + \ldots + (1+i) + 1. \label{eq:firstEq} 
+\end{align}
+
+Multiplying Eq.\eqref{eq:firstEq} through by (1+i) gives \begin{equation}
+    (1+i) \cdot s_\angl{n}  = (1+i)^{n} + (1+i)^{n-1} + \ldots + (1+i)^2 + (1+i). 
+\end{equation} Subtracting the two equations results in
+\[\begin{aligned}
+    i \cdot s_\angl{n} &= (1+i)^{n} - 1\\
+        s_\angl{n} &= \frac{(1+i)^{n} - 1}{i}.\end{aligned}\]
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-26}{}\label{exm:unlabeled-div-26}
+
+\emph{Let} \(i\) be the constant effective rate of interest per time unit. Show
+that the present value at time 0 of a level annuity certain, denoted by
+\(a_\angl{n}\) (pronounced ``A.N.'') , having cashflow of 1 unit at the end
+of each of the next \(n\) time units is
+\[a_\angl{n} = \frac{1 - v^n }{i}.\]
+
+\end{example}
+
+\textbf{Solution:} Taking the accumulated value at time \(n\) and discounting
+back to time 0 gives \[\begin{aligned}
+    a_\angl{n} &= s_\angl{n} \cdot v^n \\
+            &= \frac{(1+i)^{n} - 1}{i} \cdot v^n \\
+            &=  \frac{1 - v^n }{i}.\end{aligned}\]
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-27}{}\label{exm:unlabeled-div-27}
+
+\emph{Given the effective rate of interest of} \(8\%\) p.a., calculate
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{the accumulation at 12 years of ฿500 payable yearly in arrears for
+  the next 12 years.}
+\item
+  \emph{the present value now of ฿2,000 payable yearly in arrears for the
+  next 6 years.}
+\item
+  \emph{the present value now of ฿1,000 payable half-yearly in arrears for
+  the next 12.5 years.}
+\end{enumerate}
+
+\end{example}
+
+\textbf{Solution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The timeline of this transaction is shown in the figure below.
+\end{enumerate}
+
+\begin{center}\includegraphics{tikz-ex10-1} \end{center}
+
+\begin{verbatim}
+The accumulation of the payments is
+$$500 \cdot s_\angl{12}  = 500 \cdot \frac{1.08^{12} - 1}{0.08} = 9488.563230.$$
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\item
+  The present value of the payments is
+  \[2000\cdot a_\angl{6}  = 2000 \cdot \frac{1 - 1.08^{-6} }{0.08 } = 9245.759328.\]
+\item
+  An interest rate of 8\% p.a. is equivalent to an effective
+  half-yearly interest rate, denoted by \(j\), of
+  \[j = 1.08^{1/2} -1 = 0.039230.\] There are 25 payments of 1000
+  each, starting in six months' time.
+
+  Working in terms of half year, the present value of the payment is
+  \[1000 \cdot a^j_\angl{25} = 1000 \cdot \frac{1 - 1.039230^{-25} }{0.039230 } = 15750.003911.\]
+\end{enumerate}
+
+\newpage \hypertarget{level-annuities-due}{%
+\subsection{Level Annuities Due}\label{level-annuities-due}}
+
+An \emph{annuity-due} is an annuity where the payments made at the start of
+each time period (instead of a the end), i.e.~the payments are paid \emph{in
+advance}.
+
+In order to calculate the present value or accumulation of an annuity
+due, we first introduce the concept of the rate of discount.
+
+\hypertarget{the-rate-of-discount}{%
+\subsubsection*{The rate of discount}\label{the-rate-of-discount}}
+\addcontentsline{toc}{subsubsection}{The rate of discount}
+
+As opposed to the interest rate where the accumulation of initial
+investment can be obtained by multiplying it by the accumulation factor
+\((1+i)^n\), we can obtain the discounted value of payment by using
+discount rates.
+
+Suppose an amount of ฿1 is due after 1 year with an effective rate of
+\(i \%\) p.a. (see the timeline below). What is the amount of money
+required to invested now to accumulate to 1?
+
+\begin{center}\includegraphics{tikz-ex12-1} \end{center}
+
+The amount of money required now to accumulate to ฿1 in one year is
+\[v =  \frac{1}{1+i}.\] Note that \[\frac{1}{1+i} = 1 - \frac{i}{1+i}.\]
+We define the effective rate of discount \(d\) per annum
+as\[d = \frac{i}{1+i}.\] It follows that
+\[v = \frac{1}{1+i} = 1 - \frac{i}{1+i} =  1 - d\] represents the
+discount of ฿1 for 1 year using the effective rate of interest of \(i \%\)
+p.a.
+
+Similarly, suppose an amount of ฿1 is due after \(n\) year with an
+effective rate of \(i \%\) p.a. The amount of money required to invested
+now to accumulate to 1 in \(n\) year is \[\frac{1}{(1+i)^n} = (1-d)^n.\]
+See the timeline below for illustration.
+
+\begin{center}\includegraphics{tikz-ex14-1} \end{center}
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-28}{}\label{exm:unlabeled-div-28}
+
+\emph{Discount ฿2,000 for 3 years using the effective rate of discount of 5\%
+per annum.}
+
+\end{example}
+
+\textbf{Solution:} After 1 year the discount will be \(0.05 \cdot 2000 = 100,\)
+and the discounted value of the payment will be
+\[2000 \cdot (1 - d) = 2000 \cdot (1 - 0.05) = 1900 .\] Similarly, after
+2 years, the discounted value will be
+\[2000 \cdot (1 - d)^2 = 2000 \cdot (1 - 0.05)^2 = 1805 .\] After 3
+years, the discounted value of the payment will be
+\[2000 \cdot (1 - d)^3 = 2000 \cdot (1 - 0.05)^3 = 1714.75 .\]
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-29}{}\label{exm:unlabeled-div-29}
+
+\emph{The effective rate of discount} \(d\) per time unit can be regarded as
+the interest paid in advance at time 0, which is equivalent to the
+effective rate of interest \(i\) payable in arrears.
+
+\end{example}
+
+\textbf{Solution:} To show this, suppose that the bank added interest of \(x\)
+to an account of an amount of 1 unit at the start of the period. Assume
+that the interest amount of \(x\) can be withdrawn and invested in another
+bank that earn the rate of interest \(i\%\) effective per time unit. The
+principle of 1 unit is still in the first bank.
+
+\begin{center}\includegraphics{tikz-ex15-1} \end{center}
+
+At the end of the year, we have
+
+\begin{itemize}
+\item
+  the principle of 1 unit in the first bank, and
+\item
+  the interest paid in advance which accumulates to \(x(1+i)\) in the
+  second bank.
+\end{itemize}
+
+For this to be equivalent to the interest paid in arrears, we can find
+\(x\) which solves \[\begin{aligned}
+     1 + x(1+i) &= 1 + i,\\
+     x &= \frac{i}{1+i} = \frac{1+i}{1+i} - \frac{1}{1+i}  = 1-v = d.\end{aligned}\]
+Therefore, the effective rate of discount \(d\) per time unit can be
+regarded as the interest paid in advance at time 0, which is equivalent
+to the effective rate of interest \(i\) payable in arrears.
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-30}{}\label{exm:unlabeled-div-30}
+
+\emph{Let} \(i\) be the constant effective rate of interest per time unit. Show
+that the accumulated value of a level annuity due, denoted by
+\(\ddot{s}_\angl{n}\) (pronounced ``S-due N'', having cashflow of 1 unit at
+the start of each of the next \(n\) time units is
+\[\ddot{s}_\angl{n} = \frac{(1+i)^n -1 }{d}.\]
+
+\end{example}
+
+\begin{center}\includegraphics{tikz-ex16-1} \end{center}
+
+\textbf{Solution:} Using the previous results, it follows that
+\[\begin{aligned}
+ \ddot{s}_\angl{n} &= (1+i)^n + (1+i)^{n-1} + \cdots + (1+i)^2 + (1+i) \\
+            &= (1+i) \cdot \left[(1+i)^{n-1} + \cdots + (1+i)^1 + 1\right] \\
+            &= (1+i) \cdot {s}_\angl{n} \\
+            &= (1+i) \cdot \frac{(1+i)^n -1 }{i}\\
+            &=  \frac{(1+i)^n -1 }{i/(1+i)}\\
+            &=  \frac{(1+i)^n -1 }{d}.\end{aligned}\]
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-31}{}\label{exm:unlabeled-div-31}
+
+\emph{Let} \(i\) be the constant effective rate of interest per time unit. Show
+that the present value at time 0 of a level annuity due having cashflow
+of 1 unit at the start of each of the next \(n\) time units is
+\[\ddot{a}_\angl{n} =  \frac{1 - v^n }{d}.\]
+
+\end{example}
+
+\textbf{Solution:} The present values of the payments can be obtained by
+discounting \(\ddot{a}_\angl{n}\) back to time 0, i.e.~\[\begin{aligned}
+ \ddot{a}_\angl{n} &= v^n  \cdot  \ddot{s}_\angl{n} \\
+            &= v^n  \frac{(1+i)^n -1 }{d} \\
+            &=\frac{1 - v^n}{d}.\end{aligned}\]
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-32}{}\label{exm:unlabeled-div-32}
+
+\emph{Given the effective rate of interest of} \(8\%\) p.a., calculate
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{the accumulation at 12 years of ฿500 payable yearly in advance for
+  the next 12 years.}
+\item
+  \emph{the present value now of ฿2,000 payable yearly in advance for the
+  next 6 years.}
+\item
+  \emph{the present value now of ฿1,000 payable half-yearly in advance for
+  the next 12.5 years.}
+\end{enumerate}
+
+\end{example}
+
+\textbf{Solution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  The accumulation of the annuity-due of 12 years is
+  \[500 \cdot \ddot{s}_\angl{12} = 500 \cdot \frac{1.08^{12} -1}{0.08/1.08} = 10247.648289.\]
+\item
+  The present value of the annuity-due of 6 years is
+  \[2000 \cdot \ddot{a}_\angl{6} = 2000 \cdot \frac{1- 1.08^{-6}}{0.08/1.08} = 9985.420074.\]
+\item
+  An interest rate of 8\% p.a. is equivalent to an effective
+  half-yearly interest rate, denoted by \(j\), of
+  \[j = 1.08^{1/2} -1 = 0.039230.\] There are 25 payments of 1000
+  each, starting in six months' time.
+
+  Working in terms of half year, the present value of the payment is
+  \[1000 \cdot \ddot{a}^j_\angl{25} = 1000 \cdot \frac{1 - 1.039230^{-25} }{0.039230/1.039230 } = 16367.876564.\]
+\end{enumerate}
+
+\newpage \hypertarget{deferred-annuities}{%
+\subsection{Deferred annuities}\label{deferred-annuities}}
+
+An annuity whose first payment is made during the first time period
+(either in arrears or in advance) is called \emph{immediate annuity}.
+Otherwise, the annuity is known as \emph{deferred} annuity, i.e.~the first
+payment starts some time in the future.
+
+To calculate the present value of the annuity of a series of \(n\)
+payments deferred for \(m\) time units (the first payment is due at time
+\(m+1\)), denoted by \(_{m \textbar}a_\angl{n}\), we first calculate the
+present value at the end of the deferred period and then discount back
+to the start of the period.
+
+\begin{center}\includegraphics{tikz-ex17-1} \end{center}
+
+\[\begin{aligned}
+    _{m \textbar} a_\angl{n}  &= v^{m+1} + v^{m+2} + \cdots +v^{m+n}  \\
+    &= v^m  \left( v + v^2 + \cdots + v^n  \right) \\
+    &= v^m \cdot  a_\angl{n}.\end{aligned}\]
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-33}{}\label{exm:unlabeled-div-33}
+
+\emph{Calculate the present value at time 0 of an annuity of 1 p.a. in
+arrears for 6 years and deferred for 10 at 6\% effective rate p.a.}
+
+\end{example}
+
+\begin{center}\includegraphics{tikz-ex18-1} \end{center}
+
+This is an annuity with 6 unit payments for which the first payment is
+at time 11. Hence the present values of such payments is
+\[\begin{aligned}
+    _{10 \textbar}a_\angl{6}
+  &= v^{11} + v^{12} + \cdots +v^{16}  \\
+    &= v^{10}  \left( v + v^2 + \cdots + v^6  \right) \\
+    &= v^{10} \cdot  a_\angl{6} \\
+    &= \left(\frac{1}{1.06}\right)^{10} \cdot \left( \frac{1- 1.06^{-6}}{0.06} \right)
+    &= 2.745808.\end{aligned}\]
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-34}{}\label{exm:unlabeled-div-34}
+
+\emph{Give the reason or show that the present value of a series of} \((n+m)\)
+payments of one unit payable at the end of each time period is equal to
+the sum of
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{present value of} \(m\) payments of one units payable at the end of
+  each time period (denoted by \(a_\angl{m}\)) and
+\item
+  \emph{present value of} \(n\) payments of one units payable at the end of
+  each time period deferred for \(m\) years (denoted by
+  \(_{m \textbar}a_\angl{n}\)).
+\end{enumerate}
+
+\end{example}
+
+\textbf{Solution:} The present value of a series of (m+n) payments is
+\[\begin{aligned}
+a_\angl{m+n} &=  \left( v + v^2 + \cdots  v^m\right) + \left( v^{m+1} + v^{m+2} + \cdots +v^{m+n} \right) \\
+&= a_\angl{m} + _{m \textbar}a_\angl{n}.\end{aligned}\] It follows that
+\(_{m \textbar}a_\angl{n} = a_\angl{m+n} - a_\angl{m}.\)
+
+\newpage \hypertarget{increasing-annuities}{%
+\subsection{Increasing annuities}\label{increasing-annuities}}
+
+An annuity in which the \(i\)th payment of the amount \(i\) is made at time
+\(t_i = i\) is called an \emph{(simple) increasing} annuity. The present and
+accumulated value of this annuity can be obtained from the first
+principles. For example, the present value of the increasing annuity can
+be evaluated by \[\sum_{i=1}^n X_i v^{t_i} = \sum_{i=1}^n i v^{t_i},\]
+where the \(i\)th payment of amount \(X_i = i\) at time \(t_i = i\).
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-35}{}\label{exm:unlabeled-div-35}
+
+\emph{Derive the formula for the present value of a simple increasing annuity
+payable yearly in arrears with the effective rate} \(i\%\) p.a. for \(n\)
+years.
+
+\end{example}
+
+\textbf{Solution:} The cashflows of the simple increasing annuity payable
+yearly in arrears is illustrated below. The present value of payments of
+1 at time 1, 2 at time 2, \(\ldots, n\) at time \(n\) denoted by
+\((Ia)_\angl{n}\) is given by
+\[(Ia)^{i}_\angl{n}   = \frac{\ddot{a}^{i}_{\actuarialangle{n}} - nv^n}{i}.\]
+
+\begin{center}\includegraphics{tikz-ex19-1} \end{center}
+
+\textbf{Notes}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  An increasing annuity but with payments in advance is given by
+  \[(I\ddot{a})^{i}_\angl{n}   = \frac{\ddot{a}^{i}_{\actuarialangle{n}} - nv^n}{d}.\]
+\item
+  The formulas for the accumulated values are
+  \[(Is)^{i}_\angl{n} = \frac{\ddot{s}^{i}_{\actuarialangle{n}} - n}{i} \quad\text{(in arrears)}\]
+  \[(I\ddot{s})^{i}_\angl{n} = \frac{\ddot{s}^{i}_{\actuarialangle{n}} - n}{d} \quad\text{(in advance)}\]
+\end{enumerate}
+
+\newpage \hypertarget{compound-increasing-annuities}{%
+\subsection{Compound increasing annuities}\label{compound-increasing-annuities}}
+
+The following example considers the value of compound increasing
+annuities where the payments increase by a constant factor each time.
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-36}{}\label{exm:unlabeled-div-36}
+
+\emph{Assume that the effective rate of interest is 6\% p.a. Calculate the
+present value as at 1 January 2010 of an annuity payable annually in
+arrears for 8 years. The first payment is ฿10 and subsequent payments
+increase by 2\% per annum compound.}
+
+\end{example}
+
+\textbf{Solution:}
+
+\begin{center}\includegraphics{tikz-ex20-1} \end{center}
+
+At 1/1/2010, the present value of the payment is given by
+\[\begin{aligned}
+    PV &= 10 \cdot \frac{1}{1.06} + 10 \cdot \frac{1.02}{(1.06)^2} + \cdots +  10 \cdot \frac{(1.02)^7}{(1.06)^8} \\
+        &= \frac{10}{1.02} \left(  \frac{1.02}{1.06} +  \left(  \frac{1.02}{1.06}  \right)^2 + \cdots +
+    \left(  \frac{1.02}{1.06}  \right)^8  \right)\end{aligned}\] The
+above equation can be arranged so that the annuity formula can be
+applied. We can define \(j\) such that \(1 + j = 1.06/1.02\), and hence,
+\[\begin{aligned}
+    PV &= \frac{10}{1.02} \left(  \frac{1}{1 + j} +  \left(  \frac{1}{1+j}  \right)^2 + \cdots +
+    \left(  \frac{1}{1+j}  \right)^8  \right)  \\
+    &=   \frac{10}{1.02}  a_\angl{8} \quad  \text{ at } j\% \\
+    &=  \frac{10}{1.02} \left(   \frac{1 - \left(\frac{1.02}{1.06}\right)^8   }{\left(   \frac{1.06}{1.02}   - 1 \right)}  \right) \\
+    &= 66.2216\end{aligned}\]
+
+\newpage \hypertarget{annuities-payable-more-than-once-per-time-unit}{%
+\subsection{Annuities payable more than once per time unit}\label{annuities-payable-more-than-once-per-time-unit}}
+
+Consider the value of an annuity payable in arrears \(m\) times per time
+unit at an effective rate of interest \(i\) per time unit. The annuity is
+still payable for \(n\) time units and a total amount of 1 unit per time
+unit. The present and accumulated values of the corresponding annuity
+are denoted by \(a^{(m)i}_\angl{n}\) and \(s^{(m)i}_\angl{n}\),
+respectively.
+
+To calculate either the present or accumulation value of this annuity,
+we can simply apply the first principles by using the effective rate of
+interest per \(1/m\) time unit. In particular, we have
+\[a^{(m)i}_\angl{n}   = \frac{1}{m}  a^j_\angl{n\cdot m},\] and
+\[s^{(m)i}_\angl{n}   = \frac{1}{m}  s^j_\angl{n\cdot m},\] where \(j\) is
+the effective rate per \(1/m\) time unit.
+
+\newpage \begin{example}
+\protect\hypertarget{exm:unlabeled-div-37}{}\label{exm:unlabeled-div-37}
+
+\emph{Calculate the accumulation at 1 January 2020 of an annuity of ฿100 per
+month, payable in arrears from 1 January 2010 at an effective rate of
+interest of 4\% p.a.}
+
+\end{example}
+
+\textbf{Solution:} The annual payment is 1200 and the effective rate per
+month equivalent to 4\% p.a. is \(j = (1.04)^{1/12} - 1 = 0.003274\) per
+month. Hence,
+\[1200 s^{(12)4\%}_\angl{10}   = 100  s^j_\angl{12\cdot 10} = 14669.59.\]
+
+
 \end{document}

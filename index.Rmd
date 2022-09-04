@@ -999,6 +999,79 @@ The above formula can be obtained by summing these two components:
 -   for all $t_r > t$ , adding up the discounted values of these
     individual cashflows back to time $t$.
 
+```{tikz, tikz-ex7, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (11.5,121) -- (648.5,121) ;
+\draw [shift={(650.5,121)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (21,115) -- (21,126) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (161,116) -- (161,127) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (320,115) -- (320,126) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (599,116) -- (599,127) ;
+%Straight Lines [id:da6916216612158876] 
+\draw    (470,115) -- (470,126) ;
+%Straight Lines [id:da5378437724389864] 
+\draw    (21,75) -- (20.53,104) ;
+\draw [shift={(20.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (470,76) -- (469.53,105) ;
+\draw [shift={(469.5,107)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da048688156533002847] 
+\draw    (160,160) -- (159.53,189) ;
+\draw [shift={(159.5,191)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15939998725879834] 
+\draw    (600,158) -- (599.53,187) ;
+\draw [shift={(599.5,189)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da031538711266737796] 
+\draw    (23.5,41) .. controls (35.5,24) and (214,-44) .. (321,103) ;
+\draw [shift={(321,103)}, rotate = 233.95] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da21933383878087986] 
+\draw    (159,228) .. controls (270.87,250.77) and (293.55,197.09) .. (318.25,156.23) ;
+\draw [shift={(319,155)}, rotate = 481.37] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da756354870019234] 
+\draw    (325.5,159.8) .. controls (344.9,184.07) and (363.33,243.45) .. (454,261) .. controls (547,279) and (584.98,241.51) .. (599,231) ;
+\draw [shift={(324,158)}, rotate = 48.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da08207150502732485] 
+\draw    (320.78,100.75) .. controls (314.54,26.77) and (415.03,-33.29) .. (467,37) ;
+\draw [shift={(321,103)}, rotate = 263.53] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (22,141.5) node   [align=left] {$\displaystyle t_{1}$};
+% Text Node
+\draw (160,142.5) node   [align=left] {$\displaystyle t_{2}$};
+% Text Node
+\draw (323,141.5) node   [align=left] {$\displaystyle t$};
+% Text Node
+\draw (600,142.5) node   [align=left] {$\displaystyle t_{n}$};
+% Text Node
+\draw (471,141.5) node   [align=left] {$\displaystyle t_{n-1}$};
+% Text Node
+\draw (22,59) node   [align=left] {$\displaystyle C_{1}$};
+% Text Node
+\draw (471,60) node   [align=left] {$\displaystyle C_{n-1}$};
+% Text Node
+\draw (161,205) node   [align=left] {$\displaystyle C_{2}$};
+% Text Node
+\draw (601,204) node   [align=left] {$\displaystyle C_{n}$};
+% Text Node
+\draw (636,104) node   [align=left] {Time};
+
+
+\end{tikzpicture}
+
+```
+
+
 **Notes**
 
 1.  At a fixed effective rate of interest, the original series of
@@ -1031,6 +1104,76 @@ The above formula can be obtained by summing these two components:
 
 **Solution:**
 
+```{tikz, tikz-ex8, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (11.5,121) -- (648.5,121) ;
+\draw [shift={(650.5,121)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (21,115) -- (21,126) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (120,116) -- (120,127) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (219,115) -- (219,126) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (619,116) -- (619,127) ;
+%Straight Lines [id:da6916216612158876] 
+\draw    (520,115) -- (520,126) ;
+%Straight Lines [id:da5378437724389864] 
+\draw    (121,75) -- (120.53,104) ;
+\draw [shift={(120.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da048688156533002847] 
+\draw    (520,158) -- (519.53,187) ;
+\draw [shift={(519.5,189)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da15939998725879834] 
+\draw    (620,158) -- (619.53,187) ;
+\draw [shift={(619.5,189)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8577021712761623] 
+\draw    (319,114) -- (319,125) ;
+%Straight Lines [id:da9594183913234795] 
+\draw    (419,113) -- (419,124) ;
+%Straight Lines [id:da0484009302785704] 
+\draw    (320,75) -- (319.53,104) ;
+\draw [shift={(319.5,106)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (21,141.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (119,142.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (222,141.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (620,142.5) node   [align=left] {$\displaystyle 6$};
+% Text Node
+\draw (521,141.5) node   [align=left] {$\displaystyle 5$};
+% Text Node
+\draw (122,59) node   [align=left] {$\displaystyle 200$};
+% Text Node
+\draw (521,203) node   [align=left] {$\displaystyle -100$};
+% Text Node
+\draw (621,204) node   [align=left] {$\displaystyle -50$};
+% Text Node
+\draw (636,104) node   [align=left] {Time};
+% Text Node
+\draw (318,140.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (421,139.5) node   [align=left] {$\displaystyle 4$};
+% Text Node
+\draw (321,59) node   [align=left] {$\displaystyle 300$};
+
+
+\end{tikzpicture}
+
+
+```
+
+
 1.  The series of cashflows is shown in the following timeline. The
     accumulation at time $t = 7$ is $$\begin{aligned}
         \sum_{r=1}^4 A(t_r,7) &= 200 \cdot A(1,7) +  300 \cdot A(3,7) -  100 \cdot A(5,7) -  50 \cdot A(6,7) \\
@@ -1046,13 +1189,20 @@ The above formula can be obtained by summing these two components:
 
 ### Level Annuities certain
 
-**Annuities** are financial products that provide a guaranteed income
-stream and are primarily used for retirement savings. They are regular
-series of payments (cashflows). When they are specific payments to be
-made for a specific period of time, they are called *annuity certain*.
 
--   If the payments are made at the end of each time period, they are
-    paid *in arrears*.
+An **annuity** is a series of payments made at equal intervals. There are many practical examples of financial transactions involving annuities, such as.
+
+- a car loan that is repaid in equal monthly instalments
+
+- a pensioner who purchases an annuity from an insurance company upon retirement
+
+- a life insurance policy that is taken out with monthly premiums
+
+
+
+When certain payments are to be made for a certain period of time, they are called *annuity certain*.
+
+-   If the payments are made at the end of each time period, they are paid *in arrears*.
 
 -   Otherwise, payments are made at the beginning of each time period,
     they are pain *in advance*.
@@ -1068,6 +1218,70 @@ that the accumulated value of a level annuity certain having cashflow of
 $$\frac{(1+i)^n -1 }{i}.$$ Such accumulated value of the annuity is
 denoted by $s_\angl{n}$ (pronounced "S.N.")
 :::
+
+```{tikz, tikz-ex9, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,69) -- (300.53,98) ;
+\draw [shift={(300.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (420,105) -- (420,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (421,69) -- (420.53,98) ;
+\draw [shift={(420.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (571,69) -- (570.53,98) ;
+\draw [shift={(570.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,131.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle n$};
+% Text Node
+\draw (601,90) node   [align=left] {Time};
+% Text Node
+\draw (420,131.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (495,130.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (182,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (301,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (421,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (571,54) node   [align=left] {$\displaystyle 1$};
+
+
+\end{tikzpicture}
+
+
+```
 
 **Solution:** Based on the first principles,
 
@@ -1115,6 +1329,71 @@ back to time 0 gives $$\begin{aligned}
 
 1.  The timeline of this transaction is shown in the figure below.
 
+```{tikz, tikz-ex10, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,69) -- (300.53,98) ;
+\draw [shift={(300.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (420,105) -- (420,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (421,69) -- (420.53,98) ;
+\draw [shift={(420.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (571,69) -- (570.53,98) ;
+\draw [shift={(570.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,131.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle 12$};
+% Text Node
+\draw (601,90) node   [align=left] {Year};
+% Text Node
+\draw (420,131.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (182,54) node   [align=left] {$\displaystyle 500$};
+% Text Node
+\draw (301,54) node   [align=left] {$\displaystyle 500$};
+% Text Node
+\draw (421,54) node   [align=left] {$\displaystyle 500$};
+% Text Node
+\draw (571,54) node   [align=left] {500};
+
+
+\end{tikzpicture}
+
+
+```
+
+
     The accumulation of the payments is
     $$500 \cdot s_\angl{12}  = 500 \cdot \frac{1.08^{12} - 1 }{0.08 } = 9488.563230.$$
 
@@ -1149,6 +1428,46 @@ Suppose an amount of ฿1 is due after 1 year with an effective rate of
 $i \%$ p.a. (see the timeline below). What is the amount of money
 required to invested now to accumulate to 1?
 
+
+```{tikz, tikz-ex12, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (258.5,111.99) ;
+\draw [shift={(260.5,112)}, rotate = 180.27] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (61,69) -- (60.53,98) ;
+\draw [shift={(60.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5757036058163636] 
+\draw    (180,148) -- (179.53,177) ;
+\draw [shift={(179.5,179)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (241,90) node   [align=left] {Time};
+% Text Node
+\draw (62,54) node   [align=left] {$\displaystyle ?$};
+% Text Node
+\draw (180,195.5) node   [align=left] {$\displaystyle 1$};
+
+
+\end{tikzpicture}
+
+
+```
+
+
 The amount of money required now to accumulate to ฿1 in one year is
 $$v =  \frac{1}{1+i}.$$ Note that $$\frac{1}{1+i} = 1 - \frac{i}{1+i}.$$
 We define the effective rate of discount $d$ per annum
@@ -1161,6 +1480,50 @@ Similarly, suppose an amount of ฿1 is due after $n$ year with an
 effective rate of $i \%$ p.a. The amount of money required to invested
 now to accumulate to 1 in $n$ year is $$\frac{1}{(1+i)^n} = (1-d)^n.$$
 See the timeline below for illustration.
+
+```{tikz, tikz-ex14, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (420.5,111.99) ;
+\draw [shift={(422.5,112)}, rotate = 180.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (61,69) -- (60.53,98) ;
+\draw [shift={(60.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1842490054646806] 
+\draw    (341,106) -- (341,117) ;
+%Straight Lines [id:da7547448836866759] 
+\draw    (340,148) -- (339.53,177) ;
+\draw [shift={(339.5,179)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (401,90) node   [align=left] {Time};
+% Text Node
+\draw (62,54) node   [align=left] {$\displaystyle ?$};
+% Text Node
+\draw (340,132.5) node   [align=left] {$\displaystyle n$};
+% Text Node
+\draw (340,195.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (260,124.5) node   [align=left] {$\displaystyle .\ .\ .$};
+
+
+\end{tikzpicture}
+
+```
+
 
 ::: {.example}
 *Discount ฿2,000 for 3 years using the effective rate of discount of 5%
@@ -1187,6 +1550,81 @@ that the interest amount of $x$ can be withdrawn and invested in another
 bank that earn the rate of interest $i\%$ effective per time unit. The
 principle of 1 unit is still in the first bank.
 
+```{tikz, tikz-ex15, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,422); %set diagram left start at 0, and has height of 422
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (104.5,71) -- (480.5,71.99) ;
+\draw [shift={(482.5,72)}, rotate = 180.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (120,66) -- (120,77) ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (121,29) -- (120.53,58) ;
+\draw [shift={(120.5,60)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1842490054646806] 
+\draw    (401,66) -- (401,77) ;
+%Straight Lines [id:da7547448836866759] 
+\draw    (400,108) -- (399.53,137) ;
+\draw [shift={(399.5,139)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da09254361578257253] 
+\draw    (104.5,270) -- (480.5,270.99) ;
+\draw [shift={(482.5,271)}, rotate = 180.15] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da34715003290010693] 
+\draw    (120,265) -- (120,276) ;
+%Straight Lines [id:da1006730032243719] 
+\draw    (121,228) -- (120.53,257) ;
+\draw [shift={(120.5,259)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6591600982218124] 
+\draw    (401,265) -- (401,276) ;
+%Straight Lines [id:da9613278244556793] 
+\draw    (400,307) -- (399.53,336) ;
+\draw [shift={(399.5,338)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da06558227969027053] 
+\draw    (120,108) -- (119.53,137) ;
+\draw [shift={(119.5,139)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da2923604966558815] 
+\draw    (139.5,170) .. controls (149.74,187.55) and (136.21,187.99) .. (122.55,204.68) ;
+\draw [shift={(121.5,206)}, rotate = 307.87] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp8888928547826969] 
+\draw   (122.5,152) .. controls (122.5,144.82) and (128.66,139) .. (136.25,139) .. controls (143.84,139) and (150,144.82) .. (150,152) .. controls (150,159.18) and (143.84,165) .. (136.25,165) .. controls (128.66,165) and (122.5,159.18) .. (122.5,152) -- cycle ;
+
+% Text Node
+\draw (121,151.5) node   [align=left] {$\displaystyle 1+\ \textcolor[rgb]{0.29,0.56,0.89}{x}$};
+% Text Node
+\draw (461,50) node   [align=left] {Time};
+% Text Node
+\draw (122,14) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (400,92.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (400,155.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (121,290.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (461,249) node   [align=left] {Time};
+% Text Node
+\draw (122,213) node   [align=left] {$\displaystyle x$};
+% Text Node
+\draw (400,291.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (400,354.5) node   [align=left] {$\displaystyle x\cdot ( 1+i)$};
+% Text Node
+\draw (120,92.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (42,4) node [anchor=north west][inner sep=0.75pt]   [align=left] {Bank A};
+% Text Node
+\draw (43,203) node [anchor=north west][inner sep=0.75pt]   [align=left] {Bank B};
+
+
+\end{tikzpicture}
+
+```
+
 At the end of the year, we have
 
 -   the principle of 1 unit in the first bank, and
@@ -1209,6 +1647,70 @@ $\ddot{s}_\angl{n}$ (pronounced "S-due N", having cashflow of 1 unit at
 the start of each of the next $n$ time units is
 $$\ddot{s}_\angl{n} = \frac{(1+i)^n -1 }{d}.$$
 :::
+
+```{tikz, tikz-ex16, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,69) -- (300.53,98) ;
+\draw [shift={(300.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (449,105) -- (449,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (450,69) -- (449.53,98) ;
+\draw [shift={(449.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (61,69) -- (60.53,98) ;
+\draw [shift={(60.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,131.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle n$};
+% Text Node
+\draw (601,90) node   [align=left] {Time};
+% Text Node
+\draw (449,131.5) node   [align=left] {$\displaystyle n-1$};
+% Text Node
+\draw (374,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (182,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (301,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (450,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (61,54) node   [align=left] {$\displaystyle 1$};
+
+
+\end{tikzpicture}
+
+
+```
+
 
 **Solution:** Using the previous results, it follows that
 $$\begin{aligned}
@@ -1274,6 +1776,75 @@ $m+1$), denoted by $_{m \textbar}a_\angl{n}$, we first calculate the
 present value at the end of the deferred period and then discount back
 to the start of the period.
 
+```{tikz, tikz-ex17, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (121,106) -- (121,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (303,105) -- (303,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (420,105) -- (420,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (421,69) -- (420.53,98) ;
+\draw [shift={(420.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (571,69) -- (570.53,98) ;
+\draw [shift={(570.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da903069076316972] 
+\draw    (360,105) -- (360,116) ;
+%Straight Lines [id:da8911276783833124] 
+\draw    (360,69) -- (359.53,98) ;
+\draw [shift={(359.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5818501597930779] 
+\draw    (240,105) -- (240,116) ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (120,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (304,131.5) node   [align=left] {$\displaystyle m$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle m+n$};
+% Text Node
+\draw (601,90) node   [align=left] {Time};
+% Text Node
+\draw (420,131.5) node   [align=left] {$\displaystyle m+2$};
+% Text Node
+\draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (421,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (571,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (361,131.5) node   [align=left] {$\displaystyle m+1$};
+% Text Node
+\draw (360,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (241,131.5) node   [align=left] {$\displaystyle m-1$};
+% Text Node
+\draw (175,126.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (495,49.5) node   [align=left] {$\displaystyle .\ .\ .$};
+
+
+\end{tikzpicture}
+
+```
+
 $$\begin{aligned}
     _{m \textbar} a_\angl{n}  &= v^{m+1} + v^{m+2} + \cdots +v^{m+n}  \\
     &= v^m  \left( v + v^2 + \cdots + v^n  \right) \\
@@ -1283,6 +1854,68 @@ $$\begin{aligned}
 *Calculate the present value at time 0 of an annuity of 1 p.a. in
 arrears for 6 years and deferred for 10 at 6% effective rate p.a.*
 :::
+
+```{tikz, tikz-ex18, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (420,105) -- (420,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (421,69) -- (420.53,98) ;
+\draw [shift={(420.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (571,69) -- (570.53,98) ;
+\draw [shift={(570.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da903069076316972] 
+\draw    (321,105) -- (321,116) ;
+%Straight Lines [id:da8911276783833124] 
+\draw    (321,69) -- (320.53,98) ;
+\draw [shift={(320.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5818501597930779] 
+\draw    (159,105) -- (159,116) ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle 16$};
+% Text Node
+\draw (601,90) node   [align=left] {Time};
+% Text Node
+\draw (420,131.5) node   [align=left] {$\displaystyle 12$};
+% Text Node
+\draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (421,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (571,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (322,131.5) node   [align=left] {$\displaystyle 11$};
+% Text Node
+\draw (321,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (160,131.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (223,126.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (495,49.5) node   [align=left] {$\displaystyle .\ .\ .$};
+
+
+\end{tikzpicture}
+
+```
 
 This is an annuity with 6 unit payments for which the first payment is
 at time 11. Hence the present values of such payments is
@@ -1334,6 +1967,71 @@ yearly in arrears is illustrated below. The present value of payments of
 $(Ia)_\angl{n}$ is given by
 $$(Ia)^{i}_\angl{n}   = \frac{\ddot{a}^{i}_{\actuarialangle{n}} - nv^n}{i}.$$
 
+```{tikz, tikz-ex19, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,69) -- (300.53,98) ;
+\draw [shift={(300.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (420,105) -- (420,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (421,69) -- (420.53,98) ;
+\draw [shift={(420.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (571,69) -- (570.53,98) ;
+\draw [shift={(570.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,131.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle n$};
+% Text Node
+\draw (601,90) node   [align=left] {Time};
+% Text Node
+\draw (420,131.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (182,54) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (301,54) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (421,54) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (571,54) node   [align=left] {$\displaystyle n$};
+
+
+\end{tikzpicture}
+
+
+```
+
+
 **Notes**
 
 1.  An increasing annuity but with payments in advance is given by
@@ -1356,6 +2054,69 @@ increase by 2% per annum compound.*
 :::
 
 **Solution:**
+
+```{tikz, tikz-ex20, fig.ext = 'png', cache=TRUE, echo = FALSE, fig.align = 'center'}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,279); %set diagram left start at 0, and has height of 279
+
+%Straight Lines [id:da8691686097400964] 
+\draw    (44.5,111) -- (617.5,110) ;
+\draw [shift={(619.5,110)}, rotate = 539.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da597257855042824] 
+\draw    (60,106) -- (60,117) ;
+%Straight Lines [id:da9474951160801843] 
+\draw    (181,106) -- (181,117) ;
+%Straight Lines [id:da6185331554915787] 
+\draw    (301,105) -- (301,116) ;
+%Straight Lines [id:da5682405407635602] 
+\draw    (570,106) -- (570,117) ;
+%Straight Lines [id:da5881588816774714] 
+\draw    (301,69) -- (300.53,98) ;
+\draw [shift={(300.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da1927000421177052] 
+\draw    (181,69) -- (180.53,98) ;
+\draw [shift={(180.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da43730719784498717] 
+\draw    (420,105) -- (420,116) ;
+%Straight Lines [id:da5347119577328068] 
+\draw    (421,69) -- (420.53,98) ;
+\draw [shift={(420.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da21105992529208994] 
+\draw    (571,69) -- (570.53,98) ;
+\draw [shift={(570.5,100)}, rotate = 270.92] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (61,131.5) node   [align=left] {$\displaystyle 0$};
+% Text Node
+\draw (180,132.5) node   [align=left] {$\displaystyle 1$};
+% Text Node
+\draw (302,131.5) node   [align=left] {$\displaystyle 2$};
+% Text Node
+\draw (571,129.5) node   [align=left] {$\displaystyle 8$};
+% Text Node
+\draw (601,90) node   [align=left] {Year};
+% Text Node
+\draw (420,131.5) node   [align=left] {$\displaystyle 3$};
+% Text Node
+\draw (495,125.5) node   [align=left] {$\displaystyle .\ .\ .$};
+% Text Node
+\draw (182,54) node   [align=left] {$\displaystyle 10$};
+% Text Node
+\draw (301,54) node   [align=left] {$\displaystyle 10( 1.02)$};
+% Text Node
+\draw (421,54) node   [align=left] {$\displaystyle 10( 1.02)^{2}$};
+% Text Node
+\draw (571,54) node   [align=left] {$\displaystyle 10( 1.02)^7$};
+
+
+\end{tikzpicture}
+
+
+```
 
 At 1/1/2010, the present value of the payment is given by
 $$\begin{aligned}

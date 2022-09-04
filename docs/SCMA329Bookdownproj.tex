@@ -89,7 +89,7 @@
 
 \title{SCMA329 Practical Mathematical Financial Modeling}
 \author{Pairote Satiracoo}
-\date{2022-08-30}
+\date{2022-09-01}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -967,6 +967,8 @@ The above formula can be obtained by summing these two components:
   individual cashflows back to time \(t\).
 \end{itemize}
 
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex7-1} \end{center}
+
 \textbf{Notes}
 
 \begin{enumerate}
@@ -1013,6 +1015,8 @@ The above formula can be obtained by summing these two components:
 
 \textbf{Solution:}
 
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex8-1} \end{center}
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -1033,15 +1037,22 @@ The above formula can be obtained by summing these two components:
 \hypertarget{level-annuities-certain}{%
 \subsection{Level Annuities certain}\label{level-annuities-certain}}
 
-\textbf{Annuities} are financial products that provide a guaranteed income
-stream and are primarily used for retirement savings. They are regular
-series of payments (cashflows). When they are specific payments to be
-made for a specific period of time, they are called \emph{annuity certain}.
+An \textbf{annuity} is a series of payments made at equal intervals. There are many practical examples of financial transactions involving annuities, such as.
 
 \begin{itemize}
 \item
-  If the payments are made at the end of each time period, they are
-  paid \emph{in arrears}.
+  a car loan that is repaid in equal monthly instalments
+\item
+  a pensioner who purchases an annuity from an insurance company upon retirement
+\item
+  a life insurance policy that is taken out with monthly premiums
+\end{itemize}
+
+When certain payments are to be made for a certain period of time, they are called \emph{annuity certain}.
+
+\begin{itemize}
+\item
+  If the payments are made at the end of each time period, they are paid \emph{in arrears}.
 \item
   Otherwise, payments are made at the beginning of each time period,
   they are pain \emph{in advance}.
@@ -1061,6 +1072,8 @@ that the accumulated value of a level annuity certain having cashflow of
 denoted by \(s_\angl{n}\) (pronounced ``S.N.'')
 
 \end{example}
+
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex9-1} \end{center}
 
 \textbf{Solution:} Based on the first principles,
 
@@ -1117,11 +1130,21 @@ back to time 0 gives \[\begin{aligned}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
   The timeline of this transaction is shown in the figure below.
+\end{enumerate}
 
-  The accumulation of the payments is
-  \[500 \cdot s_\angl{12}  = 500 \cdot \frac{1.08^{12} - 1 }{0.08 } = 9488.563230.\]
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex10-1} \end{center}
+
+\begin{verbatim}
+The accumulation of the payments is
+$$500 \cdot s_\angl{12}  = 500 \cdot \frac{1.08^{12} - 1 }{0.08 } = 9488.563230.$$
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
 \item
   The present value of the payments is
   \[2000\cdot a_\angl{6}  = 2000 \cdot \frac{1 - 1.08^{-6} }{0.08 } = 9245.759328.\]
@@ -1158,6 +1181,8 @@ Suppose an amount of ฿1 is due after 1 year with an effective rate of
 \(i \%\) p.a. (see the timeline below). What is the amount of money
 required to invested now to accumulate to 1?
 
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex12-1} \end{center}
+
 The amount of money required now to accumulate to ฿1 in one year is
 \[v =  \frac{1}{1+i}.\] Note that \[\frac{1}{1+i} = 1 - \frac{i}{1+i}.\]
 We define the effective rate of discount \(d\) per annum
@@ -1170,6 +1195,8 @@ Similarly, suppose an amount of ฿1 is due after \(n\) year with an
 effective rate of \(i \%\) p.a. The amount of money required to invested
 now to accumulate to 1 in \(n\) year is \[\frac{1}{(1+i)^n} = (1-d)^n.\]
 See the timeline below for illustration.
+
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex14-1} \end{center}
 
 \begin{example}
 \protect\hypertarget{exm:unlabeled-div-28}{}\label{exm:unlabeled-div-28}
@@ -1202,6 +1229,8 @@ that the interest amount of \(x\) can be withdrawn and invested in another
 bank that earn the rate of interest \(i\%\) effective per time unit. The
 principle of 1 unit is still in the first bank.
 
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex15-1} \end{center}
+
 At the end of the year, we have
 
 \begin{itemize}
@@ -1230,6 +1259,8 @@ the start of each of the next \(n\) time units is
 \[\ddot{s}_\angl{n} = \frac{(1+i)^n -1 }{d}.\]
 
 \end{example}
+
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex16-1} \end{center}
 
 \textbf{Solution:} Using the previous results, it follows that
 \[\begin{aligned}
@@ -1310,6 +1341,8 @@ payments deferred for \(m\) time units (the first payment is due at time
 present value at the end of the deferred period and then discount back
 to the start of the period.
 
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex17-1} \end{center}
+
 \[\begin{aligned}
     _{m \textbar} a_\angl{n}  &= v^{m+1} + v^{m+2} + \cdots +v^{m+n}  \\
     &= v^m  \left( v + v^2 + \cdots + v^n  \right) \\
@@ -1322,6 +1355,8 @@ to the start of the period.
 arrears for 6 years and deferred for 10 at 6\% effective rate p.a.}
 
 \end{example}
+
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex18-1} \end{center}
 
 This is an annuity with 6 unit payments for which the first payment is
 at time 11. Hence the present values of such payments is
@@ -1384,6 +1419,8 @@ yearly in arrears is illustrated below. The present value of payments of
 \((Ia)_\angl{n}\) is given by
 \[(Ia)^{i}_\angl{n}   = \frac{\ddot{a}^{i}_{\actuarialangle{n}} - nv^n}{i}.\]
 
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex19-1} \end{center}
+
 \textbf{Notes}
 
 \begin{enumerate}
@@ -1414,6 +1451,8 @@ increase by 2\% per annum compound.}
 \end{example}
 
 \textbf{Solution:}
+
+\begin{center}\includegraphics{SCMA329Bookdownproj_files/figure-latex/tikz-ex20-1} \end{center}
 
 At 1/1/2010, the present value of the payment is given by
 \[\begin{aligned}

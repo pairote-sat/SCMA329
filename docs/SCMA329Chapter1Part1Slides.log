@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.12)  14 AUG 2022 09:51
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.4.12)  1 SEP 2022 12:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1718,22 +1718,86 @@ File: tikz-ex4-1.pdf Graphic file (type QTm)
 File: tikz-ex6-1.pdf Graphic file (type QTm)
 
 <use  "tikz-ex6-1.pdf" > [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
-[36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 941.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 941.
+[36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47]
+File: tikz-ex7-1.pdf Graphic file (type QTm)
 
-(./SCMA329Chapter1Part1Slides.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 941.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 941.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 941.
+<use  "tikz-ex7-1.pdf" > [48]
+File: tikz-ex8-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex8-1.pdf" > [49]
+Overfull \hbox (27.63342pt too wide) detected at line 1031
+[][]
+ []
+
+[50] [51] [52]
+File: tikz-ex9-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex9-1.pdf" > [53] [54] [55]
+File: tikz-ex10-1.pdf Graphic file (type QTm)
+
+<use  "tikz-ex10-1.pdf" >
+Overfull \hbox (204.01682pt too wide) in paragraph at lines 1147--1147
+[]\TU/lmtt/m/n/20.74 $$500 \cdot s_\angl{12}  = 500 \cdot \frac{1.08^{12} - 1}{
+0.08} = 9488.563230.$$[] 
+ []
+
+[56] [57]
+File: tikz-ex12-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex12-1.pdf" > [58] [59]
+File: tikz-ex14-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex14-1.pdf" >
+[60] [61]
+File: tikz-ex15-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex15-1.pdf" > [62] [63] [64]
+File: tikz-ex16-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex16-1.pdf" >
+[65] [66] [67] [68] [69]
+
+LaTeX Warning: Command \textbar invalid in math mode on input line 1344.
+
+File: tikz-ex17-1.pdf Graphic file (type QTm)
+<use  "tikz-ex17-1.pdf" >
+
+LaTeX Warning: Command \textbar invalid in math mode on input line 1351.
+
+[70]
+File: tikz-ex18-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex18-1.pdf" >
+
+LaTeX Warning: Command \textbar invalid in math mode on input line 1368.
+
+[71]
+
+LaTeX Warning: Command \textbar invalid in math mode on input line 1390.
+
+
+LaTeX Warning: Command \textbar invalid in math mode on input line 1398.
+
+
+LaTeX Warning: Command \textbar invalid in math mode on input line 1399.
+
+[72] [73]
+File: tikz-ex19-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex19-1.pdf" > [74] [75] [76]
+File: tikz-ex20-1.pdf Graphic file (type QTm)
+ <use  "tikz-ex20-1.pdf" >
+[77] [78] [79] [80]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1507.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1507.
+ (./SCMA329Chapter1Part1Slides.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1507.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1507.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1507.
  ) 
 Here is how much of TeX's memory you used:
- 37821 strings out of 493005
- 724095 string characters out of 6134596
- 908308 words of memory out of 5000000
- 41258 multiletter control sequences out of 15000+600000
- 9048 words of font info for 61 fonts, out of 8000000 for 9000
+ 37874 strings out of 493005
+ 725076 string characters out of 6134596
+ 912249 words of memory out of 5000000
+ 41296 multiletter control sequences out of 15000+600000
+ 9056 words of font info for 62 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,11n,73p,10421b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,16n,73p,10421b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on SCMA329Chapter1Part1Slides.pdf (47 pages).
+Output written on SCMA329Chapter1Part1Slides.pdf (81 pages).
