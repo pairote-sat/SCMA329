@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling</title>
   <meta name="description" content="Chapter 2 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling" />
   <meta property="og:type" content="book" />
-  
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Pairote Satiracoo" />
 
 
-<meta name="date" content="2022-09-04" />
+<meta name="date" content="2022-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="processes-for-stock-prices.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -184,10 +183,10 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bonds-and-inflation" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Bonds and Inflation</h1>
-<div id="bonds" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Bonds</h2>
+<div id="bonds-and-inflation" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Bonds and Inflation<a href="bonds-and-inflation.html#bonds-and-inflation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bonds" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Bonds<a href="bonds-and-inflation.html#bonds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A government or corporation can raise money in the capital markets by
 issuing <em>fixed interest securities (FIS)</em>, also called <em>bonds</em>. Bonds
 are a form of medium and long-term securities.</p>
@@ -199,8 +198,8 @@ the end of the term.</p>
 on a stock exchange. For example, a company raises ฿1,000,000,000 by
 issuing 10,000,000 bonds, each one a loan of face value ฿100. These can
 be bought and sold on a stock exchange.</p>
-<div id="characteristics-of-bonds" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Characteristics of Bonds</h3>
+<div id="characteristics-of-bonds" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Characteristics of Bonds<a href="bonds-and-inflation.html#characteristics-of-bonds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>The <em>nominal amount or face value</em> of a bond is the amount of the
 loan it represents. The nominal amount is usually ฿1,000 (without
@@ -317,8 +316,8 @@ country.</p></li>
 per annum will be obtained?</p></li>
 </ul>
 </div>
-<div id="bond-prices" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Bond prices</h3>
+<div id="bond-prices" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Bond prices<a href="bonds-and-inflation.html#bond-prices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Given a yield <span class="math inline">\(i\%\)</span>, the price of a bond can be computed by discounting
 all the future payments received net of any tax.</p>
 <div class="example">
@@ -349,6 +348,16 @@ after 5 years at the price of ฿97.75.</em></p></li>
 <li>The remaining payments are shown in the table below.</li>
 </ol>
 <table>
+<colgroup>
+<col width="28%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="15%" />
+<col width="7%" />
+<col width="17%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Time (half-year)</th>
@@ -383,6 +392,16 @@ half-year, denoted by <span class="math inline">\(k\)</span>, that is equivalent
 <li>The payments of the investor are shown in the table below.</li>
 </ol>
 <table>
+<colgroup>
+<col width="26%" />
+<col width="11%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="14%" />
+<col width="7%" />
+<col width="18%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Time (half-year)</th>
@@ -442,8 +461,8 @@ and market conditions such as the yields obtainable on other
 investments.</p></li>
 </ol>
 </div>
-<div id="no-tax" class="section level3" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> No tax</h3>
+<div id="no-tax" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> No tax<a href="bonds-and-inflation.html#no-tax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A tax-exempt investor receives the full amount of the coupon and
 redemption payments. The price of an <span class="math inline">\(n\)</span> year fixed interest bond which
 pays coupons of <span class="math inline">\(D\)</span> per annum payable <span class="math inline">\(p\)</span> thly in arrear and has
@@ -454,8 +473,8 @@ example a period of half a year as shown in the previous examples. Then
 the formula can be written as
 <span class="math display">\[P = \frac{D}{2} a_{\angl{2n}} + R v^{2n}\]</span></p>
 </div>
-<div id="income-tax" class="section level3" number="2.1.4">
-<h3><span class="header-section-number">2.1.4</span> Income tax</h3>
+<div id="income-tax" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Income tax<a href="bonds-and-inflation.html#income-tax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Suppose an investor is subject to income tax at rate <span class="math inline">\(t_1\)</span> on the
 coupons, which is due at the time that the coupons are paid. Tax will
 affect both yields and bond prices. In general, the price of this bond,
@@ -473,6 +492,16 @@ yield of 9% pa.</em></p>
 <span class="math display">\[ (1 - t_1) D = (1 - 0.3) \frac{8\%}{2} \times 100 = 2.8.\]</span></p>
 <p>The payments of the investor are shown in the table below.</p>
 <table>
+<colgroup>
+<col width="27%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="15%" />
+<col width="7%" />
+<col width="19%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Time (half-year)</th>
@@ -503,8 +532,8 @@ calculated from
 <span class="math display">\[P = 2.8 a^j_{\angl{30}} + 100 (\frac{1}{1+j})^{30} = 73.59,\]</span> where
 where <span class="math inline">\(j = (1.09)^{(1/2)} - 1 = 0.044031\)</span> per half-year effective.</p>
 </div>
-<div id="capital-gains-tax-cgt" class="section level3" number="2.1.5">
-<h3><span class="header-section-number">2.1.5</span> Capital gains tax (CGT)</h3>
+<div id="capital-gains-tax-cgt" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Capital gains tax (CGT)<a href="bonds-and-inflation.html#capital-gains-tax-cgt" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Capital gains tax is a tax levied on the capital gain made on the
 redemption of a bond (or the sale of the bond if sold earlier). The
 capital gain is simply the difference between</p>
@@ -564,6 +593,16 @@ is <strong>payable</strong>.</li>
 </ol>
 <p>The payments of the investor are shown in the table below.</p>
 <table>
+<colgroup>
+<col width="17%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="13%" />
+<col width="6%" />
+<col width="34%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Time (year)</th>
@@ -627,8 +666,8 @@ correct and CGT is payable.</li>
 discussed elsewhere in the course “Theory of Interest”.</p>
 </div>
 </div>
-<div id="inflation" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Inflation</h2>
+<div id="inflation" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Inflation<a href="bonds-and-inflation.html#inflation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Inflation is a measure of the rate of change in the price of consumer
 goods and services, such as food and beverages, transportation and
 housing.</p>
@@ -832,7 +871,7 @@ to December 2019.</caption>
 </table>
 <p>Figure <a href="bonds-and-inflation.html#fig:figCPI">2.1</a> shows the monthly consumer price indices from
 January 2011 to December 2019.</p>
-<div class="figure" style="text-align: center"><span id="fig:figCPI"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figCPI"></span>
 <img src="SCMA329Bookdownproj_files/figure-html/figCPI-1.png" alt="The monthly consumer price indices from January 2011 to December 2019" width="672" />
 <p class="caption">
 Figure 2.1: The monthly consumer price indices from January 2011 to December 2019
@@ -873,8 +912,8 @@ the end of the period reduced for the effects of inflation</strong>.</em></p></l
 time <span class="math inline">\(s\)</span> of <span class="math display">\[X \cdot \frac{Q(s)}{Q(t)}.\]</span></p></li>
 </ul>
 </div>
-<div id="real-rates-of-interest" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Real rates of interest</h3>
+<div id="real-rates-of-interest" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Real rates of interest<a href="bonds-and-inflation.html#real-rates-of-interest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The rate of interest which is calculated using monetary payments is
 called a <strong>money (or monetary or nominal) rate of interest</strong>.</p>
 <p>The <strong>real rate of interest</strong> is calculated using real payments.</p>
@@ -904,8 +943,8 @@ which is the same as the previous case.</p></li>
 </ul>
 </div>
 </div>
-<div id="real-yields" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Real yields</h3>
+<div id="real-yields" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Real yields<a href="bonds-and-inflation.html#real-yields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It is often useful to look at the rate of return earned on an investment
 after taking into account of inflation. As analogous to the real rate of
 interest, a <strong>real yield</strong> is calculated using real payments, which can
@@ -1016,8 +1055,8 @@ This is equivalent to
 Therefore, <strong>the real yield is independent of the date the payment units
 are adjusted to</strong>.</p>
 </div>
-<div id="calculating-real-yields-given-constant-inflation-assumptions" class="section level3" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Calculating real yields given constant inflation assumptions</h3>
+<div id="calculating-real-yields-given-constant-inflation-assumptions" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Calculating real yields given constant inflation assumptions<a href="bonds-and-inflation.html#calculating-real-yields-given-constant-inflation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For future cashflows, the inflation index will not be known. Suppose we
 assume a constant rate of inflation <span class="math inline">\(q\)</span> p.a. The cashflows <span class="math inline">\(C(t_k)\)</span> at
 time <span class="math inline">\(t_k\)</span> have the purchasing power at time 0 (or real payments
@@ -1035,8 +1074,8 @@ relation holds: <span class="math display">\[(1 +i) = ( 1 + q)(1+i&#39;).\]</spa
 relationship between the real yield <span class="math inline">\(i&#39;\)</span>, the monetary yield <span class="math inline">\(i\)</span> and the
 inflation rate <span class="math inline">\(q\)</span>.</p>
 </div>
-<div id="index-linked-securities" class="section level3" number="2.2.4">
-<h3><span class="header-section-number">2.2.4</span> Index-linked securities</h3>
+<div id="index-linked-securities" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Index-linked securities<a href="bonds-and-inflation.html#index-linked-securities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An index-linked security is an investment security in which interest
 payments and the redemption are adjusted in line with inflation index
 values by linking the payments to the Consumer Price Index (CPI). The
@@ -1110,7 +1149,6 @@ assumptions.</em></p></li>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1150,6 +1188,10 @@ gitbook.start({
 "text": null
 },
 "download": ["SCMA329Bookdownproj.pdf", "SCMA329Bookdownproj.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -1163,7 +1205,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

@@ -3081,7 +3081,8 @@ library(readxl)
 ```{r, figCPI, echo = FALSE, fig.cap="The monthly consumer price indices from January 2011 to December 2019", fig.align = 'center'}
 # https://stats.idre.ucla.edu/r/faq/how-can-i-format-a-string-containing-a-date-into-r-date-object/
 
-CPIData <- read_excel("~/Documents/LectureNotes2019/SCMA329/2021LectureNotes/CPIData.xlsx")
+#CPIData <- read_excel("~/Documents/LectureNotes2019/SCMA329/2021LectureNotes/CPIData.xlsx")
+CPIData <- read_excel("CPIData.xlsx")
 
 dat <- CPIData
 

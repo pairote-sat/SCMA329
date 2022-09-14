@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 Processes for stock prices | SCMA329 Practical Mathematical Financial Modeling</title>
   <meta name="description" content="Chapter 3 Processes for stock prices | SCMA329 Practical Mathematical Financial Modeling" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 Processes for stock prices | SCMA329 Practical Mathematical Financial Modeling" />
   <meta property="og:type" content="book" />
-  
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
@@ -24,7 +23,7 @@
 <meta name="author" content="Pairote Satiracoo" />
 
 
-<meta name="date" content="2022-09-04" />
+<meta name="date" content="2022-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +32,8 @@
   
 <link rel="prev" href="bonds-and-inflation.html"/>
 <link rel="next" href="applications.html"/>
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,9 +49,9 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 
@@ -184,8 +183,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="processes-for-stock-prices" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Processes for stock prices</h1>
+<div id="processes-for-stock-prices" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Processes for stock prices<a href="processes-for-stock-prices.html#processes-for-stock-prices" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>In this chapter, we will consider some models (or processes) that are
 used to model stock price. The prices of stocks are continuous in time
 and value, which are unpredictable. However, we assume that stock prices
@@ -197,8 +196,8 @@ study in more details in the course “SCMA 459 Investment Science II”.</p>
 interest</strong> (or <strong>continuous compounding</strong>). The process for a stock
 price and an algorithm to simulate stock prices will be presented after
 main concepts of random walks and Brownian motion are given.</p>
-<div id="force-of-interest" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Force of interest</h2>
+<div id="force-of-interest" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Force of interest<a href="processes-for-stock-prices.html#force-of-interest" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Given an annual effective rate <span class="math inline">\(i\)</span>, a principal of 1 accumulates to
 <span class="math inline">\((1 + i)\)</span> at the end of the first year. The following formula provides
 the <strong>equivalent nominal rates</strong>, <span class="math inline">\(i^{(n)}\)</span>, of interest convertible <span class="math inline">\(n\)</span>
@@ -269,8 +268,8 @@ pa, where <span class="math display">\[\delta(t) = a + b t + c t^2,\]</span> <sp
 constants.</p>
 </div>
 </div>
-<div id="stochastic-processes" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Stochastic processes</h2>
+<div id="stochastic-processes" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Stochastic processes<a href="processes-for-stock-prices.html#stochastic-processes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is of great interest to model the behaviour of a system by describing
 how different states, describe by random variables <span class="math inline">\(X\)</span>’s, in the system
 evolve with time.</p>
@@ -298,8 +297,8 @@ continuous.</p></li>
 <li><p>Topics on stochastic processes will be discussed in the course “SCMA
 469 Actuarial Statistics”.</p></li>
 </ol>
-<div id="a-simple-random-walk" class="section level3" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> A simple random walk</h3>
+<div id="a-simple-random-walk" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> A simple random walk<a href="processes-for-stock-prices.html#a-simple-random-walk" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Consider a simple model of the price of a stock measured in units of
 Thai baht. For each trading day <span class="math inline">\(n = 0,1,2, \ldots\)</span>, the stock price
 increases by 1 baht with probability <span class="math inline">\(p\)</span> or decreases by 1 baht with
@@ -314,7 +313,7 @@ process defined by</p>
 <span class="math display">\[X_n = a + \sum_{i=1}^n  Z_i, \text{ where } Z_i = \begin{cases}
     1, &amp; \text{ with probability } p  \\
     -1, &amp; \text{ with probability } q =  1- p.
- \end{cases}\]</span></p></li>
+\end{cases}\]</span></p></li>
 </ul>
 <p><strong>Note</strong> When <span class="math inline">\(p = 1/2\)</span>, the value of the process increases or decreases
 randomly by 1 unit with equal probability. In this case, the process is
@@ -350,15 +349,15 @@ times.</p>
 </div>
 <p><strong>Solution:</strong> See the Excel worksheet.</p>
 </div>
-<div id="sample-paths" class="section level3" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Sample paths</h3>
+<div id="sample-paths" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Sample paths<a href="processes-for-stock-prices.html#sample-paths" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In the simple random walk process, time is discrete (as observed at the
 end of each day) and the state space is discrete. The stochastic model
 has an infinite number of <strong>stochastic realisations</strong>. A <strong>sample path</strong>
 is then just the sequence of a particular set of experiments. Graphs of
 some stochastic realisations of the simple random walk with <span class="math inline">\(p = 0.5\)</span>
 and <span class="math inline">\(a = 100\)</span> are shown in Figure are shown in Figure <a href="processes-for-stock-prices.html#fig:FigRW">3.1</a>.</p>
-<div class="figure"><span id="fig:FigRW"></span>
+<div class="figure"><span style="display:block;" id="fig:FigRW"></span>
 <img src="SCMA329Bookdownproj_files/figure-html/FigRW-1.png" alt="Some stochastic realisations of the simple random walk" width="672" />
 <p class="caption">
 Figure 3.1: Some stochastic realisations of the simple random walk
@@ -379,8 +378,8 @@ probability <span class="math inline">\(p^2(1-p)\)</span>. So
 <p class="caption">Three possible sample paths</p>
 </div>
 </div>
-<div id="simulating-a-simple-random-walk" class="section level3" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> Simulating a simple random walk</h3>
+<div id="simulating-a-simple-random-walk" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Simulating a simple random walk<a href="processes-for-stock-prices.html#simulating-a-simple-random-walk" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To simulate a sample path of the simple random walk process <span class="math inline">\(X_n\)</span> for
 <span class="math inline">\(n = 0,1, \ldots, N\)</span>, we proceed as follows:</p>
 <ol style="list-style-type: decimal">
@@ -409,8 +408,8 @@ from some specified distributions (to be discussed in Excel Lab).</p></li>
 </div>
 </div>
 </div>
-<div id="monte-carlo-methods" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> Monte Carlo Methods</h2>
+<div id="monte-carlo-methods" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Monte Carlo Methods<a href="processes-for-stock-prices.html#monte-carlo-methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Monte Carlo methods are simulation-based algorithms that rely on
 generating a large set of samples from a statistical model to obtain the
 behaviour of the model and estimate the quantities of interest. For a
@@ -445,8 +444,8 @@ for large <span class="math inline">\(N\)</span>, for example for <span class="m
 <span class="math display">\[\mathrm{E}[X] \approx \frac{1}{N}\sum_{i=1}^N X_i,\]</span> and
 <span class="math display">\[\mathrm{Var}[X] \approx \frac{1}{N-1}\sum_{i=1}^N (X_i - \bar{X})^2.\]</span></p>
 </div>
-<div id="the-markov-property" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> The Markov Property</h2>
+<div id="the-markov-property" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> The Markov Property<a href="processes-for-stock-prices.html#the-markov-property" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A Markov process is a special type of stochastic processes with the
 property that the future evolution of the process depends only on its
 current state and not on its past history.</p>
@@ -469,8 +468,8 @@ engineering to predict the variability of a variable over time,
 where past values are used as the input variables for the model.</p></li>
 </ol>
 </div>
-<div id="wiener-processes" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> Wiener processes</h2>
+<div id="wiener-processes" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Wiener processes<a href="processes-for-stock-prices.html#wiener-processes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We start with the Markov process that is a building block for the
 geometric Brownian motion. Analogously to the random walk process, it is
 defined in terms of some simple intermediary processes, that is the
@@ -558,8 +557,8 @@ measured in terms of its standard deviation increases as the square
 root of how far we are looking ahead, i.e. the square root of the
 length of the period considered.</p></li>
 </ol>
-<div id="simulating-a-standard-brownian-motion" class="section level4" number="3.5.0.1">
-<h4><span class="header-section-number">3.5.0.1</span> Simulating a standard Brownian motion</h4>
+<div id="simulating-a-standard-brownian-motion" class="section level4 hasAnchor" number="3.5.0.1">
+<h4><span class="header-section-number">3.5.0.1</span> Simulating a standard Brownian motion<a href="processes-for-stock-prices.html#simulating-a-standard-brownian-motion" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Recall that the standard Brownian motion is a continuous process. We can
 simulate it by discretising the time domain (the interval <span class="math inline">\([0,T]\)</span>) . The
 algorithm can be summarised as follows:</p>
@@ -610,8 +609,8 @@ during 3 months, i.e.</em> <span class="math inline">\(W(0.25) - W(0) = W(0.25)\
 </div>
 </div>
 </div>
-<div id="generalised-wiener-process-brownian-motion-with-drift" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Generalised Wiener process (Brownian Motion with Drift)</h2>
+<div id="generalised-wiener-process-brownian-motion-with-drift" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Generalised Wiener process (Brownian Motion with Drift)<a href="processes-for-stock-prices.html#generalised-wiener-process-brownian-motion-with-drift" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this section, we will consider a variant of the standard Wiener
 process, which is modified by introducing the drift and variance
 parameters. This new process is known as a <strong>generalised Wiener
@@ -706,8 +705,8 @@ or <span class="math display">\[X(1/2) \sim N(55,200).\]</span></p></li>
         &amp;= 1 - 0.638 = 0.362.
     \end{aligned}\]</span></p></li>
 </ol>
-<div id="simulating-a-generalised-wiener-process" class="section level4" number="3.6.0.1">
-<h4><span class="header-section-number">3.6.0.1</span> Simulating a generalised Wiener process</h4>
+<div id="simulating-a-generalised-wiener-process" class="section level4 hasAnchor" number="3.6.0.1">
+<h4><span class="header-section-number">3.6.0.1</span> Simulating a generalised Wiener process<a href="processes-for-stock-prices.html#simulating-a-generalised-wiener-process" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Simulating a generalised Wiener process over <span class="math inline">\([0,T]\)</span> is similar to a
 standard Wiener process.</p>
 <ol style="list-style-type: decimal">
@@ -733,8 +732,8 @@ gross return of an asset is called the continuously compounded return or
 log return <span class="math display">\[r_t = \ln(1 + R_t) = \ln\frac{P_t}{P_{t-1}}.\]</span></p>
 </div>
 </div>
-<div id="the-process-for-a-stock-price" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> The process for a stock price</h2>
+<div id="the-process-for-a-stock-price" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> The process for a stock price<a href="processes-for-stock-prices.html#the-process-for-a-stock-price" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will discuss a simple model (or a stochastic process) for the price
 of a non-dividend-paying stock. The model is known as <strong>geometric
 Brownian motion</strong>. We will show that this stochastic model assumes or
@@ -761,8 +760,8 @@ in stock price) required by an investor in a short period of time,
 <span class="math inline">\(\Delta t\)</span>, should be the same regardless of the stock price.</p>
 <p>In particular, when either the stock price is ฿100 or ฿1000, the
 investor would require the same expected return.</p>
-<div id="model-assumptions-of-the-geometric-brownian-motion" class="section level3" number="3.7.1">
-<h3><span class="header-section-number">3.7.1</span> Model Assumptions of the Geometric Brownian Motion</h3>
+<div id="model-assumptions-of-the-geometric-brownian-motion" class="section level3 hasAnchor" number="3.7.1">
+<h3><span class="header-section-number">3.7.1</span> Model Assumptions of the Geometric Brownian Motion<a href="processes-for-stock-prices.html#model-assumptions-of-the-geometric-brownian-motion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The geometric Brownian motion also consists of two components:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>The deterministic component:</strong> The model assumes that the expected
@@ -803,8 +802,8 @@ and unit variance ) The parameter <span class="math inline">\(\mu\)</span> is th
 return per unit of time</strong> from the stock, and <span class="math inline">\(\sigma\)</span> is the
 <strong>volatility</strong> of the stock price.</p></li>
 </ol>
-<div id="proportional-return-on-stocks-are-normally-distributed" class="section level4" number="3.7.1.1">
-<h4><span class="header-section-number">3.7.1.1</span> Proportional return on stocks are normally distributed</h4>
+<div id="proportional-return-on-stocks-are-normally-distributed" class="section level4 hasAnchor" number="3.7.1.1">
+<h4><span class="header-section-number">3.7.1.1</span> Proportional return on stocks are normally distributed<a href="processes-for-stock-prices.html#proportional-return-on-stocks-are-normally-distributed" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>It follows from the definition of the the geometric Brownian motion that
 the proportional return on the stock over a short time interval is
 normally distributed with a mean <span class="math inline">\(\mu \Delta t\)</span> and variance of
@@ -868,13 +867,13 @@ standard deviation of the change in the stock price in 1 year.</p></li>
 </ol>
 </div>
 </div>
-<div id="stock-prices-are-lognormally-distributed" class="section level3 unnumbered">
-<h3>Stock prices are lognormally distributed</h3>
+<div id="stock-prices-are-lognormally-distributed" class="section level3 unnumbered hasAnchor">
+<h3>Stock prices are lognormally distributed<a href="processes-for-stock-prices.html#stock-prices-are-lognormally-distributed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using Itô lemma (from stochastic calculus), it follows that stock prices
 are lognormally distributed: <span class="math display">\[\begin{aligned}
- \label{lognormal}
- \ln \frac{S_T}{S_0} \sim N\left((\mu - \frac{\sigma^2}{2})T,\sigma^2 T\right)
- \end{aligned}\]</span> and
+\label{lognormal}
+\ln \frac{S_T}{S_0} \sim N\left((\mu - \frac{\sigma^2}{2})T,\sigma^2 T\right)
+\end{aligned}\]</span> and
 <span class="math display">\[\ln S_T \sim N\left(\ln S_0 +  (\mu - \frac{\sigma^2}{2})T,\sigma^2 T\right)\]</span>
 where <span class="math inline">\(S_T\)</span> is the stock price at time <span class="math inline">\(T\)</span> and <span class="math inline">\(S_0\)</span> is the stock price
 at time 0. Here <span class="math inline">\(\ln S_T\)</span> is normally distributed and hence <span class="math inline">\(S_T\)</span> has a
@@ -957,8 +956,8 @@ of <span class="math inline">\(S_T\)</span> is
 <span class="math display">\[\mathrm{Var}[S_1] = 20^2 \exp(2 \cdot 0.2 \cdot 1) (\exp(0.4^2 \cdot 1) - 1) = 103.539.\]</span>
 and <span class="math display">\[\text{SD}(S_1) = \sqrt{ 103.539} = 10.175.\]</span></p>
 </div>
-<div id="more-accurate-simulation-the-lognormal-model" class="section level3" number="3.7.2">
-<h3><span class="header-section-number">3.7.2</span> More accurate simulation : the lognormal model</h3>
+<div id="more-accurate-simulation-the-lognormal-model" class="section level3 hasAnchor" number="3.7.2">
+<h3><span class="header-section-number">3.7.2</span> More accurate simulation : the lognormal model<a href="processes-for-stock-prices.html#more-accurate-simulation-the-lognormal-model" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Because <span class="math inline">\(T\)</span> can be any time interval, we can use the lognormal
 distribution of stock prices to simulate the price of a stock at time
 <span class="math inline">\(t + \Delta t\)</span> given its price at time <span class="math inline">\(t\)</span>. This provides accurately
@@ -966,7 +965,7 @@ simulated points along a typical path, regardless of the size of
 <span class="math inline">\(\Delta t\)</span>.</p>
 <p>The following equations can be use to simulate stock price and estimate
 volatility: <span class="math display">\[\begin{aligned}
- \label{lognormalModel}
+\label{lognormalModel}
 \ln\left(  \frac{S_{t+\Delta t}}{S_t} \right) = (\mu - \frac{1}{2}\sigma^2 )\Delta t + \sigma \epsilon \sqrt{\Delta t}\end{aligned}\]</span>
 and
 <span class="math display">\[S_{t+ \Delta t}  = S_t \exp(   (\mu - \frac{1}{2}\sigma^2 )\Delta t + \sigma \epsilon \sqrt{\Delta t}  )\]</span></p>
@@ -974,8 +973,8 @@ and
 <span class="math inline">\(\ln S\)</span> satisfies the following stochastic differential equation
 <span class="math display">\[d \ln S =  (\mu - \frac{1}{2}\sigma^2 ) \, dt + \sigma \, d W.\]</span></p>
 </div>
-<div id="the-distribution-of-the-rate-of-return" class="section level3" number="3.7.3">
-<h3><span class="header-section-number">3.7.3</span> The distribution of the rate of return</h3>
+<div id="the-distribution-of-the-rate-of-return" class="section level3 hasAnchor" number="3.7.3">
+<h3><span class="header-section-number">3.7.3</span> The distribution of the rate of return<a href="processes-for-stock-prices.html#the-distribution-of-the-rate-of-return" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The lognormal property of stock prices can be used to show that the
 probability distribution of the <strong>continuously compounded rate of return
 per year</strong> for a stock is <strong>normally distributed</strong>.</p>
@@ -1002,8 +1001,8 @@ standard deviation of the distribution of its continuously
 compounded return per year</strong>.</p></li>
 </ol>
 </div>
-<div id="the-two-expected-returns-this-section-may-be-skipped" class="section level3" number="3.7.4">
-<h3><span class="header-section-number">3.7.4</span> The two expected returns (this section may be skipped)</h3>
+<div id="the-two-expected-returns-this-section-may-be-skipped" class="section level3 hasAnchor" number="3.7.4">
+<h3><span class="header-section-number">3.7.4</span> The two expected returns (this section may be skipped)<a href="processes-for-stock-prices.html#the-two-expected-returns-this-section-may-be-skipped" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As we have seen, there are two different expected returns of stocks,
 <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\mu - \sigma^2/2\)</span>.</p>
 <ul>
@@ -1037,8 +1036,8 @@ The stock with the higher volatility will have a lower continuously
 compounded expected rate of return.</p></li>
 </ol>
 </div>
-<div id="estimating-volatility" class="section level3" number="3.7.5">
-<h3><span class="header-section-number">3.7.5</span> Estimating volatility</h3>
+<div id="estimating-volatility" class="section level3 hasAnchor" number="3.7.5">
+<h3><span class="header-section-number">3.7.5</span> Estimating volatility<a href="processes-for-stock-prices.html#estimating-volatility" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are many different methods to estimate the volatility of a stock.
 Here the method is based on a stock’s historical volatility calculated
 from its daily prices for a certain number of days. As we have seen, the
@@ -1093,7 +1092,6 @@ table below.</em></p>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -1133,6 +1131,10 @@ gitbook.start({
 "text": null
 },
 "download": ["SCMA329Bookdownproj.pdf", "SCMA329Bookdownproj.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }
@@ -1146,7 +1148,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
