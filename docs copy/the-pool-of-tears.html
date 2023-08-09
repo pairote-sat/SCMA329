@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 The pool of tears | Practical Mathematical Financial Modelling in Excel</title>
+  <meta name="description" content="Chapter 4 The pool of tears | Practical Mathematical Financial Modelling in Excel" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 The pool of tears | Practical Mathematical Financial Modelling in Excel" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 The pool of tears | Practical Mathematical Financial Modelling in Excel" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="working-with-text.html"/>
+<link rel="next" href="a-caucus-race-and-a-long-tale.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SHORT TITLE HERE</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction to Financial Modelling</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#cashflows"><i class="fa fa-check"></i><b>1.1</b> Cashflows</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#interest-and-the-time-value-of-money"><i class="fa fa-check"></i><b>1.2</b> Interest and the Time Value of Money</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#simple-interest"><i class="fa fa-check"></i><b>1.2.1</b> Simple interest</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#effective-rate-of-interest"><i class="fa fa-check"></i><b>1.2.2</b> Effective rate of interest</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#compounding-over-any-number-of-time-units"><i class="fa fa-check"></i><b>1.2.3</b> Compounding over any number of time units</a></li>
+<li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#changing-the-time-period-of-the-effective-rates-of-interest"><i class="fa fa-check"></i><b>1.2.4</b> Changing the time period of the effective rates of interest</a></li>
+<li class="chapter" data-level="1.2.5" data-path="index.html"><a href="index.html#non-constant-interest-rates"><i class="fa fa-check"></i><b>1.2.5</b> Non-constant interest rates</a></li>
+<li class="chapter" data-level="1.2.6" data-path="index.html"><a href="index.html#accumulation-factors"><i class="fa fa-check"></i><b>1.2.6</b> Accumulation factors</a></li>
+<li class="chapter" data-level="1.2.7" data-path="index.html"><a href="index.html#present-values-and-discount-factors"><i class="fa fa-check"></i><b>1.2.7</b> Present values and discount factors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#cashflows-and-annuities"><i class="fa fa-check"></i><b>1.3</b> Cashflows and Annuities</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#level-annuities-certain"><i class="fa fa-check"></i><b>1.3.1</b> Level Annuities certain</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#level-annuities-due"><i class="fa fa-check"></i><b>1.3.2</b> Level Annuities Due</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#deferred-annuities"><i class="fa fa-check"></i><b>1.3.3</b> Deferred annuities</a></li>
+<li class="chapter" data-level="1.3.4" data-path="index.html"><a href="index.html#increasing-annuities"><i class="fa fa-check"></i><b>1.3.4</b> Increasing annuities</a></li>
+<li class="chapter" data-level="1.3.5" data-path="index.html"><a href="index.html#compound-increasing-annuities"><i class="fa fa-check"></i><b>1.3.5</b> Compound increasing annuities</a></li>
+<li class="chapter" data-level="1.3.6" data-path="index.html"><a href="index.html#annuities-payable-more-than-once-per-time-unit"><i class="fa fa-check"></i><b>1.3.6</b> Annuities payable more than once per time unit</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#nominal-rates-of-interest"><i class="fa fa-check"></i><b>1.4</b> Nominal Rates of Interest</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#nominal-rates-of-discount"><i class="fa fa-check"></i><b>1.4.1</b> Nominal Rates of Discount</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#principle-of-equivalence-yields-and-equation-of-value"><i class="fa fa-check"></i><b>1.5</b> Principle of Equivalence, Yields and Equation of Value</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#equation-of-value-and-yields"><i class="fa fa-check"></i><b>1.5.1</b> Equation of value and yields</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#the-method-to-estimate-the-yield"><i class="fa fa-check"></i><b>1.5.2</b> The method to estimate the yield</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#loan-schedules"><i class="fa fa-check"></i><b>1.6</b> Loan schedules</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-as-late-as-possible"><i class="fa fa-check"></i>Repay as late as possible:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-interest-only-during-the-term-and-repay-the-capital-at-the-end-of-the-term"><i class="fa fa-check"></i>Repay interest only during the term and repay the capital at the end of the term:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-loan-by-regular-instalments-of-interest-and-capital-throughout-term-of-loan"><i class="fa fa-check"></i>Repay loan by regular instalments of interest and capital throughout term of loan:</a></li>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#the-loan-schedule"><i class="fa fa-check"></i><b>1.6.1</b> The loan schedule</a></li>
+<li class="chapter" data-level="1.6.2" data-path="index.html"><a href="index.html#changing-the-term-of-a-loan"><i class="fa fa-check"></i><b>1.6.2</b> Changing the term of a loan</a></li>
+<li class="chapter" data-level="1.6.3" data-path="index.html"><a href="index.html#changing-the-interest-rate"><i class="fa fa-check"></i><b>1.6.3</b> Changing the interest rate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="dates-and-date-functions.html"><a href="dates-and-date-functions.html"><i class="fa fa-check"></i><b>2</b> Dates and date functions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="dates-and-date-functions.html"><a href="dates-and-date-functions.html#inconsistent-date-entries"><i class="fa fa-check"></i><b>2.1</b> Inconsistent date entries</a></li>
+<li class="chapter" data-level="2.2" data-path="dates-and-date-functions.html"><a href="dates-and-date-functions.html#date-serial-number"><i class="fa fa-check"></i><b>2.2</b> Date serial number</a></li>
+<li class="chapter" data-level="2.3" data-path="dates-and-date-functions.html"><a href="dates-and-date-functions.html#date-functions"><i class="fa fa-check"></i><b>2.3</b> Date functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="working-with-text.html"><a href="working-with-text.html"><i class="fa fa-check"></i><b>3</b> Working with Text</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="working-with-text.html"><a href="working-with-text.html#text-functions"><i class="fa fa-check"></i><b>3.1</b> Text functions</a></li>
+<li class="chapter" data-level="3.2" data-path="working-with-text.html"><a href="working-with-text.html#character-codes"><i class="fa fa-check"></i><b>3.2</b> Character codes</a></li>
+<li class="chapter" data-level="3.3" data-path="working-with-text.html"><a href="working-with-text.html#determining-whether-two-string-are-identical"><i class="fa fa-check"></i><b>3.3</b> Determining whether two string are identical</a></li>
+<li class="chapter" data-level="3.4" data-path="working-with-text.html"><a href="working-with-text.html#joining-two-or-more-cells"><i class="fa fa-check"></i><b>3.4</b> Joining two or more cells</a></li>
+<li class="chapter" data-level="3.5" data-path="working-with-text.html"><a href="working-with-text.html#examples-of-the-use-of-text-functions-in-excel"><i class="fa fa-check"></i><b>3.5</b> Examples of the use of text functions in Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>4</b> The pool of tears</a></li>
+<li class="chapter" data-level="5" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>5</b> A caucus-race and a long tale</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><strong>Practical Mathematical Financial Modelling in Excel</strong></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-pool-of-tears" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> The pool of tears</h1>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="working-with-text.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-caucus-race-and-a-long-tale.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/pairote-sat/SCMA329/edit/master/04-tears.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329/blob/master/04-tears.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

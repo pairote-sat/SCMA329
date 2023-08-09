@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling</title>
+  <meta name="description" content="Chapter 2 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Bonds and Inflation | SCMA329 Practical Mathematical Financial Modeling" />
+  
+  
+  
+
+<meta name="author" content="Pairote Satiracoo" />
+
+
+<meta name="date" content="2022-09-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="processes-for-stock-prices.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">SCMA329 Practical Mathematical Financial Modelling</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Cashflows, Interest and the Time Value of Money</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction-to-financial-modelling"><i class="fa fa-check"></i><b>1.1</b> Introduction to Financial Modelling</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#cashflows"><i class="fa fa-check"></i><b>1.2</b> Cashflows</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#interest-and-the-time-value-of-money"><i class="fa fa-check"></i><b>1.3</b> Interest and the Time Value of Money</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#simple-interest"><i class="fa fa-check"></i><b>1.3.1</b> Simple interest</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#compound-interest"><i class="fa fa-check"></i><b>1.3.2</b> Compound interest</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#frequency-of-compounding"><i class="fa fa-check"></i><b>1.4</b> Frequency of Compounding</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#effective-rate-of-interest"><i class="fa fa-check"></i><b>1.4.1</b> Effective rate of interest</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#compounding-over-any-number-of-time-units"><i class="fa fa-check"></i><b>1.4.2</b> Compounding over any number of time units</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#changing-the-time-period-of-the-effective-rates-of-interest"><i class="fa fa-check"></i><b>1.4.3</b> Changing the time period of the effective rates of interest</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#non-constant-interest-rates"><i class="fa fa-check"></i><b>1.4.4</b> Non-constant interest rates</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#accumulation-factors"><i class="fa fa-check"></i><b>1.4.5</b> Accumulation factors</a></li>
+<li class="chapter" data-level="1.4.6" data-path="index.html"><a href="index.html#present-values-and-discount-factors"><i class="fa fa-check"></i><b>1.4.6</b> Present values and discount factors</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#cashflows-and-annuities"><i class="fa fa-check"></i><b>1.5</b> Cashflows and Annuities</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#level-annuities-certain"><i class="fa fa-check"></i><b>1.5.1</b> Level Annuities certain</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#level-annuities-due"><i class="fa fa-check"></i><b>1.5.2</b> Level Annuities Due</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#deferred-annuities"><i class="fa fa-check"></i><b>1.5.3</b> Deferred annuities</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#increasing-annuities"><i class="fa fa-check"></i><b>1.5.4</b> Increasing annuities</a></li>
+<li class="chapter" data-level="1.5.5" data-path="index.html"><a href="index.html#compound-increasing-annuities"><i class="fa fa-check"></i><b>1.5.5</b> Compound increasing annuities</a></li>
+<li class="chapter" data-level="1.5.6" data-path="index.html"><a href="index.html#annuities-payable-more-than-once-per-time-unit"><i class="fa fa-check"></i><b>1.5.6</b> Annuities payable more than once per time unit</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#nominal-rates-of-interest"><i class="fa fa-check"></i><b>1.6</b> Nominal Rates of Interest</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#nominal-rates-of-discount"><i class="fa fa-check"></i><b>1.6.1</b> Nominal Rates of Discount</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#principle-of-equivalence-yields-and-equation-of-value"><i class="fa fa-check"></i><b>1.7</b> Principle of Equivalence, Yields and Equation of Value</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="index.html"><a href="index.html#equation-of-value-and-yields"><i class="fa fa-check"></i><b>1.7.1</b> Equation of value and yields</a></li>
+<li class="chapter" data-level="1.7.2" data-path="index.html"><a href="index.html#the-method-to-estimate-the-yield"><i class="fa fa-check"></i><b>1.7.2</b> The method to estimate the yield</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#loan-schedules"><i class="fa fa-check"></i><b>1.8</b> Loan schedules</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-as-late-as-possible"><i class="fa fa-check"></i>Repay as late as possible:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-interest-only-during-the-term-and-repay-the-capital-at-the-end-of-the-term"><i class="fa fa-check"></i>Repay interest only during the term and repay the capital at the end of the term:</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#repay-loan-by-regular-instalments-of-interest-and-capital-throughout-term-of-loan"><i class="fa fa-check"></i>Repay loan by regular instalments of interest and capital throughout term of loan:</a></li>
+<li class="chapter" data-level="1.8.1" data-path="index.html"><a href="index.html#the-loan-schedule"><i class="fa fa-check"></i><b>1.8.1</b> The loan schedule</a></li>
+<li class="chapter" data-level="1.8.2" data-path="index.html"><a href="index.html#changing-the-term-of-a-loan"><i class="fa fa-check"></i><b>1.8.2</b> Changing the term of a loan</a></li>
+<li class="chapter" data-level="1.8.3" data-path="index.html"><a href="index.html#changing-the-interest-rate"><i class="fa fa-check"></i><b>1.8.3</b> Changing the interest rate</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html"><i class="fa fa-check"></i><b>2</b> Bonds and Inflation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#bonds"><i class="fa fa-check"></i><b>2.1</b> Bonds</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#characteristics-of-bonds"><i class="fa fa-check"></i><b>2.1.1</b> Characteristics of Bonds</a></li>
+<li class="chapter" data-level="2.1.2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#bond-prices"><i class="fa fa-check"></i><b>2.1.2</b> Bond prices</a></li>
+<li class="chapter" data-level="2.1.3" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#no-tax"><i class="fa fa-check"></i><b>2.1.3</b> No tax</a></li>
+<li class="chapter" data-level="2.1.4" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#income-tax"><i class="fa fa-check"></i><b>2.1.4</b> Income tax</a></li>
+<li class="chapter" data-level="2.1.5" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#capital-gains-tax-cgt"><i class="fa fa-check"></i><b>2.1.5</b> Capital gains tax (CGT)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#inflation"><i class="fa fa-check"></i><b>2.2</b> Inflation</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#real-rates-of-interest"><i class="fa fa-check"></i><b>2.2.1</b> Real rates of interest</a></li>
+<li class="chapter" data-level="2.2.2" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#real-yields"><i class="fa fa-check"></i><b>2.2.2</b> Real yields</a></li>
+<li class="chapter" data-level="2.2.3" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#calculating-real-yields-given-constant-inflation-assumptions"><i class="fa fa-check"></i><b>2.2.3</b> Calculating real yields given constant inflation assumptions</a></li>
+<li class="chapter" data-level="2.2.4" data-path="bonds-and-inflation.html"><a href="bonds-and-inflation.html#index-linked-securities"><i class="fa fa-check"></i><b>2.2.4</b> Index-linked securities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html"><i class="fa fa-check"></i><b>3</b> Processes for stock prices</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#force-of-interest"><i class="fa fa-check"></i><b>3.1</b> Force of interest</a></li>
+<li class="chapter" data-level="3.2" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#stochastic-processes"><i class="fa fa-check"></i><b>3.2</b> Stochastic processes</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#a-simple-random-walk"><i class="fa fa-check"></i><b>3.2.1</b> A simple random walk</a></li>
+<li class="chapter" data-level="3.2.2" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#sample-paths"><i class="fa fa-check"></i><b>3.2.2</b> Sample paths</a></li>
+<li class="chapter" data-level="3.2.3" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#simulating-a-simple-random-walk"><i class="fa fa-check"></i><b>3.2.3</b> Simulating a simple random walk</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#monte-carlo-methods"><i class="fa fa-check"></i><b>3.3</b> Monte Carlo Methods</a></li>
+<li class="chapter" data-level="3.4" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#the-markov-property"><i class="fa fa-check"></i><b>3.4</b> The Markov Property</a></li>
+<li class="chapter" data-level="3.5" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#wiener-processes"><i class="fa fa-check"></i><b>3.5</b> Wiener processes</a></li>
+<li class="chapter" data-level="3.6" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#generalised-wiener-process-brownian-motion-with-drift"><i class="fa fa-check"></i><b>3.6</b> Generalised Wiener process (Brownian Motion with Drift)</a></li>
+<li class="chapter" data-level="3.7" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#the-process-for-a-stock-price"><i class="fa fa-check"></i><b>3.7</b> The process for a stock price</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#model-assumptions-of-the-geometric-brownian-motion"><i class="fa fa-check"></i><b>3.7.1</b> Model Assumptions of the Geometric Brownian Motion</a></li>
+<li class="chapter" data-level="" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#stock-prices-are-lognormally-distributed"><i class="fa fa-check"></i>Stock prices are lognormally distributed</a></li>
+<li class="chapter" data-level="3.7.2" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#more-accurate-simulation-the-lognormal-model"><i class="fa fa-check"></i><b>3.7.2</b> More accurate simulation : the lognormal model</a></li>
+<li class="chapter" data-level="3.7.3" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#the-distribution-of-the-rate-of-return"><i class="fa fa-check"></i><b>3.7.3</b> The distribution of the rate of return</a></li>
+<li class="chapter" data-level="3.7.4" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#the-two-expected-returns-this-section-may-be-skipped"><i class="fa fa-check"></i><b>3.7.4</b> The two expected returns (this section may be skipped)</a></li>
+<li class="chapter" data-level="3.7.5" data-path="processes-for-stock-prices.html"><a href="processes-for-stock-prices.html#estimating-volatility"><i class="fa fa-check"></i><b>3.7.5</b> Estimating volatility</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#datacamp-light"><i class="fa fa-check"></i><b>4.1</b> DataCamp Light</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">SCMA329 Practical Mathematical Financial Modeling</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bonds-and-inflation" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Bonds and Inflation<a href="bonds-and-inflation.html#bonds-and-inflation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bonds" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Bonds<a href="bonds-and-inflation.html#bonds" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A government or corporation can raise money in the capital markets by
+issuing <em>fixed interest securities (FIS)</em>, also called <em>bonds</em>. Bonds
+are a form of medium and long-term securities.</p>
+<p>This means that investors will lend money to the issuer (for e.g. the
+government or coporation) and in return will receive fixed interest
+payments known as <em>coupons</em> at fixed dates plus repayment of the loan at
+the end of the term.</p>
+<p><strong>Note</strong> The loan is usually split into smaller units that can be traded
+on a stock exchange. For example, a company raises ฿1,000,000,000 by
+issuing 10,000,000 bonds, each one a loan of face value ฿100. These can
+be bought and sold on a stock exchange.</p>
+<div id="characteristics-of-bonds" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Characteristics of Bonds<a href="bonds-and-inflation.html#characteristics-of-bonds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>The <em>nominal amount or face value</em> of a bond is the amount of the
+loan it represents. The nominal amount is usually ฿1,000 (without
+further specific, we will set the nominal amount to be ฿100.)</p></li>
+<li><p>The interest payments are called <em>coupons</em>, usually expressed as a
+percentage per year of the nominal amount. The rate of interest
+denoted by <span class="math inline">\(D\)</span> is also known as <em>coupon rate</em>. They are always <strong>in
+arrears</strong>.</p></li>
+<li><p>Coupons are usually expressed as the amount of interest payable in a
+year, but are paid half-yearly (twice per year) or quarterly (4
+times per year)</p></li>
+<li><p><em>Coupon dates</em> are the dates on which the bond issuer will make
+interest payments.</p></li>
+<li><p>Bonds have <em>maturity dates</em> at which point the principal amount must
+be paid back in full.</p></li>
+<li><p>The loan is repaid or redeemed at the end of the term. The
+redemption amount per 100 nominal is the <em>redemption rate</em>, often
+expressed as a percentage.</p>
+<p>A loan is redeemed</p>
+<ul>
+<li><p>at a premium if redemption rate &gt; 100%</p></li>
+<li><p>at par if redemption rate = 100%</p></li>
+<li><p>at a discount if redemption rate &lt; 100%</p></li>
+</ul></li>
+<li><p>Many corporate and government bonds are publicly traded; others are
+traded only over-the-counter (OTC) or privately between the borrower
+and lender.</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-53" class="example"><strong>Example 2.1  </strong></span><em>Each bond of ฿100 nominal value carries coupons of 6% pa payable
+half-yearly.</em></p>
+</div>
+<p><strong>Solution:</strong> The coupon rate of 6% pa payable half-yearly means that
+bondholders will receive
+<span class="math display">\[ \frac{6\%}{2} \times 100 = ฿ 3 \text{ every half-year}.\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-54" class="example"><strong>Example 2.2  </strong></span><em>An investor purchases ฿95 for a 5-year fixed interest bond with face
+value (or nominal amount of) ฿100. The bond pays coupon of 6% pa
+half-yearly in arrear and the lump sum equal to the nominal amount in 5
+years’ time. The cashflows related to the payments of the bond can be
+shown as follows:</em></p>
+</div>
+<p><strong>Solution:</strong> Cashflows are given in the following table.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Time (year)</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+<th align="center">1.5</th>
+<th align="center"><span class="math inline">\(\ldots\)</span></th>
+<th align="center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cashflow</td>
+<td align="center">-95</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+<td align="center"><span class="math inline">\(3 + 100\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Examples of bonds include</p>
+<ul>
+<li><p>domestic bonds issued in the domestic currency such as gilts issued
+by UK government and treasury bonds issued by US government.</p></li>
+<li><p>Eurobonds where an issuer sells the bond outside the domestic
+country.</p></li>
+<li><p>debenture bonds issued by corporations.</p></li>
+</ul>
+<div class="example">
+<p><span id="exm:exampleBondPrice" class="example"><strong>Example 2.3  </strong></span><em>A company issues a 10-year bond, to be redeemed at 102%, with coupon of
+6% pa payable half-yearly in arrears. The nominal amount of each bond is
+฿100. What repayments are made?</em></p>
+</div>
+<p><strong>Solution:</strong> Cashflows are given in the following table.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Time (year)</th>
+<th align="center">0</th>
+<th align="center">0.5</th>
+<th align="center">1</th>
+<th align="center">1.5</th>
+<th align="center"><span class="math inline">\(\ldots\)</span></th>
+<th align="center">9.5</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cashflow</td>
+<td align="center"><span class="math inline">\(P\)</span></td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+<td align="center"><span class="math inline">\(3\)</span></td>
+<td align="center"><span class="math inline">\(3 + 102\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Here the bond price in the table above is denoted by <span class="math inline">\(P\)</span>.</p>
+<p>The following questions may be asked:</p>
+<ul>
+<li><p>At what price should be paid by an investor to obtain a net yield of
+<span class="math inline">\(i\)</span> per annum?</p></li>
+<li><p>Given the price of the fixed interest bond, what is the net yield
+per annum will be obtained?</p></li>
+</ul>
+</div>
+<div id="bond-prices" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Bond prices<a href="bonds-and-inflation.html#bond-prices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Given a yield <span class="math inline">\(i\%\)</span>, the price of a bond can be computed by discounting
+all the future payments received net of any tax.</p>
+<div class="example">
+<p><span id="exm:exampleBondPrice2" class="example"><strong>Example 2.4  </strong></span><em>A tax-exempt investor buy the bond in Example</em>
+<a href="bonds-and-inflation.html#exm:exampleBondPrice">2.3</a> <em>on its issue date. Calculate the price the
+investor should pay to obtain a yield of 9%.</em></p>
+</div>
+<p><strong>Solution:</strong> Appplying the Principle of Equivalence: by equate the
+present value of the future incomes at 9% with the unknown price <span class="math inline">\(P\)</span>.</p>
+<p><span class="math display">\[P = \frac{6}{2} a^j_{\angl{20}} + 102 (\frac{1}{1.09})^{20},\]</span> where
+<span class="math inline">\(j = (1.09)^{(1/2)} - 1 = 0.044031.\)</span> This gives <span class="math inline">\(P = 82.44\)</span>. It should
+be emphasised that the price in this example differs from the nominal
+amount of 100.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-55" class="example"><strong>Example 2.5  </strong></span><em>Refer to Examples</em> <a href="bonds-and-inflation.html#exm:exampleBondPrice">2.3</a> <em>and</em>
+<a href="bonds-and-inflation.html#exm:exampleBondPrice2">2.4</a><em>. After the 10th coupon has been paid, the
+investor sells the bond. At that time the market yield on comparable
+5-year bonds is 7% pa effective.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Calculate the price that he will obtain.</em></p></li>
+<li><p><em>Calculate the yield that the first investor obtains if he paid
+฿82.44 and received 10 coupon payments of ฿3 each and sold the bond
+after 5 years at the price of ฿97.75.</em></p></li>
+</ol>
+</div>
+<p><strong>Solution:</strong></p>
+<ol style="list-style-type: decimal">
+<li>The remaining payments are shown in the table below.</li>
+</ol>
+<table>
+<colgroup>
+<col width="28%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="15%" />
+<col width="7%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Time (half-year)</th>
+<th align="center">10</th>
+<th align="center">11</th>
+<th align="center">12</th>
+<th align="center">13</th>
+<th align="center"><span class="math inline">\(\ldots\)</span></th>
+<th align="center">19</th>
+<th align="center">20</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cashflow</td>
+<td align="center"><span class="math inline">\(-\)</span></td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+<td align="center"><span class="math inline">\(3\)</span></td>
+<td align="center"><span class="math inline">\(3 + 102\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Working in unit of half-year, we first calculate the effective rate per
+half-year, denoted by <span class="math inline">\(k\)</span>, that is equivalent to <span class="math inline">\(i = 7\%\)</span>.</p>
+<p><span class="math display">\[ k = (1.07)^{(1/2)} - 1 = 0.034408. \]</span></p>
+<p>The price <span class="math inline">\(P&#39;\)</span> that he will obtain follows from the following equation.
+<span class="math display">\[P&#39; = 3 a^k_{\angl{10}} + 102 (\frac{1}{1.07})^{5} = 97.75.\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>The payments of the investor are shown in the table below.</li>
+</ol>
+<table>
+<colgroup>
+<col width="26%" />
+<col width="11%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="14%" />
+<col width="7%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Time (half-year)</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center"><span class="math inline">\(\ldots\)</span></th>
+<th align="center">9</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cashflow</td>
+<td align="center">-82.44</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+<td align="center"><span class="math inline">\(3\)</span></td>
+<td align="center"><span class="math inline">\(3 + 97.75\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Let <span class="math inline">\(i\)</span> denote the yield (per half-year) that the first investor
+obtains. Working at time 10, the equation of value of the cashflows is
+<span class="math display">\[ f(i) = 82.44 (1+i)^{10} - 3 s^i_{\angl{10}} - 97.75 = 0.\]</span> By linear
+interpolation, we have <span class="math display">\[ f(0.05) = -1.1976, \quad f(0.06) = 10.3451, \]</span>
+and hence, the approximate of <span class="math inline">\(i\)</span> is <span class="math inline">\(i^* \approx 0.051038\)</span>. The annual
+yield is then approximately equal to <span class="math inline">\((1 + 0.051038)^2 - 1 = 10.468\%\)</span></p>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>If the investor is not subject to taxation, the yield is called the
+<em>gross yield</em>.</p></li>
+<li><p>The yield obtained by holding the bond until redemption is called
+<em>redemption yield</em>. This is quoted in financial newspapers.</p></li>
+<li><p>If a bond is sold before redemption, the yield that the investor
+obtains is called <em>realised yield</em>. This yield depends on both the
+buying and selling prices.</p></li>
+</ol>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>There is an inverse relationship between the bond prices and yields.</p></li>
+<li><p>The nominal amount of the loan is just a theoretical figure on which
+the coupon and redemption rates are based.</p></li>
+<li><p>The amount of capital the borrower can actually raise on the issue
+date is the price that investors are willing to pay for the future
+income stream and also set by supply and demand.</p></li>
+<li><p>The investors also consider the <strong>credit risk</strong> of the borrower. It
+is the risk that they might default on interest and capital
+payments.</p></li>
+<li><p>The greater the credit risk, the higher the yield they will require.</p></li>
+<li><p>The bonds can be traded on an exchange at any time until it is
+redeemed. The prices will depend on the remaining term to redemption
+and market conditions such as the yields obtainable on other
+investments.</p></li>
+</ol>
+</div>
+<div id="no-tax" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> No tax<a href="bonds-and-inflation.html#no-tax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A tax-exempt investor receives the full amount of the coupon and
+redemption payments. The price of an <span class="math inline">\(n\)</span> year fixed interest bond which
+pays coupons of <span class="math inline">\(D\)</span> per annum payable <span class="math inline">\(p\)</span> thly in arrear and has
+redemption amount <span class="math inline">\(R\)</span> is <span class="math display">\[P = D a_{\angln}^{(p)} + R v^n\]</span> at rate <span class="math inline">\(i\)</span>
+per annum.</p>
+<p>In practice, we can calculate by using a suitable time period, for
+example a period of half a year as shown in the previous examples. Then
+the formula can be written as
+<span class="math display">\[P = \frac{D}{2} a_{\angl{2n}} + R v^{2n}\]</span></p>
+</div>
+<div id="income-tax" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Income tax<a href="bonds-and-inflation.html#income-tax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Suppose an investor is subject to income tax at rate <span class="math inline">\(t_1\)</span> on the
+coupons, which is due at the time that the coupons are paid. Tax will
+affect both yields and bond prices. In general, the price of this bond,
+an <span class="math inline">\(n\)</span> year fixed interest bond which pays coupons of <span class="math inline">\(D\)</span> per annum
+payable <span class="math inline">\(p\)</span> thly in arrear and has redemption amount <span class="math inline">\(R\)</span> is
+<span class="math display">\[P = (1 - t_1) D a_{\angln}^{(p)} + R v^n\]</span> at rate <span class="math inline">\(i\)</span> per annum. Here
+the rate is called the <em>net yield</em>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-56" class="example"><strong>Example 2.6  </strong></span><em>An investor liable to income tax at 30% buys a 15-year fixed interest
+bond which is redeemable at par and pays coupons of 8% pa half-yearly in
+arrear. Calculate the price the investor should pay to obtain a net
+yield of 9% pa.</em></p>
+</div>
+<p><strong>Solution:</strong> Coupon payments after tax are
+<span class="math display">\[ (1 - t_1) D = (1 - 0.3) \frac{8\%}{2} \times 100 = 2.8.\]</span></p>
+<p>The payments of the investor are shown in the table below.</p>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="15%" />
+<col width="7%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Time (half-year)</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center"><span class="math inline">\(\ldots\)</span></th>
+<th align="center">29</th>
+<th align="center">30</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cashflow</td>
+<td align="center"><span class="math inline">\(P\)</span></td>
+<td align="center">2.8</td>
+<td align="center">2.8</td>
+<td align="center">2.8</td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+<td align="center">2.8</td>
+<td align="center"><span class="math inline">\(2.8 + 100\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The price the investor should pay to obtain a net yield of 9% pa can be
+calculated from
+<span class="math display">\[P = 2.8 a^j_{\angl{30}} + 100 (\frac{1}{1+j})^{30} = 73.59,\]</span> where
+where <span class="math inline">\(j = (1.09)^{(1/2)} - 1 = 0.044031\)</span> per half-year effective.</p>
+</div>
+<div id="capital-gains-tax-cgt" class="section level3 hasAnchor" number="2.1.5">
+<h3><span class="header-section-number">2.1.5</span> Capital gains tax (CGT)<a href="bonds-and-inflation.html#capital-gains-tax-cgt" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Capital gains tax is a tax levied on the capital gain made on the
+redemption of a bond (or the sale of the bond if sold earlier). The
+capital gain is simply the difference between</p>
+<p>Note that <strong>capital gain</strong> refers to an increase in a capital asset’s
+value and is considered to be realized when the asset is sold. A
+<strong>capital loss</strong> is incurred when there is a decrease in the capital
+asset value compared to an asset’s purchase price.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-57" class="example"><strong>Example 2.7  </strong></span><em>An investor liable to the capital gains tax at 20% purchases two bonds</em></p>
+<ul>
+<li><p><em>Bond A for the price of ฿102 and</em></p></li>
+<li><p><em>Bond B for the price of ฿98.</em></p></li>
+</ul>
+<p><em>Calculate the capital gains tax on each bond if the investor sells them
+both one year later for ฿100 each.</em></p>
+</div>
+<p><strong>Solution:</strong></p>
+<ul>
+<li><p>Bond A: Tax payment is <span class="math inline">\(0.2 \times \max\{100 - 102,0 \} = 0\)</span> (i.e.
+capital loss)</p></li>
+<li><p>Bond B: Tax payment is <span class="math inline">\(0.2 \times \max\{100 - 98,0 \} = 0.4\)</span> (i.e.
+capital gain)</p></li>
+</ul>
+<p>Here we assume that no ‘relief’, i.e. we cannot add the two bonds
+together and say we bought the two bonds for ฿200 and sold the bonds for
+฿200.</p>
+<p><strong>Notes</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Similar to income tax, the price of the bond is then calculated on
+the net redemption received after tax has been deducted.</p></li>
+<li><p>When the purchase and sale (or redemption) prices are known, it it
+easy to calculate the yield.</p></li>
+<li><p>In contrast, as the price depends on whether there is a capital gain
+and the capital gain depends on the price, it is not easy to
+calculate the price for a given redemption yield. There is a test to
+determine whether CGT is payable.</p></li>
+</ol>
+<div class="example">
+<p><span id="exm:unlabeled-div-58" class="example"><strong>Example 2.8  </strong></span><em>An investor liable to the capital gains tax at 20% purchases a 10-year
+bond with an annual coupon of 8% pa payable yearly in arrear, to be
+redeemed at par.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Calculate the redemption yield the investor obtain if the price is
+฿96 per ฿100 nominal.</em></p></li>
+<li><p><em>What price should the investor pay to obtain a yield of 7% pa
+effective?</em> (see note below)</p></li>
+<li><p><em>What price should the investor pay to obtain a yield of 9% pa
+effective?</em><br />
+</p></li>
+</ol>
+</div>
+<p><strong>Solution:</strong></p>
+<ol style="list-style-type: decimal">
+<li>The bond is redeemed at par. Therefore, the redemption amount is 100
+THB which is greater than the bond price, and the capital gain tax
+is <strong>payable</strong>.</li>
+</ol>
+<p>The payments of the investor are shown in the table below.</p>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="13%" />
+<col width="6%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Time (year)</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center"><span class="math inline">\(\ldots\)</span></th>
+<th align="center">9</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Cashflow</td>
+<td align="center">-96</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center"><span class="math inline">\(\ldots\)</span></td>
+<td align="center">8</td>
+<td align="center">8 + 100 - 0.2(100 - 96)</td>
+</tr>
+</tbody>
+</table>
+<p>Let <span class="math inline">\(i\)</span> denote the yield per year that the first investor obtains.
+Working at time 10, the equation of value of the cashflows is
+<span class="math display">\[ f(i) =  -96 (1+i)^{10} + 8 s^i_{\angl{10}} +  99.2 = 0.\]</span> By linear
+interpolation, we have <span class="math display">\[ f(0.08) = 7.836, \quad f(0.09) = -6.523, \]</span>
+and hence, the approximate of <span class="math inline">\(i\)</span> is <span class="math inline">\(i^* \approx 0.08546 = 8.546\%\)</span>.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>We know that <span class="math inline">\(P = 96\)</span> is equivalent to yield approximately equal to
+<span class="math inline">\(8.546\%\)</span>.</li>
+</ol>
+<p>To obtain a yield of <span class="math inline">\(7\%\)</span>, this should imply that <span class="math inline">\(P &gt; 96\)</span>. If
+<span class="math inline">\(P \ge R = 100\)</span>, no CGT is payable. This would change the equation we
+need to calculate the bond price. Two cases to be considered are</p>
+<ul>
+<li><p><strong>CGT is payable:</strong> The equation of value is
+<span class="math display">\[ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%\]</span></p></li>
+<li><p><strong>CGT is not payable:</strong> The equation of value is
+<span class="math display">\[ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%\]</span></p></li>
+</ul>
+<p><strong>Note</strong> In this example, we can guess whether CGT is payable because we
+have calculated the price to yield 8.546% from the above question. Then
+we can use the appropriate equation to calculate the bond price and
+check whether or not our initial guess was correct.</p>
+<p>According to the note, let us guess that <span class="math inline">\(P &gt; 100\)</span>, i.e. CGT is <strong>not</strong>
+payable.</p>
+<p><span class="math display">\[ P = 8 a^i_{\angl{10}} +  100\cdot (1+i)^{-10}, \quad i = 7\%,\]</span> which
+implies that <span class="math inline">\(P = 107.02 &gt; 100\)</span>. So our initial guess was correct and
+CGT is <strong>not</strong> payable.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Here <span class="math inline">\(9\% &gt; 8.546\%\)</span>. Let us guess that <span class="math inline">\(P &lt; 100\)</span>, i.e. CGT is
+payable.
+<span class="math display">\[ P = 8 a^i_{\angl{10}} +  99.2\cdot (1+i)^{-10}, \quad i = 7\%,\]</span>
+which implies that <span class="math inline">\(P = 92.99 &lt; 100\)</span>. So our initial guess was
+correct and CGT is payable.</li>
+</ol>
+<p><strong>Note</strong> The algorithm to test whether CGT will be payable will be
+discussed elsewhere in the course “Theory of Interest”.</p>
+</div>
+</div>
+<div id="inflation" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Inflation<a href="bonds-and-inflation.html#inflation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Inflation is a measure of the rate of change in the price of consumer
+goods and services, such as food and beverages, transportation and
+housing.</p>
+<ul>
+<li><p>In Thailand or US, it is measured with reference to a <strong>consumer
+price index</strong> (or CPI). In UK, it is measured in terms of <strong>retail
+price index</strong> (RPI).</p></li>
+<li><p>Bureau of Trade and Economic Indices reports the CPI on a monthly
+basis.</p></li>
+<li><p>High inflation means that prices increase quickly and hence <strong>the
+purchasing power</strong> significantly decreases.</p></li>
+</ul>
+<p>Let <span class="math inline">\(Q(t)\)</span> be the CPI at time <span class="math inline">\(t\)</span>. Then the rate of inflation per year
+denoted by <span class="math inline">\(q(t)\)</span> is <span class="math display">\[q(t) = \frac{Q(t)}{Q(t-1)} - 1.\]</span> The average
+inflation rate per year between time <span class="math inline">\(s\)</span> and <span class="math inline">\(t\)</span>, denoted by <span class="math inline">\(\bar{q}\)</span>,
+satisfies <span class="math display">\[(1 + \bar{q})^{t-s} = \frac{Q(t)}{Q(s)},\]</span> and hence
+<span class="math display">\[\bar{q} = \left( \frac{Q(t)}{Q(s)}  \right)^{1/(t-s)} - 1.\]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-59" class="example"><strong>Example 2.9  </strong></span><em>A set of goods costs ฿98.25 in January 2013 and ฿101.44 in January
+2018. Calculate the average inflation rate</em> <span class="math inline">\(\bar{q}\)</span> over this period.</p>
+</div>
+<p><strong>Solution:</strong> The increase from Jan 2013 to Jan 2018 (5 years) is
+<span class="math display">\[\frac{101.44}{98.25}  - 1 =   0.032.\]</span> The average of inflation rate
+<span class="math inline">\(\bar{q}\)</span> is given by <span class="math display">\[(1  + \bar{q})^5 = 1.032.\]</span> Therefore
+<span class="math inline">\(\bar{q} = 0.64\%\)</span>.</p>
+<p>Therefore, ฿1 in January 2013 buys as much as ฿1.032 in January 2018.</p>
+<p>The following table shows the monthly consumer price indices from
+January 2011 to December 2019. Source: <a href="http://www.price.moc.go.th/" class="uri">http://www.price.moc.go.th/</a></p>
+<table style="width:100%;">
+<caption><span id="tab:tableCPI">Table 2.1: </span> The monthly consumer price indices from January 2011
+to December 2019.</caption>
+<colgroup>
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2011</td>
+<td>91.93</td>
+<td>92.3</td>
+<td>92.75</td>
+<td>94.03</td>
+<td>94.35</td>
+<td>94.47</td>
+<td>94.64</td>
+<td>95.05</td>
+<td>94.73</td>
+<td>94.91</td>
+<td>95.12</td>
+<td>94.66</td>
+</tr>
+<tr class="even">
+<td>2012</td>
+<td>95.03</td>
+<td>95.38</td>
+<td>95.95</td>
+<td>96.35</td>
+<td>96.73</td>
+<td>96.89</td>
+<td>97.22</td>
+<td>97.61</td>
+<td>97.93</td>
+<td>98.06</td>
+<td>97.71</td>
+<td>98.09</td>
+</tr>
+<tr class="odd">
+<td>2013</td>
+<td>98.25</td>
+<td>98.46</td>
+<td>98.52</td>
+<td>98.68</td>
+<td>98.92</td>
+<td>99.07</td>
+<td>99.17</td>
+<td>99.16</td>
+<td>99.32</td>
+<td>99.49</td>
+<td>99.59</td>
+<td>99.73</td>
+</tr>
+<tr class="even">
+<td>2014</td>
+<td>100.15</td>
+<td>100.39</td>
+<td>100.6</td>
+<td>101.1</td>
+<td>101.51</td>
+<td>101.4</td>
+<td>101.32</td>
+<td>101.23</td>
+<td>101.06</td>
+<td>100.96</td>
+<td>100.84</td>
+<td>100.33</td>
+</tr>
+<tr class="odd">
+<td>2015</td>
+<td>99.74</td>
+<td>99.86</td>
+<td>100.03</td>
+<td>100.05</td>
+<td>100.22</td>
+<td>100.32</td>
+<td>100.25</td>
+<td>100.03</td>
+<td>99.98</td>
+<td>100.18</td>
+<td>99.86</td>
+<td>99.47</td>
+</tr>
+<tr class="even">
+<td>2016</td>
+<td>99.21</td>
+<td>99.36</td>
+<td>99.57</td>
+<td>100.11</td>
+<td>100.68</td>
+<td>100.71</td>
+<td>100.36</td>
+<td>100.32</td>
+<td>100.36</td>
+<td>100.52</td>
+<td>100.46</td>
+<td>100.59</td>
+</tr>
+<tr class="odd">
+<td>2017</td>
+<td>100.75</td>
+<td>100.79</td>
+<td>100.33</td>
+<td>100.49</td>
+<td>100.64</td>
+<td>100.66</td>
+<td>100.53</td>
+<td>100.64</td>
+<td>101.22</td>
+<td>101.38</td>
+<td>101.45</td>
+<td>101.37</td>
+</tr>
+<tr class="even">
+<td>2018</td>
+<td>101.44</td>
+<td>101.21</td>
+<td>101.12</td>
+<td>101.57</td>
+<td>102.14</td>
+<td>102.05</td>
+<td>102.00</td>
+<td>102.27</td>
+<td>102.57</td>
+<td>102.63</td>
+<td>102.40</td>
+<td>101.73</td>
+</tr>
+<tr class="odd">
+<td>2019</td>
+<td>101.71</td>
+<td>101.95</td>
+<td>102.37</td>
+<td>102.82</td>
+<td>103.31</td>
+<td>102.94</td>
+<td>103.00</td>
+<td>102.80</td>
+<td>102.90</td>
+<td>102.74</td>
+<td>102.61</td>
+<td>102.62</td>
+</tr>
+</tbody>
+</table>
+<p>Figure <a href="bonds-and-inflation.html#fig:figCPI">2.1</a> shows the monthly consumer price indices from
+January 2011 to December 2019.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:figCPI"></span>
+<img src="SCMA329Bookdownproj_files/figure-html/figCPI-1.png" alt="The monthly consumer price indices from January 2011 to December 2019" width="672" />
+<p class="caption">
+Figure 2.1: The monthly consumer price indices from January 2011 to December 2019
+</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-60" class="example"><strong>Example 2.10  </strong></span><em>An investment contract made on January 2018 promises to pay an investor
+of ฿10,000 in 5 years’ time. Assume the average inflation rate at</em>
+<span class="math inline">\(\bar{q} = 0.64\%\)</span> for the next 5 years.</p>
+<p><em>If a bowl of noodles costs ฿100 in 2018, then ฿10,000 could buy 100
+bowls. How many bowls of noodles would the payment of ฿10,000 buy in the
+next 5 years?</em></p>
+<p><em><strong>Solution:</strong> In Jan 2018, ฿100 buys as much as</em> <span class="math inline">\(100 (1.0064)^5 =\)</span>
+฿103.2 in Jan 2023.</p>
+<p><em>So ฿10000 in Jan 2023 could buy</em>
+<span class="math display">\[\frac{10000}{103.2} \approx 96 \text{ bowls}.\]</span> Notice that we divide
+by <span class="math inline">\((1 + \bar{q})^5\)</span> to calculate how much your money is worth at the
+end of the next five years.</p>
+<ul>
+<li><p><em>The quantity of goods that can be bought with 10,000 in January
+2023 reduces from 100 to 96 bowls.</em></p></li>
+<li><p><em>The effect of inflation results in the reduction of the purchasing
+power of a unit of money in January 2023 compared to that in
+January 2018.</em></p></li>
+<li><p><em>The amount of ฿10,000 is referred to as the <strong>monetary</strong> (or
+<strong>nominal</strong>) payment in 5 years. This is the amount of money that
+change hands.</em></p></li>
+<li><p><em>The <strong>real payment of ฿10,000 (due at time 5 years) in time 0
+unit</strong> is</em> <span class="math display">\[\begin{aligned}
+10000 \frac{Q(0)}{Q(5)} &amp;=  10000  \frac{1}{(1.0064)^5} \\
+                         &amp;=  9686.05.\end{aligned}\]</span> Here we have
+less purchasing power with your money at the end of the five years
+than you had at the start of the year.</p></li>
+<li><p><em>The real payment (in time 0) is the purchase power of 10,000 paid
+in 5 years relative to today. <strong>It is the amount of cash in hand at
+the end of the period reduced for the effects of inflation</strong>.</em></p></li>
+<li><p><em>In general, ฿X at time</em> <span class="math inline">\(t\)</span> has the purchasing power relative to
+time <span class="math inline">\(s\)</span> of <span class="math display">\[X \cdot \frac{Q(s)}{Q(t)}.\]</span></p></li>
+</ul>
+</div>
+<div id="real-rates-of-interest" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Real rates of interest<a href="bonds-and-inflation.html#real-rates-of-interest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The rate of interest which is calculated using monetary payments is
+called a <strong>money (or monetary or nominal) rate of interest</strong>.</p>
+<p>The <strong>real rate of interest</strong> is calculated using real payments.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-61" class="example"><strong>Example 2.11  </strong></span><em>An investor deposits 100 at time 0 and receives 120 after one year.</em></p>
+<ul>
+<li><p><em>The monetary rate of interest effective is</em>
+<span class="math display">\[\frac{120}{100} - 1 = 20\%.\]</span></p></li>
+<li><p><em>Suppose that the inflation rate over this one year period is 4%.
+Calculate the real payment of 120 at time 1 and the real rate of
+interest. After adjusting for the inflation rate, the real rate of
+interest can be calculated by first expressing both payments in
+units of the same purchasing power.</em></p>
+<ul>
+<li><p><em>In term of time 0 money unit, the transaction is represented
+by</em></p>
+<p><em>Here, the real payment of 120 due in 1 year in terms of time 0
+unit is</em> <span class="math inline">\(\displaystyle{120 \cdot \frac{1}{1.04} = 115.38}\)</span>.
+Hence the real rate of interest is 15.38%.</p></li>
+<li><p><em>In term of time 1 money unit, the transaction is represented
+by</em></p>
+<p><em>Similarly, we instead calculate the real payment of 100
+relative to time 1, which gives</em> <span class="math inline">\(100 \cdot 1.04 = 104\)</span>. The
+real rate of interest is <span class="math display">\[\frac{120}{104} - 1 = 15.38\%,\]</span>
+which is the same as the previous case.</p></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="real-yields" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Real yields<a href="bonds-and-inflation.html#real-yields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is often useful to look at the rate of return earned on an investment
+after taking into account of inflation. As analogous to the real rate of
+interest, a <strong>real yield</strong> is calculated using real payments, which can
+be obtained by expressing payments in units of the same purchasing power
+<strong>at some specific date</strong>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-62" class="example"><strong>Example 2.12  </strong></span><em>A 5-year bond with nominal value of ฿100 was issued in January 2013.
+The coupon rate was 8% p.a. payable yearly in arrears. Redemption was at
+par after 5 years. The bond was issued at 100%. Calculate the yield to a
+non-tax paying investor</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>in monetary terms <strong>Solution:</strong></em></p>
+<p><em>The transaction together with the inflation indices</em> <span class="math inline">\(Q(t)\)</span> at time
+<span class="math inline">\(t\)</span> is shown as follows:</p>
+<p><em>Clearly, the monetary rate of return on this transaction is 8%.
+This is because the investor receives the interest payment of ฿8 at
+the end of each year plus the initial capital of ฿100 at the end of
+five years.</em></p>
+<p><em>Alternatively, one can solve for the monetary rate of return from
+the following equation of value</em>
+<span class="math display">\[f(i) = -100 + 8 a^i_{\actuarialangle{5}} + 100\frac{1}{(1+i)^5} = 0.\]</span></p></li>
+<li><p><em>in real terms with reference to the CPI.</em></p>
+<p><em>Taking into account of the inflation rates, we calculate the real
+payment in term of time 0 unit by dividing the monetary amounts by
+the <strong>proportional</strong> increase in the inflation index from 0 to</em> <span class="math inline">\(t\)</span>.</p></li>
+</ol>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="5%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Time</th>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Year</td>
+<td align="center">2013</td>
+<td align="center">2014</td>
+<td align="center">2015</td>
+<td align="center">2016</td>
+<td align="center">2017</td>
+<td align="center">2018</td>
+</tr>
+<tr class="even">
+<td align="center">Cashflow</td>
+<td align="center">-100</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">8 + 100</td>
+</tr>
+<tr class="odd">
+<td align="center">CPI</td>
+<td align="center">98.25</td>
+<td align="center">100.15</td>
+<td align="center">99.74</td>
+<td align="center">99.21</td>
+<td align="center">100.75</td>
+<td align="center">101.44</td>
+</tr>
+<tr class="even">
+<td align="center">Real
+value
+of cashflow
+at
+<span class="math inline">\(t = 0\)</span></td>
+<td align="center">-100</td>
+<td align="center"><span class="math inline">\(8 \cdot \frac{98.25}{100.15}\)</span>
+= 7.85</td>
+<td align="center"><span class="math inline">\(8 \cdot \frac{98.25}{99.74}\)</span>
+= 7.88</td>
+<td align="center"><span class="math inline">\(8 \cdot \frac{98.25}{99.21}\)</span>
+= 7.91</td>
+<td align="center"><span class="math inline">\(8 \cdot \frac{98.25}{100.75}\)</span>
+= 7.80</td>
+<td align="center"><span class="math inline">\(8 \cdot \frac{98.25}{101.44}\)</span>
+= 104.60</td>
+</tr>
+</tbody>
+</table>
+<p><em>The real yield</em> <span class="math inline">\(i&#39;\)</span> p.a. effective solve the equation of value as
+follows:
+<span class="math display">\[f(i&#39;) = -100 + 7.85 v  + 7.88v^2 + 7.91v^3 + 7.80v^6 + 104.6v^5 = 0,\]</span>
+which gives <span class="math inline">\(i&#39; \approx 7.30\%\)</span> by the linear interpolation.</p>
+</div>
+<p>In general, the real yield <span class="math inline">\(i&#39;\)</span> for a series of cashflows
+<span class="math inline">\(C(t_1), C(t_2), \ldots, C(t_n)\)</span>, given associated inflation index
+<span class="math inline">\(Q(t_k)\)</span> for <span class="math inline">\(k = 1, \ldots, n\)</span>, can be obtained in terms of time 0
+money units as
+<span class="math display">\[\sum_{k=1}^n C(t_k) \frac{Q(0)}{Q(t_k)} \frac{1}{(1 + i&#39;)^{t_k}} = 0.\]</span>
+This is equivalent to
+<span class="math display">\[\sum_{k=1}^n C(t_k) \frac{1}{Q(t_k)} \frac{1}{(1 + i&#39;)^{t_k}} = 0.\]</span>
+Therefore, <strong>the real yield is independent of the date the payment units
+are adjusted to</strong>.</p>
+</div>
+<div id="calculating-real-yields-given-constant-inflation-assumptions" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Calculating real yields given constant inflation assumptions<a href="bonds-and-inflation.html#calculating-real-yields-given-constant-inflation-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For future cashflows, the inflation index will not be known. Suppose we
+assume a constant rate of inflation <span class="math inline">\(q\)</span> p.a. The cashflows <span class="math inline">\(C(t_k)\)</span> at
+time <span class="math inline">\(t_k\)</span> have the purchasing power at time 0 (or real payments
+relative to time 0) <span class="math display">\[\begin{aligned}
+    C(t_k) \cdot \frac{Q(0)}{Q(t_k)} &amp;=     C(t_k) \cdot \frac{Q(0)}{Q(0)(1+q)^{t_k}}  =  C(t_k) \cdot \frac{1}{(1+q)^{t_k}} , \quad k = 1, \ldots, n.\end{aligned}\]</span>
+The relation between the real yield <span class="math inline">\(i&#39;\)</span>, the constant rate of inflation
+<span class="math inline">\(q\)</span> and the monetary yield <span class="math inline">\(i\)</span> can be obtained as follows: From the
+equation of value, <span class="math display">\[\begin{aligned}
+    0   &amp;= \sum_{k=1}^n C(t_k) \frac{Q(0)}{Q(t_k)} \frac{1}{(1 + i&#39;)^{t_k}} \\
+        &amp;=  \sum_{k=1}^n C(t_k)  \cdot \frac{1}{(1+q)^{t_k}}\cdot \frac{1}{(1 + i&#39;)^{t_k}}\end{aligned}\]</span>
+With no inflation adjustment, the monetary rate of return <span class="math inline">\(i\)</span> satisfies
+<span class="math display">\[0 =  \sum_{k=1}^n C(t_k)  \cdot \frac{1}{(1+i)^{t_k}}.\]</span> Therefore, if
+<strong>we assume a constant rate of inflation</strong> <span class="math inline">\(q\)</span> p.a., then the following
+relation holds: <span class="math display">\[(1 +i) = ( 1 + q)(1+i&#39;).\]</span> This provides the
+relationship between the real yield <span class="math inline">\(i&#39;\)</span>, the monetary yield <span class="math inline">\(i\)</span> and the
+inflation rate <span class="math inline">\(q\)</span>.</p>
+</div>
+<div id="index-linked-securities" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Index-linked securities<a href="bonds-and-inflation.html#index-linked-securities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An index-linked security is an investment security in which interest
+payments and the redemption are adjusted in line with inflation index
+values by linking the payments to the Consumer Price Index (CPI). The
+reasons for these types of security are</p>
+<ul>
+<li><p>to protect investors against inflation risk, and</p></li>
+<li><p>to help pension funds to provide index-link benefits so that the
+index-link liability can be matched with the index-link asset.</p></li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-63" class="example"><strong>Example 2.13  </strong></span><em>Consider an index-link bond of a nominal of ฿100 issued at time</em> <span class="math inline">\(t_0\)</span>,
+bearing an annual coupon of <span class="math inline">\(C\%\)</span> payable <span class="math inline">\(m\)</span> times a year and a
+redemption is at <span class="math inline">\(R\%\)</span>. Then per ฿100 nominal, the monetary amount
+(actual cashflow) of an interest payment <span class="math inline">\(D(t_k)\)</span> at time <span class="math inline">\(t_k\)</span> is</p>
+<p><em>The monetary amount of the redemption amount at time</em> <span class="math inline">\(t_n\)</span> is</p>
+</div>
+<div class="example">
+<p><span id="exm:exampleILB" class="example"><strong>Example 2.14  </strong></span><em>An investor purchased a 3-year index-linked bond in January 2015. The
+investor received payments at the end of each year plus a final
+redemption amount, all of which were adjusted in line with the CPI
+values reported in Table</em> <a href="bonds-and-inflation.html#tab:tableCPI">2.1</a><em>. Calculate the actual
+payments received by the investor.</em></p>
+</div>
+<p><strong>Note</strong> In practice, due to delays in calculating the index, the
+payments (or cashflows) will be adjusted based on the inflation index
+value from an earlier period.</p>
+<p>Let <span class="math inline">\(s\)</span> denote the indexation time lag. The payments are adjusted with
+reference to inflation index value at time <span class="math inline">\(s\)</span> (months) before the
+payment is made. Then the monetary amount of an interest payment
+<span class="math inline">\(D(t_k)\)</span> per ฿100 nominal at time <span class="math inline">\(t_k\)</span> is
+<span class="math display">\[\displaystyle D(t_k) = 100 \frac{C}{m} \cdot \frac{Q(t_k - \frac{s}{12})}{Q(t_0 - \frac{s}{12})}\]</span>
+and the monetary amount of redemption at time <span class="math inline">\(t_n\)</span> is
+<span class="math display">\[D(t_n) = 100 R \cdot \frac{Q(t_n - \frac{s}{12})}{Q(t_0 - \frac{s}{12})}.\]</span>
+The term <span class="math inline">\(Q(t_0 - \frac{s}{12})\)</span> is called the base inflation figure
+(the base CPI figure).</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-64" class="example"><strong>Example 2.15  </strong></span><em>Repeat Example</em><a href="bonds-and-inflation.html#exm:exampleILB">2.14</a> <em>for a 3-year index linked bond.
+The indexation adjustments are made according to the CPI three months
+before each payment, i.e.</em> <span class="math inline">\(s = 3\)</span> months.</p>
+</div>
+<div class="example">
+<p><span id="exm:exampleILB2" class="example"><strong>Example 2.16  </strong></span><em>In January 2015, the government issued an index-linked bond of term 10
+years. Coupons are payable half-yearly in arrears, and the annual
+nominal coupon rate is 4%. The coupons and redemption amount are
+adjusted with reference to the inflation index value 3 months before the
+payment is made.</em></p>
+<p><em>Assume the constant inflation rate from February 2018 is 2% p.a.</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Find the base CPI figure (i.e. it is the October 2014 CPI which is
+3 months before the issue date).</em></p></li>
+<li><p><em>Calculate the actual payments received by the investor.</em></p></li>
+<li><p><em>Assume that the price of ฿100 nominal of this index-linked bond in
+January 2018 (after the January 2018 coupon payment) is ฿ .
+Calculate the monetary yield that an investor who purchased the bond
+in January 2018 (after the January 2018 coupon payment) will
+obtained.</em></p></li>
+<li><p><em>Calculate the real yield for this investor under the above
+assumptions.</em></p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="processes-for-stock-prices.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/pairote-sat/SCMA329/blob/master/index.Rmd",
+"text": null
+},
+"download": ["SCMA329Bookdownproj.pdf", "SCMA329Bookdownproj.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+---
+title: "Untitled"
+author: "Pairote Satiracoo"
+date: "2022-10-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to Thai Financial System
+
+In this chapter, we will first provide an overview of the structure of the Thai financial system. In the economy, the financial system is of critical importance. It enables the process of financial intermediation, which facilitates the movement of money between savers and borrowers and ensures that money is used effectively to promote economic growth and development.
+
+According to the document from the Bank of Thailand, a financial system typically consists of three essential components: financial institutions, financial markets, and payment system.
+
+1. **Financial Institution**
+
+There are 2 types of financial institution in Thailand, including:
+        
+        1. **Depositary Corporations**, for example, commercial banks, Special Financial Institutions (SFIs), Saving Cooperative and credit unions, and money market mutual funds; and
+        
+        2. **Non-depository corporations**, for example, mutual funds, insurance companies, provident funds, asset management companies, and securities companies.
+

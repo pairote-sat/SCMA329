@@ -25,28 +25,37 @@ financial situation, which is either a mathematical or statistical model
 that describes the relationship among the variables of the financial
 problem. Here are some types of financial models.
 
--   **Financial statement model:** The model includes three main
-    components including income statement, cash flow statement and
-    balance sheet. These are accounting reports issued by a company
-    quarterly and annually that are used for decision making and
-    performing financial analysis. (see
+-   **Financial statement model:** A financial statement model is a structured representation of a company's financial information, typically presented in a standardized format such as an Excel spreadsheet. This model includes projections of the company's income statement, balance sheet, and cash flow statement. It helps analysts, investors, and managers understand and evaluate a company's financial performance, growth prospects, and overall health by forecasting how various financial metrics will evolve over time based on assumptions about revenue, expenses, and other relevant factors. (see
     <https://corporatefinanceinstitute.com/resources/knowledge/accounting/three-financial-statements/>)
 
--   **Project finance models:** The model incorporates two main elements
+
+<!-- The model includes three main -->
+<!--     components including income statement, cash flow statement and -->
+<!--     balance sheet. These are accounting reports issued by a company -->
+<!--     quarterly and annually that are used for decision making and -->
+<!--     performing financial analysis.  -->
+  
+
+-   **Project finance models:** A project finance model is like a financial plan for a specific project, like long-term infrastructure, industrial projects, and public services. It lays out all the costs involved, such as construction, equipment, and operating expenses, and also predicts the future cash flows the project will generate, like revenue from selling electricity or tolls from the highway.  
+
+For instance, if a company wants to build a wind farm, the project finance model would estimate the costs of buying and installing wind turbines, as well as the income from selling the generated electricity over several years.
+
+The model incorporates two main elements
     of the project including loans and debt repayment. It can be used to
     assess the risk-reward of lending to or investing in a long-term
     project, i.e. it can be used to tell whether the project has enough
     cash to cover the debt in the long term. (see
     <https://www.wallstreetprep.com/knowledge/project-finance-model-structure/>)
 
--   **Discounted cashflow model:** It is the model to value a company
-    using the net present value of the business's future cashflows, or
-    to estimate the value of an investment based on its future cash
-    flows. (see
+-   **Discounted cashflow model:** It is the model to
+estimate the value of an investment or business based on the present value of its future cash flows. It involves forecasting the cash flows the investment is expected to generate over time and then discounting those cash flows back to their present value using a chosen discount rate. By doing so, the model accounts for the time value of money, providing insight into whether the investment is overvalued or undervalued.
+(see
     <https://corporatefinanceinstitute.com/resources/templates/excel-modeling/dcf-model-template/>)
 
--   **Pricing models:** This models the way prices are set within a
-    market in order to maximise profits.
+-   **Pricing models:** The pricing model is a structured approach used to determine the appropriate price for a product or service. It considers various factors such as production costs, market demand, competition, and desired profit margins to arrive at a pricing strategy. The goal is to find a balance between attracting customers and generating sufficient revenue to ensure the business's sustainability and profitability.
+
+<!-- This models the way prices are set within a -->
+<!--     market in order to maximise profits. -->
 
 This chapter covers the basic concepts of calculating interest,
 including simple and compound interest, the frequency of compounding,
@@ -231,8 +240,7 @@ For the second argument, this one baht will grow to $1 + r$ in the first
 year, $(1 + r)^2$ in two years, and so on. These amounts are clearly
 worth more than receiving and holding ฿1 at the same time in the future.
 
-For the last argument, we need to compare the values of the amounts
-\*\*received at different times. To do this, we can look at the today's
+For the last argument, we need to compare the values of the amounts received at different times. To do this, we can look at the today's
 values of ฿1100 received in 2 years assuming that we can invest at an
 annual interest rate of $r$ percent.
 
